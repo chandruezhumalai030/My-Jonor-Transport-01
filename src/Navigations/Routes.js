@@ -34,6 +34,9 @@ import ForgetSuccess from '../Pages/ForgetSuccess';
 import Security1 from '../Pages/Security1';
 import Security2 from '../Pages/Security2';
 import PromoCode from '../Pages/PromoCode';
+import Favourite from '../Pages/Trips/Favourite';
+import Complete from '../Pages/Trips/Complete';
+import Trips from '../Pages/Trips/Trips';
 
 import CurrentLocation from '../Pages/SubHome/CurrentLocation';
 import Destination from '../Pages/SubHome/Destination';
@@ -196,7 +199,16 @@ function Routes() {
           component={Destination}
           options={{ headerShown: false }}
         />
-       
+        <Stack.Screen
+          name="Favourite"
+          component={Favourite}
+          options={{ headerShown: false }}
+        />
+       <Stack.Screen
+          name="Complete"
+          component={Complete}
+          options={{ headerShown: false }}
+        />
        
       </Stack.Navigator>
       <FlashMessage position="top" />

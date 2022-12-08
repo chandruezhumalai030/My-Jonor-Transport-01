@@ -1,39 +1,53 @@
 import React from "react";
-import { StyleSheet, Text, View,TouchableOpacity,TextInput } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import GetColors from '../assets/GetColors';
 
 export default function Editprofile() {
   const navigation = useNavigation();
+  const [number, onChangeNumber] = React.useState(null);
   return (
     <View style={styles.EditProfile}>
       {/* <View style={styles.AutoLayoutVertical4}> */}
-        <View >
-          <Text style={styles.Txt1081}>Enter Your Passcode</Text>
+      <View >
+        <Text style={styles.Txt1081}>Enter Your Passcode</Text>
+        <View style={styles.CodeInput}>
           <View style={styles.CodeInput}>
-            <View style={styles.CodeInput}>
-              <View style={styles._codeInput}>
-                <TextInput style={styles.Txt415}></TextInput>
-              </View>
+            <View style={styles._codeInput}>
+              <TextInput style={styles.Txt415}
+                keyboardType='numeric'
+                maxLength={1}
+                onChangeText={onChangeNumber}
+              />
             </View>
-            <View style={styles.CodeInput}>
-              <View style={styles._codeInput}>
-                <TextInput style={styles.Txt415}></TextInput>
-              </View>
+          </View>
+          <View style={styles.CodeInput}>
+            <View style={styles._codeInput}>
+              <TextInput style={styles.Txt415}
+                keyboardType='numeric'
+                maxLength={1}
+              />
             </View>
-            <View style={styles.CodeInput}>
-              <View style={styles._codeInput}>
-                <TextInput style={styles.Txt415}></TextInput>
-              </View>
+          </View>
+          <View style={styles.CodeInput}>
+            <View style={styles._codeInput}>
+              <TextInput style={styles.Txt415}
+                keyboardType='numeric'
+                maxLength={1}
+                />
             </View>
-            <View style={styles.CodeInput}>
-              <View style={styles._codeInput}>
-                <TextInput style={styles.Txt415}></TextInput>
-              </View>
+          </View>
+          <View style={styles.CodeInput}>
+            <View style={styles._codeInput}>
+              <TextInput style={styles.Txt415}
+                keyboardType='numeric'
+                maxLength={1}
+              />
             </View>
           </View>
         </View>
-        <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("EditProfile1")}>
+      </View>
+      <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("EditProfile1")}>
         <Text style={styles.btnTxt}>Continue</Text>
       </TouchableOpacity>
       {/* </View> */}
@@ -48,7 +62,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    // backgroundColor: "rgba(255, 255, 255, 1)",
+    backgroundColor: "rgba(255, 255, 255, 1)",
     // width: 528,
     // height: 926,
   },
@@ -93,7 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginRight: 3,
-    marginBottom:100
+    marginBottom: 100
   },
   _codeInput: {
     display: "flex",

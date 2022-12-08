@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Image, Text} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../Pages/Home';
-import Trip from '../Pages/Trip';
+import Trips from '../Pages/Trips/Trips';
 import Scan from '../Pages/Scan';
 import Profile from '../Pages/Profile';
 import GetImage from '../assets/GetImage';
@@ -77,8 +77,8 @@ function BottomTab() {
         }}
       />
       <Tab.Screen
-        name="Trip"
-        component={Trip}
+        name="Trips"
+        component={Trips}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => {
