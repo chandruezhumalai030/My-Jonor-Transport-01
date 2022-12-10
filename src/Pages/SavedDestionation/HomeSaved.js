@@ -20,7 +20,7 @@ const HomeSaved = () => {
         </View>
         <Pressable
           style={styles.buttonPressable}
-          onPress={() => navigation.navigate("SavedDestination03")}
+          onPress={() => navigation.navigate("Addressnew")}
         >
           <View style={styles.buttonBasePrimaryView}>
             <Text style={styles.text}>Add New</Text>
