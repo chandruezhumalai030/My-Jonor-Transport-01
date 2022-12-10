@@ -404,6 +404,10 @@ const Home = (props) => {
                   </Text>
                 </TouchableOpacity>
               </View>
+              <TouchableOpacity
+                  onPress={() => navigation.navigate("SavedDestionation")}
+                  style={styles.sub_Con}
+                >
               <View
                 style={{
                   height: (height / 100) * 10,
@@ -452,6 +456,7 @@ const Home = (props) => {
                   />
                 </View>
               </View>
+              </TouchableOpacity>
               <View
                 style={{
                   height: (height / 100) * 10,

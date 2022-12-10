@@ -38,6 +38,10 @@ import Favourite from '../Pages/Trips/Favourite';
 import Complete from '../Pages/Trips/Complete';
 import Trips from '../Pages/Trips/Trips';
 
+import SavedDestionation from '../Pages/SavedDestionation/SavedDestionation';
+import HomeSaved from '../Pages/SavedDestionation/HomeSaved';
+import Places from '../Pages/SavedDestionation/Places';
+
 import CurrentLocation from '../Pages/SubHome/CurrentLocation';
 import Destination from '../Pages/SubHome/Destination';
 const Stack = createNativeStackNavigator();
@@ -209,7 +213,22 @@ function Routes() {
           component={Complete}
           options={{ headerShown: false }}
         />
-       
+        <Stack.Screen
+          name="SavedDestionation"
+          component={SavedDestionation}
+          // options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HomeSaved"
+          component={HomeSaved}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Places"
+          component={Places}
+          options={{ headerShown: false }}
+        />
+
       </Stack.Navigator>
       <FlashMessage position="top" />
     </NavigationContainer>
