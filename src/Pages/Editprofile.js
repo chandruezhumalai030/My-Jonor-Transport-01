@@ -8,7 +8,7 @@ export default function Editprofile() {
   const [number, onChangeNumber] = React.useState(null);
   return (
     <View style={styles.EditProfile}>
-      {/* <View style={styles.AutoLayoutVertical4}> */}
+      <View style={styles.AutoLayoutVertical4}>
       <View >
         <Text style={styles.Txt1081}>Enter Your Passcode</Text>
         <View style={styles.CodeInput}>
@@ -50,7 +50,7 @@ export default function Editprofile() {
       <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("EditProfile1")}>
         <Text style={styles.btnTxt}>Continue</Text>
       </TouchableOpacity>
-      {/* </View> */}
+      </View>
     </View>
   )
 }
@@ -72,15 +72,16 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     position: "absolute",
-    top: 54,
+    backgroundColor: "rgba(255, 255, 255, 1)",
+    top: 4,
     left: 0,
     right: 0,
     paddingTop: 19,
     paddingBottom: 23,
     paddingLeft: 35,
     paddingRight: 35,
-    // width: 428,
-    // height: 576,
+    width: 428,
+    height: 576,
   },
   AutoLayoutVertical3: {
     display: "flex",

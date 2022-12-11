@@ -150,8 +150,8 @@ const styles = StyleSheet.create({
     paddingBottom: 47,
     paddingLeft: 23,
     paddingRight: 23,
-    // height: 750,
-    // width: 428,
+    height: 750,
+    width: 428,
   },
   AutoLayoutVertical1: {
     display: "flex",
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    // width: 360,
+    width: 360,
   },
   AvatarThumbail: {
     width: 140,
