@@ -44,6 +44,15 @@ import Places from '../Pages/SavedDestionation/Places';
 
 import CurrentLocation from '../Pages/SubHome/CurrentLocation';
 import Destination from '../Pages/SubHome/Destination';
+import Ewallet from '../Pages/wallet/Ewallet';
+import cardlist from '../Pages/wallet/cardlist';
+
+import addnewcard from '../Pages/wallet/addnewcard';
+import cardDetails from '../Pages/wallet/cardDetails';
+import EReceipt from '../Pages/wallet/EReceipt';
+import TopupScreen from '../Pages/wallet/TopupScreen';
+import NotificationScreen from '../Pages/Notification/NotificationScreen';
+import NotificationView from '../Pages/Notification/NotificationView';
 const Stack = createNativeStackNavigator();
 
 function Routes() {
@@ -228,6 +237,49 @@ function Routes() {
           component={Places}
           options={{ headerShown: false }}
         />
+         <Stack.Screen
+          name="NotificationScreen"
+          component={NotificationScreen}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+          name="NotificationView"
+          component={NotificationView}
+          options={{ headerShown: false }}
+        />
+            <Stack.Screen
+          name="Ewallet"
+          component={Ewallet}
+          options={{ headerShown: false }}
+        />
+             <Stack.Screen
+          name="cardlist"
+          component={cardlist}
+          options={{ headerShown: false }}
+        />
+                     <Stack.Screen
+          name="addnewcard"
+          component={addnewcard}
+          options={{ headerShown: false }}
+        />
+          <Stack.Screen
+          name="cardDetails"
+          component={cardDetails}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+         
+         name="EReceipt"
+         component={EReceipt}
+           options={{ headerShown: false }}
+         />
+
+       <Stack.Screen
+        name="TopupScreen"
+        component={TopupScreen}
+         options={{ headerShown: false }}
+      />
+
 
       </Stack.Navigator>
       <FlashMessage position="top" />
