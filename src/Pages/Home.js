@@ -338,6 +338,7 @@ if(from!==""){
                       {"Get me home"}
                     </Text>
                   </View>
+                  
                   <View
                     style={{
                       flex: 0.4,
