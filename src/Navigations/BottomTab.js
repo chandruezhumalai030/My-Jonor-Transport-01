@@ -75,6 +75,8 @@ function BottomTab() {
             );
           },
         }}
+        initialParams={{data:true,para:""}}
+        
       />
       <Tab.Screen
         name="Trips"
