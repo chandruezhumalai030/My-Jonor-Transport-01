@@ -6,9 +6,9 @@ import GetImage from '../assets/GetImage';
 export default function Header(props) {
     const height = Dimensions.get("screen").height;
     const navigation = useNavigation();
-    const { title, onPress, righticon } = props
+    const { title, onPress, righticon ,isBackground} = props
     return (
-        <View style={{ flex: 1, backgroundColor: "#f7f7f7" }}>
+        <View style={{ flex: 1, backgroundColor: isBackground ?'#002B7F':"#f7f7f7" }}>
             <View
                 style={styles.container}
             >
@@ -19,6 +19,7 @@ export default function Header(props) {
                     <Image
                         source={GetImage.leftArrow}
                         style={styles.img}
+                        tintColor={isBackground? '#fff':'#000'}
                     />
                 </TouchableOpacity>
                 <View style={{ flex: 0.85, justifyContent: "center" }}>
@@ -26,8 +27,8 @@ export default function Header(props) {
                         style={{
                             fontSize: (height / 100) * 2.2,
                             fontFamily: "Urbanist_semibold",
-                            fontWeight: 'bold',
-                            color: "#000"
+                            fontWeight: '800',
+                            color: isBackground?'#fff': "#000"
 
                         }}
                     >
@@ -45,8 +46,8 @@ export default function Header(props) {
                         <Image
                             source={GetImage.choose}
                             style={{
-                                height: 15,
-                                width: 15,
+                                height: 20,
+                                width: 20,
                                 resizeMode: 'contain'
                             }}
                         />
@@ -76,7 +77,8 @@ const styles = StyleSheet.create({
     img: {
         height: 18,
         width: 18,
-        resizeMode: "contain"
+        resizeMode: "contain",
+        
     },
     margin: {
         flex: 0.95,

@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Platform,
-  PermissionsAndroid,
+  PermissionsAndroid,Linking
 } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import GetLocation from "react-native-get-location";
@@ -17,6 +17,7 @@ import Geolocation from "@react-native-community/geolocation";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
 import CustomMarker from "../Components/CustomMarker";
 import ReactModal from "../Components/ReactModal";
+import {request, PERMISSIONS, RESULTS} from 'react-native-permissions';
 import { icon } from "../assets/icons";
 const { width, height } = Dimensions.get("window");
 const Hight = Dimensions.get("screen").height;
@@ -34,22 +35,7 @@ const Home = (props) => {
   // var varDate = new Date(date); //dd-mm-YYYY
   // var today = new Date();
   // console.log("date==>",varDate,t)
-  useEffect(()=>{
   
-    var specific_date = new Date('2022-12-14');
-    var current_date = new Date();
-    if(current_date.getTime() >= specific_date.getTime())
-    {
-        today.push(["h"])
-    }
-    else
-    {
-        console.log('current_date date is lower than specific_date')
-    }
-    
-  }
- 
-  ,[isFocused])
   useEffect(()=>{
     setSome(data)
 
@@ -67,9 +53,37 @@ if(from!==""){
   const [some, setSome] = useState(true);
   const [locationModal, setLocationModal] = useState(false);
   const[from,setFrom]=useState("");
-  const[to,setTo]=useState("")
+  const[to,setTo]=useState("");
+  const[locationEnable,setLocationEnable]=useState(false)
   const Bold = "Urbanist_bold";
   const navigation = useNavigation();
+
+
+  useEffect(async()=>{
+    const granted = await PermissionsAndroid.check(
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      
+    );
+
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      setLocationEnable(false)
+    }else{
+      setLocationEnable(true)
+    }
+//     Geolocation.getCurrentPosition((info) => {
+      
+//       setLocationModal(false);
+//       console.log("==>", info);
+//       state["latitude"] = info?.coords?.latitude;
+//       state["longitude"] = info?.coords?.longitude;
+//       state["isLoading"] = false;
+//       setState({ ...state });
+//     },(error)=>{
+//       Linking.openSettings();
+// console.log("h==>",error)
+// setLocationEnable(true)
+//     })
+  },[])
   useEffect(() => {
     setLocationModal(true);
   }, []);
@@ -78,12 +92,15 @@ if(from!==""){
     // return new Promise( async (resolve, reject) => {
 
     try {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      const granted = await request(
+        Platform.select({
+          android: PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
+          ios: PERMISSIONS.IOS.LOCATION_WHEN_IN_USE,
+        }),
         {
-          title: "Example App",
-          message: "Example App access to your location ",
-        }
+          title: "Location Permission",
+          message: "Transport needs access to your location",
+        },
       );
       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
         Geolocation.getCurrentPosition((info) => {
@@ -93,12 +110,14 @@ if(from!==""){
           state["longitude"] = info?.coords?.longitude;
           state["isLoading"] = false;
           setState({ ...state });
-        });
-
+          setLocationEnable(false)
+        }
+        )
+        setLocationEnable(false)
         console.log("You can use the location");
       } else {
         console.log("location permission denied");
-        alert("Location permission denied");
+        requestLocationPermission()
       }
     } catch (err) {
       console.warn(err);
@@ -230,10 +249,11 @@ if(from!==""){
             <View
               style={{
                 flex: 0.07,
-                width: "100%",
+                width: "85%",
                 flexDirection: "row",
                 justifyContent: "space-between",
-                paddingHorizontal: 18,
+                paddingHorizontal: 1,
+                alignSelf:'center'
               }}
             >
               <TouchableOpacity>
@@ -250,6 +270,7 @@ if(from!==""){
               </TouchableOpacity>
               <TouchableOpacity>
                 <Text
+                onPress={()=>navigation.navigate("PromoCode")}
                   style={{
                     fontSize: (height / 100) * 1.5,
                     fontFamily: "Urbanist_semibold",
@@ -261,12 +282,12 @@ if(from!==""){
               </TouchableOpacity>
             </View>
             <TouchableOpacity
-              onPress={() => navigation.navigate("PromoCode")}
+              onPress={ ()=>{ Linking.openURL('https://google.com')}}
               style={{ flex: 0.45, width: "100%" }}
             >
               <Image
                 source={GetImage.promo}
-                style={{ height: "110%", width: "100%", resizeMode: "contain" }}
+                style={{ height: "113%", width: "100%", resizeMode: "contain" }}
               />
             </TouchableOpacity>
 
@@ -293,14 +314,16 @@ if(from!==""){
                   />
                   <Text
                     style={{
-                      fontSize: (height / 100) * 1.8,
-                      fontFamily: "Urbanist_semibold",
-                      color: "#000",
+                      fontSize: (height / 100) * 1.5,
+                      fontFamily: "Urbanist_regular",
+                      color: "#616161",
+                      fontWeight:'600'
                     }}
                   >
                     {"Get me Somewhere"}
                   </Text>
                 </TouchableOpacity>
+                
                 <View
                   style={{
                     flex: 0.5,
@@ -309,7 +332,8 @@ if(from!==""){
                     borderTopWidth: 0.5,
                   }}
                 >
-                  <View
+                  <TouchableOpacity
+              onPress={() => navigation.navigate("SavedDestionation")}
                     style={{
                       flex: 0.6,
                       flexDirection: "row",
@@ -330,14 +354,15 @@ if(from!==""){
                     />
                     <Text
                       style={{
-                        fontSize: (height / 100) * 1.8,
-                        fontFamily: "Urbanist_semibold",
-                        color: "#000",
+                        fontSize: (height / 100) * 1.5,
+                        fontFamily: "Urbanist_regular",
+                        color: "#616161",
+                        fontWeight:'600'
                       }}
                     >
                       {"Get me home"}
                     </Text>
-                  </View>
+                  </TouchableOpacity>
                   
                   <View
                     style={{
@@ -347,7 +372,9 @@ if(from!==""){
                       flexDirection: "row",
                     }}
                   >
-                    <View
+                    <TouchableOpacity
+                                  onPress={() => navigation.navigate("SavedDestionation")}
+
                       style={{
                         flex: 0.5,
                         justifyContent: "center",
@@ -355,8 +382,10 @@ if(from!==""){
                       }}
                     >
                       <Image source={GetImage.work} style={styles.Img_2} />
-                    </View>
-                    <View
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                                  onPress={() => navigation.navigate("SavedDestionation")}
+
                       style={{
                         flex: 0.5,
                         justifyContent: "center",
@@ -366,7 +395,7 @@ if(from!==""){
                       }}
                     >
                       <Image source={icon.place} style={styles.Img_2} />
-                    </View>
+                    </TouchableOpacity>
                   </View>
                 </View>
               </View>
@@ -528,7 +557,7 @@ if(from!==""){
           justifyContent: "center",
           alignItems: "center",
         }}
-        visible={false}
+        visible={locationEnable}
       >
         <View
           style={{
@@ -559,7 +588,7 @@ if(from!==""){
           >
             <Text
               style={{
-                fontSize: (height / 100) * 3,
+                fontSize: (height / 100) * 2.5,
                 fontFamily: "Urbanist_semibold",
                 color: "#000",
               }}
@@ -568,13 +597,14 @@ if(from!==""){
             </Text>
             <Text
               style={{
-                fontSize: (height / 100) * 2,
+                fontSize: (height / 100) * 1.8,
                 fontFamily: "Urbanist_semibold",
                 color: "#616161",
+                alignSelf:'center'
               }}
             >
               We need access to your location to be able {"\n"}
-              to use this service.
+              {"                     "}to use this service.
             </Text>
           </View>
           <View style={{ height: (height / 100) * 4 }}></View>
@@ -584,7 +614,7 @@ if(from!==""){
               style={{
                 height: (height / 100) * 7,
                 backgroundColor: "#0F437B",
-                width: (height / 100) * 40,
+                width: (width / 100) * 70,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
@@ -602,11 +632,11 @@ if(from!==""){
             </TouchableOpacity>
             <View style={{ height: (height / 100) * 2 }}></View>
             <TouchableOpacity
-              onPress={() => setLocationModal(false)}
+              onPress={() => setLocationEnable(false)}
               style={{
                 height: (height / 100) * 7,
                 borderWidth: 0.5,
-                width: (height / 100) * 40,
+                width: (width / 100) * 70,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,

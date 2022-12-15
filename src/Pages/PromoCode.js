@@ -13,6 +13,7 @@ import PromoImg from "../Components/PromoImg";
 import { useNavigation } from "@react-navigation/native";
 export default function PromoCode(props) {
   const height = Dimensions.get("screen").height;
+  const width = Dimensions.get("screen").width;
   const navigation = useNavigation();
   const data=[
     {
@@ -33,7 +34,7 @@ export default function PromoCode(props) {
     },
   ]
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1,backgroundColor:"#FFFFFF" }}>
        
       <View
         style={{ flex: 0.05, flexDirection: "row" ,paddingTop:height/100*2}}
@@ -52,7 +53,8 @@ export default function PromoCode(props) {
             style={{
               fontSize: (height / 100) * 2.5,
               fontFamily: "Urbanist_semibold",
-              fontWeight:'bold'
+              fontWeight:'bold',
+              color:'#000'
             }}
           >
             Promo
@@ -60,19 +62,15 @@ export default function PromoCode(props) {
         </View>
       </View>
       <View style={{ flex: 0.95 }}>
-        <ScrollView style={{flex:1}}>
         <FlatList
                       data={data}
                       renderItem={({item, index}) => (
-                        <View key={index} style={{flex: 1}}>
                           
                          <PromoImg img={item.img} />
-                        </View>
                       )}
                       keyExtractor={item => item.id}
                     />
      
-        </ScrollView>
       </View>
     </View>
   );

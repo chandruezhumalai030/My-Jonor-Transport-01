@@ -6,7 +6,7 @@ import Trips from '../Pages/Trips/Trips';
 import Scan from '../Pages/Scan';
 import Profile from '../Pages/Profile';
 import GetImage from '../assets/GetImage';
-
+import ScanQR from '../Pages/QR/ScanQR';
 const RenderTabIcon = Props => {
   const {
     activeIcon,
@@ -69,7 +69,7 @@ function BottomTab() {
                 height={20}
                 activeIcon={GetImage.homeIcon}
                 inactiveIcon={GetImage.homeIcon}
-                tint={'#1A96F0'}
+                tint={'#0F437B;'}
                 // title='Home'
               />
             );
@@ -91,15 +91,16 @@ function BottomTab() {
                 height={20}
                 activeIcon={GetImage.documentIcon}
                 inactiveIcon={GetImage.documentIcon}
-                tint={'#1A96F0'}
+                tint={'#0F437B;'}
               />
             );
           },
         }}
       />
       <Tab.Screen
-        name="Scan"
-        component={Scan}
+       // name="Scan"
+       name="ScanQR"
+        component={ScanQR}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => {
@@ -110,7 +111,7 @@ function BottomTab() {
                 isFocused={focused}
                 activeIcon={GetImage.scanIcon}
                 inactiveIcon={GetImage.scanIcon}
-                tint={'#1A96F0'}
+                tint={'#0F437B;'}
               />
             );
           },
@@ -129,7 +130,7 @@ function BottomTab() {
                 height={20}
                 activeIcon={GetImage.profileIcon}
                 inactiveIcon={GetImage.profileIcon}
-                tint={'#1A96F0'}
+                tint={'#0F437B;'}
               />
             );
           },

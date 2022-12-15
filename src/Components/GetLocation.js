@@ -13,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 
 
 export default function GetLocation(props) {
-    const{onAddressSelected,onPress,}=props
+    const{onAddressSelected,onPress,label,currentLocation}=props
   const height = Dimensions.get("screen").height;
   const width = Dimensions.get("screen").width;
   const [focused, setFocused] = useState(false);
@@ -21,7 +21,7 @@ export default function GetLocation(props) {
   const navigation=useNavigation()
   return (
     <View
-      style={{ height: text == "" ? (height / 100) * 15 : (height / 100) * 40 }}
+      style={{ height: text == "" ? (height / 100) * 15 : (height / 100) * 50 }}
     >
       <GooglePlacesAutocomplete
         keepResultsAfterBlur={true}
@@ -34,7 +34,7 @@ export default function GetLocation(props) {
           ref?.setAddressText("123 myDefault Street, mycity");
         }}
         query={{
-          key: "AIzaSyCl4PwObilcXBAT-Vj6GTU0mH9az06nGDc",
+          key: "google key",
           language: "en",
           //components: `country:${isDefaultCountry}`,
         }}
@@ -94,7 +94,7 @@ onPress(data)
             `https://maps.googleapis.com/maps/api/geocode/json?address=` +
               data.description +
               `&key=` +
-              "AIzaSyCl4PwObilcXBAT-Vj6GTU0mH9az06nGDc",
+              "goole key",
             {
               method: "POST",
             }
@@ -161,7 +161,7 @@ onPress(data)
           alignItems: "center",
         }}
       >
-        <View
+       {currentLocation? <View
           style={{
             height: (height / 100) * 6,
             width: "90%",
@@ -192,9 +192,26 @@ onPress(data)
               color: "#000",
             }}
           >
-            {"Use My Location"}
+            {label}
           </Text>
-        </View>
+        </View>:<View
+          style={{
+            height: (height / 100) * 6,
+            width: "90%",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+           
+            
+          }}
+        ><Text
+         
+         style={{
+          fontSize: (height / 100) * 1.5,
+          fontFamily: "Urbanist_semibold",
+          fontWeight: "bold",
+          color:'#0F437B'
+        }}>{"View more result"}</Text></View>}
       </View>
     </View>
   );
