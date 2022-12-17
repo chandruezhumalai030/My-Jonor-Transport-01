@@ -2,13 +2,14 @@ import React from "react"
 import { Pressable, StyleSheet, Image, Text, View, ScrollView } from "react-native"
 import Helper from "../Components/utils/Helper";
 import Header from "../Components/Header";
-// import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Profile({ navigation, props }) {
-    const logOut = () => {
-        Helper.removeItemValue('userdata');
-        navigation.navigate('Intro1');
-    };
+export default function Profile(props) {
+    // const logOut = () => {
+    //     Helper.removeItemValue('userdata');
+    //     navigation.navigate('Intro1');
+    // };
+    const navigation = useNavigation();
 
     return (
         <Header
