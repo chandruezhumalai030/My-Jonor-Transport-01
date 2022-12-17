@@ -6,72 +6,73 @@ import GetColors from '../assets/GetColors';
 export default function SignIn_01() {
     const navigation = useNavigation();
     return (
-        <View style={styles.SignIn_01}>
-            <View style={styles.Group636}>
-                <View style={styles.AutoLayoutVertical2}>
-                    <Image
-                        style={styles.Frame}
-                        source={require('../assets/Profile/singup.png')}
-                    />
-                    <Text style={styles.Txt804}>Welcome Back</Text>
-                    <View style={styles.AutoLayoutVertical1}>
-                        <View style={styles.AutoLayoutVertical}>
-                            <View style={styles.SignSignUpInput}>
-                                <View style={styles.Text_field}>
-                                    <View style={styles.Content1}>
-                                        <View style={styles.Input}>
-                                            <View style={styles.Content}>
-                                                <Image
-                                                    style={styles.IconlyBoldMessage}
-                                                    source={require('../assets/Profile/email.png')}
-                                                />
-                                                <TextInput style={styles.Txt543}
-                                                    underlineColorAndroid="transparent"
-                                                    placeholder="Email"
-                                                    autoCapitalize="none"
-                                                    placeholderTextColor = "black" />
+        <View style={styles.container}>
+            <View style={styles.SignIn_01}>
+                <View style={styles.Group636}>
+                    <View style={styles.AutoLayoutVertical2}>
+                        <Image
+                            style={styles.Frame}
+                            source={require('../assets/Profile/singup.png')}
+                        />
+                        <Text style={styles.Txt804}>Welcome Back</Text>
+                        <View style={styles.AutoLayoutVertical1}>
+                            <View style={styles.AutoLayoutVertical}>
+                                <View style={styles.SignSignUpInput}>
+                                    <View style={styles.Text_field}>
+                                        <View style={styles.Content1}>
+                                            <View style={styles.Input}>
+                                                <View style={styles.Content}>
+                                                    <Image
+                                                        style={styles.IconlyBoldMessage}
+                                                        source={require('../assets/Profile/email.png')}
+                                                    />
+                                                    <TextInput style={styles.Txt543}
+                                                        underlineColorAndroid="transparent"
+                                                        placeholder="Email"
+                                                        autoCapitalize="none"
+                                                        placeholderTextColor="gray" />
+                                                </View>
                                             </View>
                                         </View>
                                     </View>
-                                </View>
-                                {/* <View style={styles.Content1}> */}
-                                {/* <View style={styles.Content1}> */}
-                                <View style={styles.Input}>
-                                    <View style={styles.Content2}>
+                                    {/* <View style={styles.Content1}> */}
+                                    {/* <View style={styles.Content1}> */}
+                                    <View style={styles.Input}>
+                                        <View style={styles.Content2}>
+                                            <Image
+                                                style={styles.IconlyBoldMessage}
+                                                source={require('../assets/Profile/password.png')}
+                                            />
+                                            <TextInput style={styles.Txt6104}
+                                                underlineColorAndroid="transparent"
+                                                placeholder="Password"
+                                                autoCapitalize="none"
+                                                placeholderTextColor="black" />
+                                        </View>
                                         <Image
-                                            style={styles.IconlyBoldMessage}
-                                            source={require('../assets/Profile/password.png')}
+                                            style={styles.IconlyLightHide}
+                                            source={require('../assets/Profile/show.png')}
                                         />
-                                        <TextInput style={styles.Txt6104}
-                                            underlineColorAndroid="transparent"
-                                            placeholder="Password"
-                                            autoCapitalize="none"
-                                            placeholderTextColor = "black" />
                                     </View>
-                                    <Image
-                                        style={styles.IconlyLightHide}
-                                        source={require('../assets/Profile/show.png')}
-                                    />
+                                    {/* </View> */}
+                                    {/* </View> */}
                                 </View>
-                                {/* </View> */}
-                                {/* </View> */}
-                            </View>
-                            <View style={styles.ReminderForgetPassword}>
-                                <View
-                                    style={
-                                        styles.StyleTextThemeLightStateUncheckedComponentCheckbox
-                                    }
-                                >
-                                    <View style={styles.Rectangle} />
-                                    <Text style={styles.Txt446}>Remember me</Text>
+                                <View style={styles.ReminderForgetPassword}>
+                                    <View
+                                        style={
+                                            styles.StyleTextThemeLightStateUncheckedComponentCheckbox
+                                        }
+                                    >
+                                        <View style={styles.Rectangle} />
+                                        <Text style={styles.Txt446}>Remember me</Text>
+                                    </View>
+                                    <TouchableOpacity
+                                        onPress={() => navigation.navigate("ForgetPassword")}
+                                    >
+                                        <Text style={styles.Txt454}>Forgot password?</Text>
+                                    </TouchableOpacity>
                                 </View>
-                                <TouchableOpacity
-                                    onPress={() => navigation.navigate("ForgetPassword")}
-                                >
-                                    <Text style={styles.Txt454}>Forgot password?</Text>
-                                </TouchableOpacity>
-                            </View>
-                            {/* <View style={styles.Button}>
+                                {/* <View style={styles.Button}>
                                 <View style={styles._buttonBasePrimary}>
                                     <TouchableOpacity
                                         onPress={() => navigation.navigate("Home")}
@@ -80,18 +81,19 @@ export default function SignIn_01() {
                                     </TouchableOpacity>
                                 </View>
                             </View> */}
-                            <TouchableOpacity style={styles.Button} onPress={() =>navigation.navigate("Home",{data:true,para:''})}>
-                                <Text style={styles.btnTxt}>Sign In</Text>
+                                <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Home", { data: true, para: '' })}>
+                                    <Text style={styles.btnTxt}>Sign In</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                        <View style={styles.AutoLayoutHorizontal}>
+                            <Text style={styles.Txt274}>Doesn’t have an account yet?</Text>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("Singup")}
+                            >
+                                <Text style={styles.Txt862}>Sign Up</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
-                    <View style={styles.AutoLayoutHorizontal}>
-                        <Text style={styles.Txt274}>Doesn’t have an account yet?</Text>
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate("Singup")}
-                        >
-                            <Text style={styles.Txt862}>Sign Up</Text>
-                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -100,14 +102,15 @@ export default function SignIn_01() {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#fff",
+    },
     SignIn_01: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "rgba(255, 255, 255, 1)",
-        width: '100%',
-        height: '100%',
     },
     Group636: {
         display: "flex",
@@ -156,24 +159,26 @@ const styles = StyleSheet.create({
         paddingBottom: 47,
         paddingLeft: 2,
         paddingRight: 7,
-        height: 482,
-        width: 428,
+        // height: 482,
+        // width: 428,
     },
     ThemeLightComponentNavbar: {
         width: 380,
         height: 48,
     },
     Frame: {
-        width: 380,
+        width: 300,
         height: 200,
     },
     Txt804: {
-        fontSize: 48,
+        fontSize: 38,
         fontFamily: "Urbanist, sans-serif",
         fontWeight: "700",
         lineHeight: 58,
         color: "rgba(33,33,33,1)",
         width: 381,
+        marginTop:50,
+        marginBottom:50,
     },
     AutoLayoutVertical1: {
         display: "flex",
@@ -220,9 +225,9 @@ const styles = StyleSheet.create({
         paddingRight: 19.5,
         borderRadius: 12,
         backgroundColor: "rgba(255, 255, 255, 1)",
-        borderWidth: 4,
+        borderWidth: 2,
         borderStyle: "solid",
-        borderColor: "rgba(189,189,189,1)",
+        borderColor: "gray",
         width: 380,
         height: 56,
     },
@@ -292,6 +297,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginBottom: 20,
         width: 380,
+        marginTop:50
     },
     StyleTextThemeLightStateUncheckedComponentCheckbox: {
         display: "flex",
@@ -341,8 +347,8 @@ const styles = StyleSheet.create({
         borderColor: GetColors.PrimaryBlue_500,
         width: '80%',
         marginHorizontal: '10%',
-      },
-      btnTxt: {
+    },
+    btnTxt: {
         fontSize: 18,
         fontFamily: 'Urbanist, sans-serif',
         fontWeight: '600',
@@ -351,7 +357,7 @@ const styles = StyleSheet.create({
         color: GetColors.white,
         textAlign: 'center',
         justifyContent: 'center',
-      },
+    },
     Txt646: {
         fontSize: 18,
         fontFamily: "Urbanist, sans-serif",

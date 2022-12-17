@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function Report() {
     const navigation = useNavigation();
   return (
-    <ScrollView>
+    <View style={styles.container}>
     <View style={styles.HelpCenter_03}>
       <View style={styles.Group7810}>
         <View style={styles.AutoLayoutVertical3}>
@@ -21,7 +21,7 @@ export default function Report() {
                             underlineColorAndroid = "transparent"
                             placeholder = "Reporter Name"
                             autoCapitalize = "none"
-                            placeholderTextColor = "black" />
+                            placeholderTextColor = "gray" />
                           </View>
                           </View>
 
@@ -36,7 +36,7 @@ export default function Report() {
                             underlineColorAndroid = "transparent"
                             placeholder = "What This All About"
                             autoCapitalize = "none"
-                            placeholderTextColor = "black"/>
+                            placeholderTextColor = "gray"/>
 
                           </View>
                     </View>
@@ -52,7 +52,7 @@ export default function Report() {
                             underlineColorAndroid = "transparent"
                             placeholder = "Description"
                             autoCapitalize = "none"
-                            placeholderTextColor = "black"/>
+                            placeholderTextColor = "gray"/>
                           </View>
                         </View>
                       </View>
@@ -73,23 +73,24 @@ export default function Report() {
         </View>
       </View>
     </View>
-    </ScrollView>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   HelpCenter_03: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     paddingTop: 0,
     paddingBottom: 47,
     paddingLeft: 0,
     paddingRight: 0,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 428,
-    height: 926,
   },
   Group7810: {
     display: "flex",
@@ -299,7 +300,7 @@ const styles = StyleSheet.create({
   AutoLayoutVertical3: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     paddingTop: 23,
     paddingBottom: 23,
@@ -311,8 +312,8 @@ const styles = StyleSheet.create({
   AutoLayoutVertical2: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     width: 380,
   },
   AutoLayoutVertical2: {
@@ -325,7 +326,7 @@ const styles = StyleSheet.create({
   AutoLayoutVertical1: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     width: 380,
   },
@@ -395,7 +396,7 @@ const styles = StyleSheet.create({
   Content1: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     flex: 1,
     paddingTop: 0,
@@ -530,16 +531,16 @@ const styles = StyleSheet.create({
   Content2: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     flex: 1,
     height: 179,
   },
   Input1: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     flex: 1,
     paddingTop: 13.5,
     paddingBottom: 13.5,
@@ -550,13 +551,13 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderStyle: "solid",
     borderColor: "rgba(189,189,189,1)",
-    width: 380,
-    height: 179,
+    // width: 380,
+    // height: 179,
   },
   Content1: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     flex: 1,
     paddingTop: 0,
@@ -593,7 +594,7 @@ const styles = StyleSheet.create({
     paddingLeft: 27,
     paddingRight: 27,
     borderRadius: 100,
-    backgroundColor: "blue",
+    backgroundColor: "#0F437B",
     borderWidth: 1,
     borderStyle: "solid",
     borderColor: "rgba(181,197,214,1)",

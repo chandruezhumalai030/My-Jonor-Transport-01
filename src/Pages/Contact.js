@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function Contact() {
     const navigation = useNavigation();
   return (
+    <View style={styles.container}>
     <View style={styles.HelpCenter_02}>
       <View style={styles.Group436}>
         <View style={styles.AutoLayoutVertical3}>
@@ -71,10 +72,15 @@ export default function Contact() {
         </View>
       </View>
     </View>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   HelpCenter_02: {
     display: "flex",
     flexDirection: "column",
@@ -84,9 +90,9 @@ const styles = StyleSheet.create({
     paddingBottom: 295,
     paddingLeft: 0,
     paddingRight: 0,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 428,
-    height: 926,
+    // backgroundColor: "rgba(255, 255, 255, 1)",
+    // width: 428,
+    // height: 926,
   },
   Group436: {
     display: "flex",

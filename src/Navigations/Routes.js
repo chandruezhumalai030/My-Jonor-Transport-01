@@ -13,8 +13,8 @@ import Payment from '../Pages/Payment';
 import Security from '../Pages/Security';
 import Language from '../Pages/Language';
 import Notification from '../Pages/Notification';
-import PrivacyPolicies from '../Pages/Privacypolicy';
-import Editprofile from '../Pages/Editprofile';
+import PrivacyPolicy from '../Pages/Privacypolicy';
+import EditProfile from '../Pages/Editprofile';
 import EditProfile1 from '../Pages/EditProfile1';
 import Editsuccess from '../Pages/Editsuccess';
 import Helpcenter from '../Pages/Helpcenter';
@@ -91,6 +91,7 @@ function Routes() {
         <Stack.Screen
           name="Profile"
           component={Profile}
+          options={{ headerShown: false }}
            />
         <Stack.Screen
           name="Home"
@@ -101,12 +102,14 @@ function Routes() {
           component={Notification}
         />
         <Stack.Screen
-          name="PrivacyPolicies"
-          component={PrivacyPolicies}
+          name="PrivacyPolicy"
+          component={PrivacyPolicy}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Editprofile"
-          component={Editprofile}
+          component={EditProfile}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="EditProfile1"
@@ -140,6 +143,7 @@ function Routes() {
         <Stack.Screen
           name="Address"
           component={Address}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Payment"
@@ -156,7 +160,7 @@ function Routes() {
         <Stack.Screen
           name="Addressnew"
           component={Addressnew}
-          // options={{ headerShown: false }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Addresssuccess"
@@ -178,6 +182,7 @@ function Routes() {
         <Stack.Screen
           name="FirstTimeRegister"
           component={FirstTimeRegister}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="ForgetPassword"
@@ -186,10 +191,12 @@ function Routes() {
         <Stack.Screen
           name="ForgetReset"
           component={ForgetReset}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="ForgetSuccess"
           component={ForgetSuccess}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Security1"

@@ -9,6 +9,7 @@ export default function Notification() {
   const toggleSwitch1 = () => setIsEnabled1(previousState1 => !previousState1);
   const toggleSwitch2 = () => setIsEnabled2(previousState2 => !previousState2);
   return (
+    <View style={styles.container}>
     <View style={styles.Notification}>
       <View style={styles.Group0}>
         <View style={styles.AutoLayoutVertical2}>
@@ -18,7 +19,7 @@ export default function Notification() {
                 <Text style={styles.Txt8109}>General</Text>
                 <Switch
                   trackColor={{ false: "#767577", true: "#81b0ff" }}
-                  thumbColor={isEnabled ? "blue" : "#f4f3f4"}
+                  thumbColor={isEnabled ? "#0F437B" : "#f4f3f4"}
                   ios_backgroundColor="#3e3e3e"
                   onValueChange={toggleSwitch}
                   value={isEnabled}
@@ -32,7 +33,7 @@ export default function Notification() {
                 <Text style={styles.Txt8109}>Special Offers & Promo</Text>
                 <Switch
                   trackColor={{ false: "#767577", true: "#81b0ff" }}
-                  thumbColor={isEnabled1 ? "blue" : "#f4f3f4"}
+                  thumbColor={isEnabled1 ? "#0F437B" : "#f4f3f4"}
                   ios_backgroundColor="#3e3e3e"
                   onValueChange={toggleSwitch1}
                   value={isEnabled1}
@@ -46,7 +47,7 @@ export default function Notification() {
                 <Text style={styles.Txt8109}>Payment & Receipt</Text>
                 <Switch
                   trackColor={{ false: "#767577", true: "#81b0ff" }}
-                  thumbColor={isEnabled2 ? "blue" : "#f4f3f4"}
+                  thumbColor={isEnabled2 ? "#0F437B" : "#f4f3f4"}
                   ios_backgroundColor="#3e3e3e"
                   onValueChange={toggleSwitch2}
                   value={isEnabled2}
@@ -61,10 +62,15 @@ export default function Notification() {
         </View>
       </View>
     </View>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   Notification: {
     display: "flex",
     flexDirection: "column",
@@ -74,9 +80,6 @@ const styles = StyleSheet.create({
     paddingBottom: 589,
     paddingLeft: 0,
     paddingRight: 0,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 428,
-    height: 826,
   },
   Group0: {
     display: "flex",

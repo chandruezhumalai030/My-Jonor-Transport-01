@@ -6,57 +6,58 @@ import GetColors from '../assets/GetColors';
 export default function Singup() {
     const navigation = useNavigation();
     return (
-        <View style={styles.Register_01}>
-            <View style={styles.Group433}>
-                <View style={styles.AutoLayoutVertical2}>
-                    <Image
-                        style={styles.Frame}
-                        source={require('../assets/Profile/singup.png')}
-                    />
-                    <Text style={styles.Txt846}>Create Your Account</Text>
-                    <View style={styles.AutoLayoutVertical1}>
-                        <View style={styles.AutoLayoutVertical}>
-                            <View style={styles.SignSignUpInput}>
-                                <View style={styles.Text_field}>
-                                    {/* <View style={styles.Content1}> */}
+        <View style={styles.container}>
+            <View style={styles.Register_01}>
+                <View style={styles.Group433}>
+                    <View style={styles.AutoLayoutVertical2}>
+                        <Image
+                            style={styles.Frame}
+                            source={require('../assets/Profile/singup.png')}
+                        />
+                        <Text style={styles.Txt846}>Create Your Account</Text>
+                        <View style={styles.AutoLayoutVertical1}>
+                            <View style={styles.AutoLayoutVertical}>
+                                <View style={styles.SignSignUpInput}>
+                                    <View style={styles.Text_field}>
+                                        {/* <View style={styles.Content1}> */}
                                         <View style={styles.Input}>
                                             <View style={styles.Content}>
                                                 <Image
                                                     style={styles.IconlyBoldMessage}
                                                     source={require('../assets/Profile/email.png')}
                                                 />
-                                               <TextInput style={styles.Txt187}
-                                                underlineColorAndroid = "transparent"
-                                                placeholder = "Email"
-                                                autoCapitalize = "none"
-                                                placeholderTextColor = "black"/>
-                                            </View>
-                                        </View>
-                                    {/* </View> */}
-                                </View>
-                                {/* <View style={styles.Content1}>
-                                    <View style={styles.Content1}> */}
-                                        <View style={styles.Input}>
-                                            <View style={styles.Content2}>
-                                                <Image
-                                                    style={styles.IconlyBoldMessage}
-                                                    source={require('../assets/Profile/password.png')}
-                                                />
                                                 <TextInput style={styles.Txt187}
-                                                underlineColorAndroid = "transparent"
-                                                placeholder = "Password"
-                                                autoCapitalize = "none"
-                                                placeholderTextColor = "black"/>
+                                                    underlineColorAndroid="transparent"
+                                                    placeholder="Email"
+                                                    autoCapitalize="none"
+                                                    placeholderTextColor="gray" />
                                             </View>
-                                            <Image
-                                                style={styles.IconlyLightHide}
-                                                source={require('../assets/Profile/show.png')}
-                                            />
                                         </View>
+                                        {/* </View> */}
                                     </View>
+                                    {/* <View style={styles.Content1}>
+                                    <View style={styles.Content1}> */}
+                                    <View style={styles.Input}>
+                                        <View style={styles.Content2}>
+                                            <Image
+                                                style={styles.IconlyBoldMessage}
+                                                source={require('../assets/Profile/password.png')}
+                                            />
+                                            <TextInput style={styles.Txt187}
+                                                underlineColorAndroid="transparent"
+                                                placeholder="Password"
+                                                autoCapitalize="none"
+                                                placeholderTextColor="gray" />
+                                        </View>
+                                        <Image
+                                            style={styles.IconlyLightHide}
+                                            source={require('../assets/Profile/show.png')}
+                                        />
+                                    </View>
+                                </View>
                                 {/* </View>
                             </View> */}
-                            {/* <View style={styles.Button}>
+                                {/* <View style={styles.Button}>
                                 <View style={styles._buttonBasePrimary}>
                                     <TouchableOpacity
                                         onPress={() => navigation.navigate("Home")}
@@ -65,18 +66,19 @@ export default function Singup() {
                                     </TouchableOpacity>
                                 </View>
                             </View> */}
-                            <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("FirstTimeRegister")}>
-                                <Text style={styles.btnTxt}>Sign up</Text>
+                                <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("FirstTimeRegister")}>
+                                    <Text style={styles.btnTxt}>Sign up</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                        <View style={styles.AutoLayoutHorizontal}>
+                            <Text style={styles.Txt8103}>Already have an account?</Text>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("Singin")}
+                            >
+                                <Text style={styles.Txt901}>Sign in</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
-                    <View style={styles.AutoLayoutHorizontal}>
-                        <Text style={styles.Txt8103}>Already have an account?</Text>
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate("Singin")}
-                        >
-                            <Text style={styles.Txt901}>Sign in</Text>
-                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -85,14 +87,15 @@ export default function Singup() {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#fff",
+    },
     Register_01: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "rgba(255, 255, 255, 1)",
-        width: '100%',
-        height: '100%',
     },
     Group433: {
         display: "flex",
@@ -141,8 +144,8 @@ const styles = StyleSheet.create({
         paddingBottom: 47,
         paddingLeft: 23,
         paddingRight: 23,
-        height: 482,
-        width: 428,
+        // height: 382,
+        // width: 28,
     },
     ThemeLightComponentNavbar: {
         width: 380,
@@ -158,6 +161,8 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         lineHeight: 58,
         color: "rgba(33,33,33,1)",
+        marginTop:50,
+        marginBottom:50,
         width: 381,
     },
     AutoLayoutVertical1: {
@@ -205,9 +210,9 @@ const styles = StyleSheet.create({
         paddingRight: 19.5,
         borderRadius: 12,
         backgroundColor: "rgba(255, 255, 255, 1)",
-        borderWidth: 4,
+        borderWidth: 1,
         borderStyle: "solid",
-        borderColor: "rgba(189,189,189,1)",
+        borderColor: "gray",
         width: 380,
         height: 56,
     },
@@ -296,8 +301,9 @@ const styles = StyleSheet.create({
         borderColor: GetColors.PrimaryBlue_500,
         width: '80%',
         marginHorizontal: '10%',
-      },
-      btnTxt: {
+        marginTop:50
+    },
+    btnTxt: {
         fontSize: 18,
         fontFamily: 'Urbanist, sans-serif',
         fontWeight: '600',
@@ -306,7 +312,7 @@ const styles = StyleSheet.create({
         color: GetColors.white,
         textAlign: 'center',
         justifyContent: 'center',
-      },
+    },
     Txt592: {
         fontSize: 18,
         fontFamily: "Urbanist, sans-serif",

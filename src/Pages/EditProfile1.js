@@ -4,12 +4,19 @@ import { RadioButton } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
+import Header from "../Components/Header";
 
-export default function Editprofile1() {
+export default function Editprofile1(props) {
   const navigation = useNavigation();
   const [checked, setChecked] = React.useState('first');
   return (
-    <ScrollView>
+    <Header
+            {...props}
+              rightIcon={false}
+            // isBackground={true}
+            title={" Edit Profile"}
+        >
+    <View style={styles.container}>
       <View style={styles.EditProfile_03}>
         <View style={styles.Group642}>
           <View style={styles.AutoLayoutVertical2}>
@@ -117,11 +124,16 @@ export default function Editprofile1() {
           </View>
         </View>
       </View>
-    </ScrollView>
+    </View>
+    </Header>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   EditProfile_03: {
     display: "flex",
     flexDirection: "column",

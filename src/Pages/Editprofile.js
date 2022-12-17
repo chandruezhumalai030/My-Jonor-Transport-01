@@ -2,11 +2,19 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import GetColors from '../assets/GetColors';
+import Header from "../Components/Header";
 
-export default function Editprofile() {
+export default function EditProfile(props) {
   const navigation = useNavigation();
   const [number, onChangeNumber] = React.useState(null);
   return (
+    <Header
+      {...props}
+        rightIcon={false}
+      // isBackground={true}
+      title={"Edit Profile"}
+    >
+    <View style={styles.container}>
     <View style={styles.EditProfile}>
       <View style={styles.AutoLayoutVertical4}>
       <View >
@@ -52,24 +60,30 @@ export default function Editprofile() {
       </TouchableOpacity>
       </View>
     </View>
+    </View>
+    </Header>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   EditProfile: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    // backgroundColor: "rgba(255, 255, 255, 1)",
     // width: 528,
     // height: 926,
   },
   AutoLayoutVertical4: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     position: "absolute",
     backgroundColor: "rgba(255, 255, 255, 1)",
@@ -80,15 +94,15 @@ const styles = StyleSheet.create({
     paddingBottom: 23,
     paddingLeft: 35,
     paddingRight: 35,
-    width: 428,
-    height: 576,
+    // width: 428,
+    // height: 576,
   },
   AutoLayoutVertical3: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    width: 380,
+    // width: 380,
   },
   Txt1081: {
     fontSize: 18,
@@ -99,8 +113,10 @@ const styles = StyleSheet.create({
     color: "rgba(33,33,33,1)",
     textAlign: "center",
     justifyContent: "center",
-    width: 381,
+    alignItems: "center",
+    // width: 381,
     marginBottom: 80,
+    marginTop:200
   },
   CodeInput: {
     display: "flex",
@@ -121,9 +137,9 @@ const styles = StyleSheet.create({
     paddingRight: 28.5,
     borderRadius: 12,
     backgroundColor: "rgba(255, 255, 255, 1)",
-    borderWidth: 2,
+    borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "black",
+    borderColor: "gray",
   },
   Txt415: {
     fontSize: 24,

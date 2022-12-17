@@ -16,22 +16,30 @@ const ForgetReset = () => {
           <View style={[styles.codeInputView8, styles.mt60]}>
             <View style={styles.codeInputView1}>
               <View style={styles.codeInputView}>
-                <TextInput style={styles.codeText}></TextInput>
+              <TextInput style={styles.codeText}
+                keyboardType='numeric'
+                maxLength={1}/>
               </View>
             </View>
             <View style={[styles.codeInputView1, styles.ml16]}>
               <View style={styles.codeInputView}>
-                <TextInput style={styles.codeText}></TextInput>
+              <TextInput style={styles.codeText}
+                keyboardType='numeric'
+                maxLength={1}/>
               </View>
             </View>
             <View style={[styles.codeInputView1, styles.ml16]}>
               <View style={styles.codeInputView}>
-                <TextInput style={styles.codeText}></TextInput>
+              <TextInput style={styles.codeText}
+                keyboardType='numeric'
+                maxLength={1}/>
               </View>
             </View>
             <View style={[styles.codeInputView1, styles.ml16]}>
               <View style={styles.codeInputView}>
-                <TextInput style={styles.codeText}></TextInput>
+                <TextInput style={styles.codeText}
+                keyboardType='numeric'
+                maxLength={1}/>
               </View>
             </View>
           </View>

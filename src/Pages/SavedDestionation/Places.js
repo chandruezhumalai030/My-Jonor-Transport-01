@@ -8,7 +8,7 @@ export default function Places() {
   const navigation = useNavigation();
   const [checked, setChecked] = React.useState('first');
   return (
-    <ScrollView>
+    <View style={styles.container}>
       <View style={styles.Address_01}>
         <View style={styles.Group}>
           <View style={styles.AutoLayoutVertical3}>
@@ -25,6 +25,7 @@ export default function Places() {
                         value="first"
                         status={checked === 'first' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('first')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
@@ -39,6 +40,11 @@ export default function Places() {
                     source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
+                <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/themelight-divider1.png")}
+              />
                 <View
                   style={
                     styles.CategoryLocationEditThemeLightComponentLocationList1
@@ -50,6 +56,7 @@ export default function Places() {
                         value="second"
                         status={checked === 'second' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('second')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
@@ -64,6 +71,11 @@ export default function Places() {
                     source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
+                <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/themelight-divider1.png")}
+              />
                 <View
                   style={
                     styles.CategoryLocationEditThemeLightComponentLocationList1
@@ -75,6 +87,7 @@ export default function Places() {
                         value="three"
                         status={checked === 'three' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('three')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
@@ -89,6 +102,11 @@ export default function Places() {
                     source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
+                <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/themelight-divider1.png")}
+              />
                 <View
                   style={
                     styles.CategoryLocationEditThemeLightComponentLocationList1
@@ -100,6 +118,7 @@ export default function Places() {
                         value="four"
                         status={checked === 'four' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('four')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
@@ -114,6 +133,11 @@ export default function Places() {
                     source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
+                <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/themelight-divider1.png")}
+              />
                 <View
                   style={
                     styles.CategoryLocationEditThemeLightComponentLocationList1
@@ -125,6 +149,7 @@ export default function Places() {
                         value="five"
                         status={checked === 'five' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('five')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
@@ -139,6 +164,11 @@ export default function Places() {
                     source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
+                <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/themelight-divider1.png")}
+              />
                 <View
                   style={
                     styles.CategoryLocationEditThemeLightComponentLocationList2
@@ -150,6 +180,7 @@ export default function Places() {
                         value="six"
                         status={checked === 'six' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('six')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
@@ -172,23 +203,38 @@ export default function Places() {
           </View>
         </View>
       </View>
-    </ScrollView>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+},
   Address_01: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: '100%',
-    height: '100%',
+    // backgroundColor: "rgba(255, 255, 255, 1)",
+    // width: '100%',
+    // height: '100%',
   },
   Group: {
     display: "flex",
     flexDirection: "column",
+  },
+  themeLightDividerIcon: {
+    alignSelf: "stretch",
+    position: "relative",
+    maxWidth: "100%",
+    overflow: "hidden",
+    height: 1,
+    flexShrink: 0,
+  },
+  mt16: {
+    marginTop: 16,
   },
   AutoLayoutVertical3: {
     display: "flex",
@@ -292,7 +338,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: GetColors.PrimaryBlue_500,
-    width: '80%',
+    width: '90%',
     marginHorizontal: '10%',
   },
   btnTxt: {

@@ -1,158 +1,173 @@
 import React from "react"
 import { Pressable, StyleSheet, Image, Text, View, ScrollView } from "react-native"
 import Helper from "../Components/utils/Helper";
+import Header from "../Components/Header";
 // import { useNavigation } from "@react-navigation/native";
 
-export default function Profile({navigation}) {
-    const logOut =()=>{
+export default function Profile({ navigation, props }) {
+    const logOut = () => {
         Helper.removeItemValue('userdata');
         navigation.navigate('Intro1');
     };
 
     return (
-        <ScrollView>
-            <View style={styles.Profile}>
-                <View style={styles.Group0}>
-                    <View style={styles.AutoLayoutVertical1}>
-                        <Image
-                            style={styles.AvatarThumbail}
-                            source={require('../assets/Profile/profile.png')}
-                        />
-                        <View style={styles.AutoLayoutVertical}>
-                            <Text style={styles.Txt1}>Ahmad Fazri</Text>
-                            <Text style={styles.Txt2}>+60 11134667671</Text>
+        <Header
+            {...props}
+            rightIcon={false}
+            // isBackground={true}
+            title={"Profile"}
+        >
+            <View style={styles.container}>
+
+                <View style={styles.Profile}>
+                    <View style={styles.Group0}>
+                        <View style={styles.AutoLayoutVertical1}>
+                            <Image
+                                style={styles.AvatarThumbail}
+                                source={require('../assets/Profile/profile.png')}
+                            />
+                            <View style={styles.AutoLayoutVertical}>
+                                <Text style={styles.Txt1}>Ahmad Fazri</Text>
+                                <Text style={styles.Txt2}>+60 11134667671</Text>
+                            </View>
+                        </View>
+                        <View style={styles.AutoLayoutVertical2}>
+                            <Pressable style={styles.AutoLayoutHorizontal}
+                                onPress={() => navigation.navigate("Editprofile")}
+                            >
+                                <Image
+                                    style={styles.IconlyLightOutlineProfile}
+                                    source={require('../assets/Profile/edit.png')}
+                                />
+                                <Text style={styles.Txt385}>Edit Profile</Text>
+                                <Image
+                                    style={styles.IconlyLightArrowRight2}
+                                    source={require('../assets/Profile/left.png')}
+                                />
+                            </Pressable>
+                            <Pressable style={styles.AutoLayoutHorizontal}
+                                onPress={() => navigation.navigate("Address")}>
+                                <Image
+                                    style={styles.IconlyLightOutlineProfile}
+                                    source={require('../assets/Profile/address.png')}
+                                />
+                                <Text style={styles.Txt385}>Address</Text>
+                                <Image
+                                    style={styles.IconlyLightArrowRight2}
+                                    source={require('../assets/Profile/left.png')}
+                                />
+                            </Pressable>
+                            <Pressable style={styles.AutoLayoutHorizontal}
+                                onPress={() => navigation.navigate("Notification")}>
+                                <Image
+                                    style={styles.IconlyLightOutlineProfile}
+                                    source={require('../assets/Profile/notification.png')}
+                                />
+                                <Text style={styles.Txt385}>Notification</Text>
+                                <Image
+                                    style={styles.IconlyLightArrowRight2}
+                                    source={require('../assets/Profile/left.png')}
+                                />
+                            </Pressable>
+                            <Pressable style={styles.AutoLayoutHorizontal}
+                                // onPress={() => navigation.navigate("Payment")}>
+                                onPress={() => navigation.navigate("Ewallet")}>
+
+                                <Image
+                                    style={styles.IconlyLightOutlineProfile}
+                                    source={require('../assets/Profile/payment.png')}
+                                />
+                                <Text style={styles.Txt385}>Payment</Text>
+                                <Image
+                                    style={styles.IconlyLightArrowRight2}
+                                    source={require('../assets/Profile/left.png')}
+                                />
+                            </Pressable>
+                            <Pressable style={styles.AutoLayoutHorizontal}
+                                onPress={() => navigation.navigate("Security")}>
+                                <Image
+                                    style={styles.IconlyLightOutlineProfile}
+                                    source={require('../assets/Profile/security.png')}
+                                />
+                                <Text style={styles.Txt385}>Security</Text>
+                                <Image
+                                    style={styles.IconlyLightArrowRight2}
+                                    source={require('../assets/Profile/left.png')}
+                                />
+                            </Pressable>
+                            <Pressable style={styles.AutoLayoutHorizontal}
+                                onPress={() => navigation.navigate("Language")}>
+                                <Image
+                                    style={styles.IconlyLightOutlineProfile}
+                                    source={require('../assets/Profile/language.png')}
+                                />
+                                <Text style={styles.Txt2109}>Language</Text>
+                                <Text style={styles.Txt1108}>English (US)</Text>
+                                <Image
+                                    style={styles.IconlyLightArrowRight2}
+                                    source={require('../assets/Profile/left.png')}
+                                />
+                            </Pressable>
+                            <Pressable style={styles.AutoLayoutHorizontal}
+                                onPress={() => navigation.navigate("PrivacyPolicy")}>
+                                <Image
+                                    style={styles.IconlyLightOutlineProfile}
+                                    source={require('../assets/Profile/privacypolicy.png')}
+                                />
+                                <Text style={styles.Txt385}>Privacy Policy</Text>
+                                <Image
+                                    style={styles.IconlyLightArrowRight2}
+                                    source={require('../assets/Profile/left.png')}
+                                />
+                            </Pressable>
+                            <Pressable style={styles.AutoLayoutHorizontal}
+                                onPress={() => navigation.navigate("Helpcenter")}>
+                                <Image
+                                    style={styles.IconlyLightOutlineProfile}
+                                    source={require('../assets/Profile/helpcenter.png')}
+                                />
+                                <Text style={styles.Txt385}>Help Center</Text>
+                                <Image
+                                    style={styles.IconlyLightArrowRight2}
+                                    source={require('../assets/Profile/left.png')}
+                                />
+                            </Pressable>
+                            <Pressable style={styles.AutoLayoutHorizontal}
+                                onPress={() => navigation.navigate("Invite")}>
+                                <Image
+                                    style={styles.IconlyLightOutlineProfile}
+                                    source={require('../assets/Profile/invitefriends.png')}
+                                />
+                                <Text style={styles.Txt385}>Invite Friends</Text>
+                                <Image
+                                    style={styles.IconlyLightArrowRight2}
+                                    source={require('../assets/Profile/left.png')}
+                                />
+                            </Pressable>
+                            <Pressable style={styles.AutoLayoutHorizontal1}
+                                onPress={() => navigation.navigate("Singin")}>
+                                {/* onPress={logOut}> */}
+                                <Image
+                                    style={styles.IconlyLightOutlineProfile}
+                                    source={require('../assets/Profile/signin.png')}
+                                />
+                                <Text style={styles.Txt241}>Sign In</Text>
+                            </Pressable>
                         </View>
                     </View>
-                    <View style={styles.AutoLayoutVertical2}>
-                        <Pressable style={styles.AutoLayoutHorizontal}
-                            onPress={() => navigation.navigate("Editprofile")}
-                        >
-                            <Image
-                                style={styles.IconlyLightOutlineProfile}
-                                source={require('../assets/Profile/edit.png')}
-                            />
-                            <Text style={styles.Txt385}>Edit Profile</Text>
-                            <Image
-                                style={styles.IconlyLightArrowRight2}
-                                source={require('../assets/Profile/left.png')}
-                            />
-                        </Pressable>
-                        <Pressable style={styles.AutoLayoutHorizontal}
-                            onPress={() => navigation.navigate("Address")}>
-                            <Image
-                                style={styles.IconlyLightOutlineProfile}
-                                source={require('../assets/Profile/address.png')}
-                            />
-                            <Text style={styles.Txt385}>Address</Text>
-                            <Image
-                                style={styles.IconlyLightArrowRight2}
-                                source={require('../assets/Profile/left.png')}
-                            />
-                        </Pressable>
-                        <Pressable style={styles.AutoLayoutHorizontal}
-                            onPress={() => navigation.navigate("Notification")}>
-                            <Image
-                                style={styles.IconlyLightOutlineProfile}
-                                source={require('../assets/Profile/notification.png')}
-                            />
-                            <Text style={styles.Txt385}>Notification</Text>
-                            <Image
-                                style={styles.IconlyLightArrowRight2}
-                                source={require('../assets/Profile/left.png')}
-                            />
-                        </Pressable>
-                        <Pressable style={styles.AutoLayoutHorizontal}
-                            // onPress={() => navigation.navigate("Payment")}>
-                                        onPress={()=>navigation.navigate("Ewallet")}>
 
-                            <Image
-                                style={styles.IconlyLightOutlineProfile}
-                                source={require('../assets/Profile/payment.png')}
-                            />
-                            <Text style={styles.Txt385}>Payment</Text>
-                            <Image
-                                style={styles.IconlyLightArrowRight2}
-                                source={require('../assets/Profile/left.png')}
-                            />
-                        </Pressable>
-                        <Pressable style={styles.AutoLayoutHorizontal}
-                            onPress={() => navigation.navigate("Security")}>
-                            <Image
-                                style={styles.IconlyLightOutlineProfile}
-                                source={require('../assets/Profile/security.png')}
-                            />
-                            <Text style={styles.Txt385}>Security</Text>
-                            <Image
-                                style={styles.IconlyLightArrowRight2}
-                                source={require('../assets/Profile/left.png')}
-                            />
-                        </Pressable>
-                        <Pressable style={styles.AutoLayoutHorizontal}
-                            onPress={() => navigation.navigate("Language")}>
-                            <Image
-                                style={styles.IconlyLightOutlineProfile}
-                                source={require('../assets/Profile/language.png')}
-                            />
-                            <Text style={styles.Txt2109}>Language</Text>
-                            <Text style={styles.Txt1108}>English (US)</Text>
-                            <Image
-                                style={styles.IconlyLightArrowRight2}
-                                source={require('../assets/Profile/left.png')}
-                            />
-                        </Pressable>
-                        <Pressable style={styles.AutoLayoutHorizontal}
-                            onPress={() => navigation.navigate("PrivacyPolicies")}>
-                            <Image
-                                style={styles.IconlyLightOutlineProfile}
-                                source={require('../assets/Profile/privacypolicy.png')}
-                            />
-                            <Text style={styles.Txt385}>Privacy Policy</Text>
-                            <Image
-                                style={styles.IconlyLightArrowRight2}
-                                source={require('../assets/Profile/left.png')}
-                            />
-                        </Pressable>
-                        <Pressable style={styles.AutoLayoutHorizontal}
-                            onPress={() => navigation.navigate("Helpcenter")}>
-                            <Image
-                                style={styles.IconlyLightOutlineProfile}
-                                source={require('../assets/Profile/helpcenter.png')}
-                            />
-                            <Text style={styles.Txt385}>Help Center</Text>
-                            <Image
-                                style={styles.IconlyLightArrowRight2}
-                                source={require('../assets/Profile/left.png')}
-                            />
-                        </Pressable>
-                        <Pressable style={styles.AutoLayoutHorizontal}
-                            onPress={() => navigation.navigate("Invite")}>
-                            <Image
-                                style={styles.IconlyLightOutlineProfile}
-                                source={require('../assets/Profile/invitefriends.png')}
-                            />
-                            <Text style={styles.Txt385}>Invite Friends</Text>
-                            <Image
-                                style={styles.IconlyLightArrowRight2}
-                                source={require('../assets/Profile/left.png')}
-                            />
-                        </Pressable>
-                        <Pressable style={styles.AutoLayoutHorizontal1}
-                            onPress={() => navigation.navigate("Singin")}>
-                            {/* onPress={logOut}> */}
-                            <Image
-                                style={styles.IconlyLightOutlineProfile}
-                                source={require('../assets/Profile/signin.png')}
-                            />
-                            <Text style={styles.Txt241}>Sign In</Text>
-                        </Pressable>
-                    </View>
                 </View>
+
             </View>
-        </ScrollView>
+        </Header>
     )
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#fff",
+    },
     Profile: {
         display: "flex",
         flexDirection: "column",
@@ -160,8 +175,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         position: "relative",
         backgroundColor: "rgba(255, 255, 255, 1)",
-        width: '100%',
-        height: '100%',
+        // width: '100%',
+        // height: 900,
     },
     Group0: {
         display: "flex",
@@ -179,6 +194,7 @@ const styles = StyleSheet.create({
         width: 150,
         height: 150,
         marginBottom: 14,
+        marginTop: 50
     },
     AutoLayoutVertical: {
         display: "flex",
@@ -235,7 +251,7 @@ const styles = StyleSheet.create({
     },
     AutoLayoutHorizontal1: {
         display: "flex",
-         flexDirection: "row",
+        flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         paddingTop: 1,

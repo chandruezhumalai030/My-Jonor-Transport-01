@@ -3,11 +3,18 @@ import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity } 
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
+import Header from "../Components/Header";
 
-export default function Addressnew() {
+export default function Addressnew( props) {
     const navigation = useNavigation();
   return (
-    <ScrollView>
+    <Header
+      {...props}
+        rightIcon={false}
+      // isBackground={true}
+      title={"Add New Address"}
+    >
+    <View style={styles.container}>
     <View style={styles.Address_02}>
       <View style={styles.Group6610}>
         <View style={styles.AutoLayoutVertical2}>
@@ -135,19 +142,24 @@ export default function Addressnew() {
         </View>
       </View>
     </View>
-    </ScrollView>
+    </View>
+    </Header>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   Address_02: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: '100%',
-    height: '100%',
+    // backgroundColor: "rgba(255, 255, 255, 1)",
+    // width: '100%',
+    // height: '100%',
   },
   Group6610: {
     display: "flex",

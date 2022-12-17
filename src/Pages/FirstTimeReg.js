@@ -8,7 +8,7 @@ export default function FirstTimeRegister() {
   const navigation = useNavigation();
   const [checked, setChecked] = React.useState('first');
   return (
-    <ScrollView>
+    <View style={styles.container}>
       <View style={styles.EditProfile_03}>
         <View style={styles.Group642}>
           <View style={styles.AutoLayoutVertical2}>
@@ -26,6 +26,7 @@ export default function FirstTimeRegister() {
                           value="first"
                           status={checked === 'first' ? 'checked' : 'unchecked'}
                           onPress={() => setChecked('first')}
+                          color={'#0F437B'}
                         />
                       </View>
                       <Text style={styles.Txt914}>NRIC</Text>
@@ -36,6 +37,7 @@ export default function FirstTimeRegister() {
                           value="second"
                           status={checked === 'second' ? 'checked' : 'unchecked'}
                           onPress={() => setChecked('second')}
+                          color={'#0F437B'}
                         />
                       </View>
                       <Text style={styles.Txt914}>I'm a foreigner</Text>
@@ -49,7 +51,7 @@ export default function FirstTimeRegister() {
                            underlineColorAndroid = "transparent"
                            placeholder = "NRIC"
                            autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                           placeholderTextColor = "gray"/>
                       </View>
                     </View>
                   </View>
@@ -61,7 +63,7 @@ export default function FirstTimeRegister() {
                            underlineColorAndroid = "transparent"
                            placeholder = "Ahmad Fazi"
                            autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                           placeholderTextColor = "gray"/>
                       </View>
                     </View>
                   </View>
@@ -77,7 +79,7 @@ export default function FirstTimeRegister() {
                            underlineColorAndroid = "transparent"
                            placeholder = "Phone Number"
                            autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                           placeholderTextColor = "gray"/>
                       </View>
                     </View>
                   </View>
@@ -90,19 +92,23 @@ export default function FirstTimeRegister() {
           </View>
         </View>
       </View>
-    </ScrollView>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+},
   EditProfile_03: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: '100%',
-    height: '100%',
+    // backgroundColor: "rgba(255, 255, 255, 1)",
+    // width: '100%',
+    // height: '100%',
   },
   Group642: {
     display: "flex",

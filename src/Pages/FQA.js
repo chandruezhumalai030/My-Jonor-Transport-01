@@ -3,6 +3,7 @@ import { StyleSheet, Image, Text, View, ImageBackground } from "react-native"
 
 export default function FQA() {
   return (
+    <View style={styles.container}>
     <View style={styles.HelpCenter_01}>
       <View style={styles.Group896}>
         <View style={styles.AutoLayoutVertical2}>
@@ -28,6 +29,11 @@ export default function FQA() {
               </View>
             </View>
           </View>
+          <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../assets/Profile/themelight-divider1.png")}
+              />
           <View style={styles.AutoLayoutVertical1}>
             <View style={styles.ThemeLightComponentFaq}>
               <View style={styles.AutoLayoutHorizontal2}>
@@ -92,10 +98,15 @@ export default function FQA() {
         </View>
       </View>
     </View>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   HelpCenter_01: {
     display: "flex",
     flexDirection: "column",
@@ -105,9 +116,9 @@ const styles = StyleSheet.create({
     paddingBottom: 121,
     paddingLeft: 0,
     paddingRight: 0,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 428,
-    height: 926,
+    // backgroundColor: "rgba(255, 255, 255, 1)",
+    // width: 428,
+    // height: 926,
   },
   Group896: {
     display: "flex",
@@ -116,13 +127,13 @@ const styles = StyleSheet.create({
   TopAppBar1: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
   },
   StatusBar: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     paddingTop: 10,
     paddingBottom: 8,
@@ -153,24 +164,6 @@ const styles = StyleSheet.create({
     height: 13,
   },
 
-  TopAppBar: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-  },
-  _topAppBar: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 23,
-    paddingRight: 23,
-    width: 428,
-    height: 64,
-  },
   Content: {
     display: "flex",
     flexDirection: "row",
@@ -317,15 +310,16 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
     paddingLeft: 23,
     paddingRight: 23,
-    width: 428,
+    // width: 428,
   },
   AutoLayoutHorizontal1: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    marginBottom: 24,
-    width: 380,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+    marginTop:10
+    // width: 380,
   },
   Chips: {
     display: "flex",
@@ -475,7 +469,19 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    width: 380,
+    // width: 380,
+    marginTop:10
+  },
+  themeLightDividerIcon: {
+    alignSelf: "stretch",
+    position: "relative",
+    maxWidth: "100%",
+    overflow: "hidden",
+    height: 1,
+    flexShrink: 0,
+  },
+  mt16: {
+    marginTop: 16,
   },
   ThemeLightComponentFaq: {
     display: "flex",
@@ -495,7 +501,7 @@ const styles = StyleSheet.create({
     shadowColor: "rgba(4,6,15,0.05)",
     elevation: 6,
     shadowOffset: { width: 0, height: 4 },
-    width: 380,
+    // width: 380,
   },
   AutoLayoutHorizontal2: {
     display: "flex",
