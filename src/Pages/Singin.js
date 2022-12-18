@@ -47,7 +47,7 @@ export default function SignIn_01() {
                                                 underlineColorAndroid="transparent"
                                                 placeholder="Password"
                                                 autoCapitalize="none"
-                                                placeholderTextColor="black" />
+                                                placeholderTextColor="gray" />
                                         </View>
                                         <Image
                                             style={styles.IconlyLightHide}

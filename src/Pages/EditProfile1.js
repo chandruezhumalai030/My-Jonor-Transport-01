@@ -14,9 +14,9 @@ export default function Editprofile1(props) {
             {...props}
               rightIcon={false}
             // isBackground={true}
-            title={" Edit Profile"}
+            title={"Edit Profile"}
         >
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.EditProfile_03}>
         <View style={styles.Group642}>
           <View style={styles.AutoLayoutVertical2}>
@@ -34,6 +34,7 @@ export default function Editprofile1(props) {
                           value="first"
                           status={checked === 'first' ? 'checked' : 'unchecked'}
                           onPress={() => setChecked('first')}
+                          color={'#0F437B'}
                         />
                       </View>
                       <Text style={styles.Txt914}>Male</Text>
@@ -44,6 +45,7 @@ export default function Editprofile1(props) {
                           value="second"
                           status={checked === 'second' ? 'checked' : 'unchecked'}
                           onPress={() => setChecked('second')}
+                          color={'#0F437B'}
                         />
                       </View>
                       <Text style={styles.Txt914}>Female</Text>
@@ -57,7 +59,7 @@ export default function Editprofile1(props) {
                            underlineColorAndroid = "transparent"
                            placeholder = "Name"
                            autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                           placeholderTextColor = "gray"/>
                       </View>
                     </View>
                   </View>
@@ -69,7 +71,7 @@ export default function Editprofile1(props) {
                            underlineColorAndroid = "transparent"
                            placeholder = "Number"
                            autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                           placeholderTextColor = "gray"/>
                       </View>
                     </View>
                   </View>
@@ -83,7 +85,7 @@ export default function Editprofile1(props) {
                            underlineColorAndroid = "transparent"
                            placeholder = "Gmail"
                            autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                           placeholderTextColor = "gray"/>
                       </View>
                     </View>
                   </View>
@@ -95,7 +97,7 @@ export default function Editprofile1(props) {
                            underlineColorAndroid = "transparent"
                            placeholder = "Nationality"
                            autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                           placeholderTextColor = "gray"/>
                       </View>
                     </View>
                   </View>
@@ -111,7 +113,7 @@ export default function Editprofile1(props) {
                            underlineColorAndroid = "transparent"
                            placeholder = "Phone Number"
                            autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                           placeholderTextColor = "gray"/>
                       </View>
                     </View>
                   </View>
@@ -124,7 +126,7 @@ export default function Editprofile1(props) {
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
     </Header>
   )
 }

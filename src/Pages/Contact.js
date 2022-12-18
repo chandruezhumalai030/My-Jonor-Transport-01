@@ -57,7 +57,7 @@ export default function Contact() {
             </View>
             </Pressable>
           </View>
-          <View style={styles.AutoLayoutVertical2}>
+          <View style={styles.AutoLayoutVertical1}>
           <Pressable
            onPress={() => navigation.navigate("Home")}>
             <View style={styles.AutoLayoutHorizontal1}>
@@ -326,13 +326,16 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowOffset: { width: 0, height: 4 },
     width: 380,
+    marginTop:15,
+    marginLeft:23
   },
   AutoLayoutHorizontal1: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    width: 332,
+    // marginLeft:10,
+    width:500 ,
   },
   Frame: {
     width: 24,
@@ -348,34 +351,6 @@ const styles = StyleSheet.create({
     width: 293,
     height: 25,
   },
-
-  AutoLayoutVertical1: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    paddingTop: 23,
-    paddingBottom: 23,
-    paddingLeft: 23,
-    paddingRight: 23,
-    marginBottom: 16,
-    borderRadius: 20,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(238,238,238,1)",
-    shadowColor: "rgba(4,6,15,0.05)",
-    elevation: 6,
-    shadowOffset: { width: 0, height: 4 },
-    width: 380,
-  },
-  AutoLayoutHorizontal1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    width: 332,
-  },
   Frame: {
     width: 24,
     height: 24,
@@ -390,34 +365,6 @@ const styles = StyleSheet.create({
     width: 293,
     height: 25,
   },
-
-  AutoLayoutVertical1: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    paddingTop: 23,
-    paddingBottom: 23,
-    paddingLeft: 23,
-    paddingRight: 23,
-    marginBottom: 16,
-    borderRadius: 20,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(238,238,238,1)",
-    shadowColor: "rgba(4,6,15,0.05)",
-    elevation: 6,
-    shadowOffset: { width: 0, height: 4 },
-    width: 380,
-  },
-  AutoLayoutHorizontal1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    width: 332,
-  },
   Frame: {
     width: 24,
     height: 24,
@@ -431,34 +378,6 @@ const styles = StyleSheet.create({
     color: "rgba(33,33,33,1)",
     width: 293,
     height: 25,
-  },
-
-  AutoLayoutVertical1: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    paddingTop: 23,
-    paddingBottom: 23,
-    paddingLeft: 23,
-    paddingRight: 23,
-    marginBottom: 16,
-    borderRadius: 20,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(238,238,238,1)",
-    shadowColor: "rgba(4,6,15,0.05)",
-    elevation: 6,
-    shadowOffset: { width: 0, height: 4 },
-    width: 380,
-  },
-  AutoLayoutHorizontal1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    width: 332,
   },
   Frame: {
     width: 24,
@@ -493,13 +412,6 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowOffset: { width: 0, height: 4 },
     width: 380,
-  },
-  AutoLayoutHorizontal1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    width: 332,
   },
   Frame: {
     width: 24,

@@ -10,7 +10,7 @@ export default function PrivacyPolicy(props) {
       // isBackground={true}
       title={"Privacy Policy"}
     >
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.PrivacyPolicies}>
           <View style={styles.AutoLayoutVertical2}>
             <View style={styles.AutoLayoutVertical}>
@@ -55,7 +55,7 @@ export default function PrivacyPolicy(props) {
             </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </Header>
   )
 }

@@ -169,6 +169,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: GetColors.PrimaryBlue_500,
     width: '80%',
+    marginTop:150,
     marginHorizontal: '10%',
   },
   btnTxt: {

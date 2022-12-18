@@ -14,7 +14,7 @@ export default function Addressnew( props) {
       // isBackground={true}
       title={"Add New Address"}
     >
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
     <View style={styles.Address_02}>
       <View style={styles.Group6610}>
         <View style={styles.AutoLayoutVertical2}>
@@ -33,7 +33,7 @@ export default function Addressnew( props) {
                            underlineColorAndroid = "transparent"
                            placeholder = "Address Name"
                            autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                           placeholderTextColor = "gray"/>
                         </View>
                       </View>
                     </View>
@@ -50,7 +50,7 @@ export default function Addressnew( props) {
                         underlineColorAndroid = "transparent"
                         placeholder = "Malaysia"
                         autoCapitalize = "none"
-                        placeholderTextColor = "black"/>
+                        placeholderTextColor = "gray"/>
                         <Image
                           style={styles.Dropdown}
                           source={require('../assets/Profile/down.png')}
@@ -70,7 +70,7 @@ export default function Addressnew( props) {
                         underlineColorAndroid = "transparent"
                         placeholder = "5600"
                         autoCapitalize = "none"
-                        placeholderTextColor = "black"/>
+                        placeholderTextColor = "gray"/>
                         <Image
                           style={styles.Dropdown}
                           source={require('../assets/Profile/down.png')}
@@ -91,7 +91,7 @@ export default function Addressnew( props) {
                           underlineColorAndroid = "transparent"
                           placeholder = "Address Line 1"
                           autoCapitalize = "none"
-                          placeholderTextColor = "black"/>
+                          placeholderTextColor = "gray"/>
                         </View>
                       </View>
                     </View>
@@ -109,7 +109,7 @@ export default function Addressnew( props) {
                           underlineColorAndroid = "transparent"
                           placeholder = "Address Line 1"
                           autoCapitalize = "none"
-                          placeholderTextColor = "black"/>
+                          placeholderTextColor = "gray"/>
                         </View>
                       </View>
                     </View>
@@ -127,7 +127,7 @@ export default function Addressnew( props) {
                           underlineColorAndroid = "transparent"
                           placeholder = "Address Line 1"
                           autoCapitalize = "none"
-                          placeholderTextColor = "black"/>
+                          placeholderTextColor = "gray"/>
                         </View>
                       </View>
                     </View>
@@ -142,7 +142,7 @@ export default function Addressnew( props) {
         </View>
       </View>
     </View>
-    </View>
+    </ScrollView>
     </Header>
   )
 }

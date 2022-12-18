@@ -3,11 +3,18 @@ import { StyleSheet, Image, Text, View, ScrollView, TextInput, TouchableOpacity 
 import { RadioButton } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
 import GetColors from '../assets/GetColors';
+import Header from "../Components/Header";
 
-export default function FirstTimeRegister() {
+export default function FirstTimeRegister(props) {
   const navigation = useNavigation();
   const [checked, setChecked] = React.useState('first');
   return (
+    <Header
+      {...props}
+        rightIcon={false}
+      // isBackground={true}
+      title={"Edit Profile"}
+    >
     <View style={styles.container}>
       <View style={styles.EditProfile_03}>
         <View style={styles.Group642}>
@@ -93,6 +100,7 @@ export default function FirstTimeRegister() {
         </View>
       </View>
     </View>
+    </Header>
   )
 }
 
@@ -119,6 +127,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "flex-start",
+    marginLeft:15
   },
   AutoLayoutVertical2: {
     display: "flex",
@@ -188,6 +197,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     lineHeight: 22,
     letterSpacing: 0.2,
+    // marginLeft:10,
     // color: "black",
     width: 341,
   },
@@ -206,6 +216,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "flex-start",
     marginBottom: 16,
+    marginLeft:15
   },
   Input: {
     display: "flex",
