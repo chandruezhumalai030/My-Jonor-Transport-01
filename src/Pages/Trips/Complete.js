@@ -11,6 +11,8 @@ const Complete = () => {
       {/* <View style={styles.autoLayoutVertical10}> */}
         <View style={styles.autoLayoutVertical9}>
           <View style={styles.autoLayoutVertical8}>
+            <Pressable
+            onPress={() => navigation.navigate("list")}>
             <View style={styles.categoryDefaultCollapseThe}>
               <View style={styles.typeDriverListComponentAc}>
                 <View style={styles.autoLayoutHorizontal1}>
@@ -62,72 +64,16 @@ const Complete = () => {
                 source={require("../../assets/Profile/Trips/iconlylightarrow--down-2.png")}
               />
             </View>
-            <View style={[styles.categoryDefaultCollapseThe1, styles.mt12]}>
-              <View style={styles.typeDriverListComponentAc1}>
-                <View style={styles.autoLayoutHorizontal4}>
-                  <View style={styles.featureIconView3}>
-                    <View style={styles.featureIconView2}>
-                      <View style={styles.autoLayoutHorizontal3}>
-                        <Image
-                          style={styles.iconlyBoldCard}
-                          resizeMode="cover"
-                          source={require("../../assets/Profile/Trips/iconlyboldcard.png")}
-                        />
-                      </View>
-                    </View>
-                  </View>
-                  <View style={[styles.autoLayoutVertical2, styles.ml20]}>
-                    <Text style={styles.busTicketText1}>Bus Ticket</Text>
-                    <Text style={[styles.dec2020241000AM1, styles.mt6]}>
-                      Dec 20, 2024 | 10:00 AM
-                    </Text>
-                  </View>
-                </View>
-                <View style={[styles.autoLayoutVertical3, styles.ml12]}>
-                  <View style={styles.autoLayoutHorizontal5}>
-                    <Image
-                      style={styles.iconlyBulkStar1}
-                      resizeMode="cover"
-                      source={require("../../assets/Profile/Trips/iconlybulkstar1.png")}
-                    />
-                    <Text style={[styles.text1, styles.ml8]}>4.8</Text>
-                  </View>
-                  <Pressable
-                    style={[
-                      styles.iconlyLightOutlineBookmarkPressable,
-                      styles.mt8,
-                    ]}
-                    onPress={() => navigation.navigate("TripsPlanner05")}
-                  >
-                    <Image
-                      style={styles.icon}
-                      resizeMode="cover"
-                      source={require("../../assets/Profile/Trips/iconlylightoutlinebookmark.png")}
-                    />
-                  </Pressable>
-                  <Text style={[styles.hDY291FGR, styles.mt8]}>
-                    HDY 291F GR
-                  </Text>
-                </View>
-              </View>
-              <Image
-                style={[styles.themeLightDividerIcon1, styles.mt16]}
-                resizeMode="cover"
-                source={require("../../assets/Profile/Trips/iconlylightarrow--down-2.png")}
-              />
-              <Image
-                style={[styles.iconlyLightArrowDown21, styles.mt16]}
-                resizeMode="cover"
-                source={require("../../assets/Profile/Trips/iconlylightarrow--down-2.png")}
-              />
-            </View>
-            <View style={[styles.categoryDefaultCollapseThe2, styles.mt12]}>
-              <View style={styles.typeDriverListComponentAc2}>
-                <View style={styles.autoLayoutHorizontal7}>
-                  <View style={styles.featureIconView5}>
-                    <View style={styles.featureIconView4}>
-                      <View style={styles.autoLayoutHorizontal6}>
-                        <Image
+            </Pressable>
+            <Pressable
+            onPress={() => navigation.navigate("list")}>
+            <View style={styles.categoryDefaultCollapseThe}>
+              <View style={styles.typeDriverListComponentAc}>
+                <View style={styles.autoLayoutHorizontal1}>
+                  <View style={styles.featureIconView1}>
+                    <View style={styles.featureIconView}>
+                      <View style={styles.autoLayoutHorizontal}>
+                      <Image
                           style={styles.iconlyBoldCard1}
                           resizeMode="cover"
                           source={require("../../assets/Profile/Trips/iconlyboldcard.png")}
@@ -135,94 +81,152 @@ const Complete = () => {
                       </View>
                     </View>
                   </View>
-                  <View style={[styles.autoLayoutVertical4, styles.ml20]}>
-                    <Text style={styles.busTicketText2}>Bus Ticket</Text>
-                    <Text style={[styles.dec2020241000AM2, styles.mt6]}>
+                  <View style={[styles.autoLayoutVertical, styles.ml20]}>
+                    <Text style={styles.busTicketText}>Bus Ticket</Text>
+                    <Text style={[styles.dec2020241000AM, styles.mt6]}>
                       Dec 20, 2024 | 10:00 AM
                     </Text>
                   </View>
                 </View>
-                <View style={[styles.autoLayoutVertical5, styles.ml12]}>
-                  <View style={styles.autoLayoutHorizontal8}>
+                <View style={[styles.autoLayoutVertical1, styles.ml12]}>
+                  <View style={styles.autoLayoutHorizontal2}>
                     <Image
-                      style={styles.iconlyBulkStar2}
+                      style={styles.iconlyBulkStar}
                       resizeMode="cover"
                       source={require("../../assets/Profile/Trips/iconlybulkstar1.png")}
                     />
-                    <Text style={[styles.text2, styles.ml8]}>4.8</Text>
+                    <Text style={[styles.text, styles.ml8]}>4.8</Text>
                   </View>
                   <Image
-                    style={[styles.iconlyBoldBookmark, styles.mt8]}
+                    style={[styles.iconlyLightOutlineBookmark, styles.mt8]}
+                    resizeMode="cover"
+                    source={require("../../assets/Profile/Trips/iconlylightoutlinebookmark.png")}
+                  />
+                  <Text style={[styles.hDG6374SY, styles.mt8]}>
+                    HDY 291F GR
+                  </Text>
+                </View>
+              </View>
+              <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/Trips/themelight-divider12.png")}
+              />
+              <Image
+                style={[styles.iconlyLightArrowDown2, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/Trips/iconlylightarrow--down-2.png")}
+              />
+            </View>
+            </Pressable>
+            <Pressable
+            onPress={() => navigation.navigate("list")}>
+            <View style={styles.categoryDefaultCollapseThe}>
+              <View style={styles.typeDriverListComponentAc}>
+                <View style={styles.autoLayoutHorizontal1}>
+                  <View style={styles.featureIconView1}>
+                    <View style={styles.featureIconView}>
+                      <View style={styles.autoLayoutHorizontal}>
+                      <Image
+                          style={styles.iconlyBoldCard1}
+                          resizeMode="cover"
+                          source={require("../../assets/Profile/Trips/iconlyboldcard.png")}
+                        />
+                      </View>
+                    </View>
+                  </View>
+                  <View style={[styles.autoLayoutVertical, styles.ml20]}>
+                    <Text style={styles.busTicketText}>Bus Ticket</Text>
+                    <Text style={[styles.dec2020241000AM, styles.mt6]}>
+                      Dec 20, 2024 | 10:00 AM
+                    </Text>
+                  </View>
+                </View>
+                <View style={[styles.autoLayoutVertical1, styles.ml12]}>
+                  <View style={styles.autoLayoutHorizontal2}>
+                    <Image
+                      style={styles.iconlyBulkStar}
+                      resizeMode="cover"
+                      source={require("../../assets/Profile/Trips/iconlybulkstar1.png")}
+                    />
+                    <Text style={[styles.text, styles.ml8]}>4.8</Text>
+                  </View>
+                  <Image
+                    style={[styles.iconlyLightOutlineBookmark, styles.mt8]}
                     resizeMode="cover"
                     source={require("../../assets/Profile/Trips/iconlyboldbookmark.png")}
                   />
-                  <Text style={[styles.jYS4728JS, styles.mt8]}>
+                  <Text style={[styles.hDG6374SY, styles.mt8]}>
                     JYS 4728 JS
                   </Text>
                 </View>
               </View>
               <Image
-                style={[styles.themeLightDividerIcon2, styles.mt16]}
+                style={[styles.themeLightDividerIcon, styles.mt16]}
                 resizeMode="cover"
-                source={require("../../assets/Profile/Trips/iconlylightarrow--down-2.png")}
+                source={require("../../assets/Profile/Trips/themelight-divider12.png")}
               />
               <Image
-                style={[styles.iconlyLightArrowDown22, styles.mt16]}
+                style={[styles.iconlyLightArrowDown2, styles.mt16]}
                 resizeMode="cover"
                 source={require("../../assets/Profile/Trips/iconlylightarrow--down-2.png")}
               />
             </View>
-            <View style={[styles.categoryDefaultCollapseThe3, styles.mt12]}>
-              <View style={styles.typeDriverListComponentAc3}>
-                <View style={styles.autoLayoutHorizontal10}>
-                  <View style={styles.featureIconView7}>
-                    <View style={styles.featureIconView6}>
-                      <View style={styles.autoLayoutHorizontal9}>
+            </Pressable>
+            <Pressable
+            onPress={() => navigation.navigate("list")}>
+            <View style={styles.categoryDefaultCollapseThe}>
+              <View style={styles.typeDriverListComponentAc}>
+                <View style={styles.autoLayoutHorizontal1}>
+                  <View style={styles.featureIconView1}>
+                    <View style={styles.featureIconView}>
+                      <View style={styles.autoLayoutHorizontal}>
                         <Image
-                          style={styles.iconlyBoldQRCode1}
+                          style={styles.iconlyBoldQRCode}
                           resizeMode="cover"
                           source={require("../../assets/Profile/Trips/iconlyboldqr-code.png")}
                         />
                       </View>
                     </View>
                   </View>
-                  <View style={[styles.autoLayoutVertical6, styles.ml20]}>
-                    <Text style={styles.busTicketText3}>Bus Ticket</Text>
-                    <Text style={[styles.dec2020241000AM3, styles.mt6]}>
+                  <View style={[styles.autoLayoutVertical, styles.ml20]}>
+                    <Text style={styles.busTicketText}>Bus Ticket</Text>
+                    <Text style={[styles.dec2020241000AM, styles.mt6]}>
                       Dec 20, 2024 | 10:00 AM
                     </Text>
                   </View>
                 </View>
-                <View style={[styles.autoLayoutVertical7, styles.ml12]}>
-                  <View style={styles.autoLayoutHorizontal11}>
+                <View style={[styles.autoLayoutVertical1, styles.ml12]}>
+                  <View style={styles.autoLayoutHorizontal2}>
                     <Image
-                      style={styles.iconlyBulkStar3}
+                      style={styles.iconlyBulkStar}
                       resizeMode="cover"
                       source={require("../../assets/Profile/Trips/iconlybulkstar1.png")}
                     />
-                    <Text style={[styles.text3, styles.ml8]}>4.8</Text>
+                    <Text style={[styles.text, styles.ml8]}>4.8</Text>
                   </View>
                   <Image
-                    style={[styles.iconlyLightOutlineBookmark1, styles.mt8]}
+                    style={[styles.iconlyLightOutlineBookmark, styles.mt8]}
                     resizeMode="cover"
                     source={require("../../assets/Profile/Trips/iconlylightoutlinebookmark.png")}
                   />
-                  <Text style={[styles.tDY5739AK, styles.mt8]}>
+                  <Text style={[styles.hDG6374SY, styles.mt8]}>
                     TDY 5739 AK
                   </Text>
                 </View>
               </View>
               <Image
-                style={[styles.themeLightDividerIcon3, styles.mt16]}
+                style={[styles.themeLightDividerIcon, styles.mt16]}
                 resizeMode="cover"
-                source={require("../../assets/Profile/Trips/iconlylightarrow--down-2.png")}
+                source={require("../../assets/Profile/Trips/themelight-divider12.png")}
               />
               <Image
-                style={[styles.iconlyLightArrowDown23, styles.mt16]}
+                style={[styles.iconlyLightArrowDown2, styles.mt16]}
                 resizeMode="cover"
                 source={require("../../assets/Profile/Trips/iconlylightarrow--down-2.png")}
               />
             </View>
+            </Pressable>
           </View>
         </View>
       {/* </View> */}
@@ -414,6 +418,7 @@ const styles = StyleSheet.create({
     boxSizing: "border-box",
     alignItems: "center",
     justifyContent: "flex-start",
+    marginTop:10
   },
   iconlyBoldCard: {
     position: "relative",

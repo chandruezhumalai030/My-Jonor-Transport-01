@@ -29,7 +29,7 @@ export default function Places() {
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
-                      <Text style={styles.Txt363}>Home</Text>
+                      <Text style={styles.Txt363}>Delicious Food Stall</Text>
                       <Text style={styles.Txt979}>
                         364 Stillwater Ave. Attleboro, MA 02703
                       </Text>
@@ -60,7 +60,7 @@ export default function Places() {
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
-                      <Text style={styles.Txt363}>Office</Text>
+                      <Text style={styles.Txt363}>Bestie House</Text>
                       <Text style={styles.Txt979}>
                         73 Virginia Rd. Cuyahoga Falls, OH 44221
                       </Text>
@@ -316,14 +316,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    marginBottom: 16,
-    width: 380,
+    marginBottom: 15,
+    // width: 380,
+    marginTop:10,
   },
   CategoryLocationEditThemeLightComponentLocationList2: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
+    marginTop:10,
     // width: 380,
   },
   Button: {
@@ -331,7 +333,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    top: 1,
+    top: 100,
     padding: 12,
     borderRadius: 100,
     backgroundColor: GetColors.PrimaryBlue_500,
@@ -340,6 +342,7 @@ const styles = StyleSheet.create({
     borderColor: GetColors.PrimaryBlue_500,
     width: '90%',
     marginHorizontal: '10%',
+    // marginTop:50,
   },
   btnTxt: {
     fontSize: 18,

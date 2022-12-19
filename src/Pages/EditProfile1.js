@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     lineHeight: 22,
     letterSpacing: 0.2,
-    // color: "black",
+    color: "black",
     width: 350,
   },
   Txt914: {

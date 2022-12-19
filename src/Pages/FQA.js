@@ -1,7 +1,7 @@
 import React from "react"
 import { StyleSheet, Image, Text, View, ImageBackground } from "react-native"
 
-export default function FQA() {
+export default function Fqa() {
   return (
     <View style={styles.container}>
     <View style={styles.HelpCenter_01}>

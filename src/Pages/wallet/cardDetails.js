@@ -20,6 +20,7 @@ import Bt_Main from "../../Components/Bt_Main";
 
 const cardDetails = (props) => {
   const navigation = useNavigation();
+  const [number, onChangeNumber] = React.useState(null);
   const [isFocused, setIsFocused] = React.useState("name");
   const [reg_details, setReg_details] = useState({
     Name: "",
@@ -107,8 +108,8 @@ const _trigger=()=>{
               </Text>
               <View style={styles.textinput_con}>
                 <TextInput
-                  placeholder="  Name On Card"
-                  placeholderTextColor={"#9E9E9E"}
+                  placeholder="Name On Card"
+                  placeholderTextColor={"gray"}
                   style={styles.textinput}
                 />
               </View>
@@ -156,8 +157,10 @@ const _trigger=()=>{
                 </Text>
                 <View style={styles.textinput_con}>
                   <TextInput
-                    placeholder="  MM/YY"
+                    placeholder="MM/YY"
                     placeholderTextColor={"#9E9E9E"}
+                    keyboardType='numeric'
+                    onChangeText={onChangeNumber}
                     style={styles.textinput}
                   />
                 </View>
@@ -176,8 +179,10 @@ const _trigger=()=>{
                 </Text>
                 <View style={styles.textinput_con}>
                   <TextInput
-                    placeholder="   CVV"
+                    placeholder="CVV"
                     placeholderTextColor={"#9E9E9E"}
+                    keyboardType='numeric'
+                    onChangeText={onChangeNumber}
                     style={styles.textinput}
                   />
                 </View>
@@ -244,7 +249,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textinput: {
-    backgroundColor:'#E5E5E5;',
+    // backgroundColor:'#E5E5E5;',
+    color:'black',
     width: "90%",
     borderWidth: 1,
     borderColor: "#9E9E9E",

@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
         fontWeight: "400",
         lineHeight: 22,
         letterSpacing: 0.2,
-        color: "rgba(158,158,158,1)",
+        color: "black",
         width: 309,
     },
     Content2: {
@@ -281,7 +281,7 @@ const styles = StyleSheet.create({
         fontWeight: "400",
         lineHeight: 22,
         letterSpacing: 0.2,
-        color: "rgba(158,158,158,1)",
+        color: "gray",
         width: 277,
     },
 

@@ -192,10 +192,10 @@ const styles = StyleSheet.create({
         // width: 140,
     },
     AvatarThumbail: {
-        width: 150,
-        height: 150,
+        width: 130,
+        height: 130,
         marginBottom: 14,
-        marginTop: 50
+        marginTop: 40
     },
     AutoLayoutVertical: {
         display: "flex",

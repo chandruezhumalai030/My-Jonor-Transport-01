@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import GetColors from '../assets/GetColors';
@@ -6,61 +6,101 @@ import Header from "../Components/Header";
 
 export default function EditProfile(props) {
   const navigation = useNavigation();
+
+  const pin1Ref = useRef(null);
+  const pin2Ref = useRef(null);
+  const pin3Ref = useRef(null);
+  const pin4Ref = useRef(null);
+
+  const [pin1, setPin1] = useState("");
+  const [pin2, setPin2] = useState("");
+  const [pin3, setPin3] = useState("");
+  const [pin4, setPin4] = useState("");
+
   const [number, onChangeNumber] = React.useState(null);
   return (
     <Header
       {...props}
-        rightIcon={false}
+      rightIcon={false}
       // isBackground={true}
       title={"Edit Profile"}
     >
-    <View style={styles.container}>
-    <View style={styles.EditProfile}>
-      <View style={styles.AutoLayoutVertical4}>
-      <View >
-        <Text style={styles.Txt1081}>Enter Your Passcode</Text>
-        <View style={styles.CodeInput}>
-          <View style={styles.CodeInput}>
-            <View style={styles._codeInput}>
-              <TextInput style={styles.Txt415}
-                keyboardType='numeric'
-                maxLength={1}
-                onChangeText={onChangeNumber}
-              />
+      <View style={styles.container}>
+        <View style={styles.EditProfile}>
+          <View style={styles.AutoLayoutVertical4}>
+            <View >
+              <Text style={styles.Txt1081}>Enter Your Passcode</Text>
+              <View style={styles.CodeInput}>
+                <View style={styles.CodeInput}>
+                  <View style={styles._codeInput}>
+                    <TextInput style={styles.Txt415}
+                      // placeholder="5"
+                      // placeholderTextColor = "black"
+                      ref={pin1Ref}
+                      keyboardType='numeric'
+                      maxLength={1}
+                      onChangeText={onChangeNumber}
+                      onChange={(pin1) => {
+                        setPin1(pin1);
+                        if (pin1 !== "") {
+                          pin2Ref.current.focus();
+                        }
+                      }}
+                    />
+                  </View>
+                </View>
+                <View style={styles.CodeInput}>
+                  <View style={styles._codeInput}>
+                    <TextInput style={styles.Txt415}
+                      ref={pin2Ref}
+                      keyboardType='numeric'
+                      maxLength={1}
+                      onChange={(pin2) => {
+                        setPin2(pin2);
+                        if (pin2 !== "") {
+                          pin3Ref.current.focus();
+                        }
+                      }}
+                    />
+                  </View>
+                </View>
+                <View style={styles.CodeInput}>
+                  <View style={styles._codeInput}>
+                    <TextInput style={styles.Txt415}
+                      ref={pin3Ref}
+                      keyboardType='numeric'
+                      maxLength={1}
+                      onChange={(pin3) => {
+                        setPin3(pin3);
+                        if (pin3 !== "") {
+                          pin4Ref.current.focus();
+                        }
+                      }}
+                    />
+                  </View>
+                </View>
+                <View style={styles.CodeInput}>
+                  <View style={styles._codeInput}>
+                    <TextInput style={styles.Txt415}
+                      ref={pin4Ref}
+                      keyboardType='numeric'
+                      maxLength={1}
+                      onChange={(pin4) => {
+                        setPin4(pin4)
+                      }}
+                    />
+                  </View>
+                </View>
+              </View>
             </View>
-          </View>
-          <View style={styles.CodeInput}>
-            <View style={styles._codeInput}>
-              <TextInput style={styles.Txt415}
-                keyboardType='numeric'
-                maxLength={1}
-              />
-            </View>
-          </View>
-          <View style={styles.CodeInput}>
-            <View style={styles._codeInput}>
-              <TextInput style={styles.Txt415}
-                keyboardType='numeric'
-                maxLength={1}
-                />
-            </View>
-          </View>
-          <View style={styles.CodeInput}>
-            <View style={styles._codeInput}>
-              <TextInput style={styles.Txt415}
-                keyboardType='numeric'
-                maxLength={1}
-              />
+            <View style={styles.AutoLayoutVertical5}>
+              <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("EditProfile1")}>
+                <Text style={styles.btnTxt}>Continue</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
       </View>
-      <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("EditProfile1")}>
-        <Text style={styles.btnTxt}>Continue</Text>
-      </TouchableOpacity>
-      </View>
-    </View>
-    </View>
     </Header>
   )
 }
@@ -80,6 +120,24 @@ const styles = StyleSheet.create({
     // width: 528,
     // height: 926,
   },
+  AutoLayoutVertical5: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    backgroundColor: "rgba(255, 255, 255, 1)",
+    top: 4,
+    left: 0,
+    right: 0,
+    paddingTop: 1,
+    paddingBottom: 23,
+    paddingLeft: 15,
+    paddingRight: 15,
+    marginTop: 450
+    // width: 428,
+    // height: 576,
+  },
   AutoLayoutVertical4: {
     display: "flex",
     flexDirection: "column",
@@ -93,7 +151,7 @@ const styles = StyleSheet.create({
     paddingTop: 19,
     paddingBottom: 23,
     paddingLeft: 35,
-    paddingRight: 35,
+    paddingRight: 15,
     // width: 428,
     // height: 576,
   },
@@ -116,25 +174,25 @@ const styles = StyleSheet.create({
     alignItems: "center",
     // width: 381,
     marginBottom: 80,
-    marginTop:200
+    marginTop: 170
   },
   CodeInput: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginRight: 3,
-    marginBottom: 100
+    marginRight: 9,
+    marginBottom: 50
   },
   _codeInput: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: 15.5,
+    paddingTop: .5,
     paddingBottom: 15.5,
-    paddingLeft: 28.5,
-    paddingRight: 28.5,
+    paddingLeft: 16.5,
+    paddingRight: 32,
     borderRadius: 12,
     backgroundColor: "rgba(255, 255, 255, 1)",
     borderWidth: 1,
@@ -161,8 +219,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: GetColors.PrimaryBlue_500,
-    width: '80%',
+    width: '100%',
     marginHorizontal: '10%',
+    marginTop: 40,
   },
   btnTxt: {
     fontSize: 18,

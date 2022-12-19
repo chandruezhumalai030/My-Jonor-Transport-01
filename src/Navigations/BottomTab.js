@@ -53,7 +53,7 @@ function BottomTab() {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: {height: 65, padding: 10},
+        tabBarStyle: {height: 70, padding: 10,},
       }}
       initialRouteName="Home">
       <Tab.Screen

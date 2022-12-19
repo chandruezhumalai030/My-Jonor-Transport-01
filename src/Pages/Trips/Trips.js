@@ -11,12 +11,14 @@ export default function Trips(props) {
     <Header
       {...props}
       rightIcon={false}
-      // isBackground={true}
-      title={"Trips"}
+      // isBackground={false}
+      title={"Trip Planner"}
     >
-      <Tab.Navigator>
-          <Tab.Screen name="Favourite" component={Favourite} />
-          <Tab.Screen name="Complete" component={Complete} />
+      <Tab.Navigator screenOptions={{
+        tabBarLabelStyle: { textTransform: 'capitalize' },
+      }}>
+        <Tab.Screen name="Favourite" component={Favourite} />
+        <Tab.Screen name="Complete" component={Complete} />
 
       </Tab.Navigator>
     </Header>

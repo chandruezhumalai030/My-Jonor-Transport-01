@@ -18,7 +18,7 @@ import EditProfile from '../Pages/Editprofile';
 import EditProfile1 from '../Pages/EditProfile1';
 import Editsuccess from '../Pages/Editsuccess';
 import Helpcenter from '../Pages/Helpcenter';
-import FQA from '../Pages/FQA';
+import Fqa from '../Pages/FQA';
 import Contact from '../Pages/Contact';
 import Report from '../Pages/Report';
 import Address from '../Pages/Address';
@@ -55,6 +55,7 @@ import NotificationScreen from '../Pages/Notification/NotificationScreen';
 import NotificationView from '../Pages/Notification/NotificationView';
 import ScanQR from '../Pages/QR/ScanQR';
 import routerlist from '../Pages/QR/routerlist';
+import list from '../Pages/Trips/list';
 
 
 const Stack = createNativeStackNavigator();
@@ -92,7 +93,7 @@ function Routes() {
           name="Profile"
           component={Profile}
           options={{ headerShown: false }}
-           />
+        />
         <Stack.Screen
           name="Home"
           component={Home}
@@ -127,7 +128,7 @@ function Routes() {
         />
         <Stack.Screen
           name="Helpcenter1"
-          component={FQA}
+          component={Fqa}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -228,7 +229,7 @@ function Routes() {
           component={Favourite}
           options={{ headerShown: false }}
         />
-       <Stack.Screen
+        <Stack.Screen
           name="Complete"
           component={Complete}
           options={{ headerShown: false }}
@@ -236,7 +237,7 @@ function Routes() {
         <Stack.Screen
           name="SavedDestionation"
           component={SavedDestionation}
-          // options={{ headerShown: false }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="HomeSaved"
@@ -248,59 +249,64 @@ function Routes() {
           component={Places}
           options={{ headerShown: false }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="NotificationScreen"
           component={NotificationScreen}
           options={{ headerShown: false }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="NotificationView"
           component={NotificationView}
           options={{ headerShown: false }}
         />
-            <Stack.Screen
+        <Stack.Screen
           name="Ewallet"
           component={Ewallet}
           options={{ headerShown: false }}
         />
-             <Stack.Screen
+        <Stack.Screen
           name="cardlist"
           component={cardlist}
           options={{ headerShown: false }}
         />
-                     <Stack.Screen
+        <Stack.Screen
           name="addnewcard"
           component={addnewcard}
           options={{ headerShown: false }}
         />
-          <Stack.Screen
+        <Stack.Screen
           name="cardDetails"
           component={cardDetails}
           options={{ headerShown: false }}
         />
-         <Stack.Screen
-         
-         name="EReceipt"
-         component={EReceipt}
-           options={{ headerShown: false }}
-         />
+        <Stack.Screen
 
-       <Stack.Screen
-        name="TopupScreen"
-        component={TopupScreen}
-         options={{ headerShown: false }}
-      />
-           <Stack.Screen
-        name="ScanQR"
-        component={ScanQR}
-         options={{ headerShown: false }}
-      />
+          name="EReceipt"
+          component={EReceipt}
+          options={{ headerShown: false }}
+        />
 
-<Stack.Screen
-        name="routerlist"
-        component={routerlist}
-         options={{ headerShown: false }}
-      />
+        <Stack.Screen
+          name="TopupScreen"
+          component={TopupScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ScanQR"
+          component={ScanQR}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="routerlist"
+          component={routerlist}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="list"
+          component={list}
+          options={{ headerShown: false }}
+        />
 
 
       </Stack.Navigator>

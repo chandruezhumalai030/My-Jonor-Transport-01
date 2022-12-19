@@ -1,59 +1,97 @@
-import * as React from "react";
-import { Text, StyleSheet, View,TextInput,TouchableOpacity,ScrollView } from "react-native";
+import React, { useState, useRef } from "react";
+import { Text, StyleSheet, View, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import GetColors from '../assets/GetColors';
 import { useNavigation } from "@react-navigation/native";
 
 const ForgetReset = () => {
-    const navigation = useNavigation();
+  const pin1Ref = useRef(null);
+  const pin2Ref = useRef(null);
+  const pin3Ref = useRef(null);
+  const pin4Ref = useRef(null);
+
+  const [pin1, setPin1] = useState("");
+  const [pin2, setPin2] = useState("");
+  const [pin3, setPin3] = useState("");
+  const [pin4, setPin4] = useState("");
+
+  const [number, onChangeNumber] = React.useState(null);
+
+  const navigation = useNavigation();
   return (
     <ScrollView>
-    <View style={styles.forgetResetPassword}>
-      <View style={styles.autoLayoutVertical1}>
-        <View style={styles.autoLayoutVertical}>
-          <Text style={styles.codeHasBeenSendTo1111}>
-            Code has been send to +1 111 ******99
-          </Text>
-          <View style={[styles.codeInputView8, styles.mt60]}>
-            <View style={styles.codeInputView1}>
-              <View style={styles.codeInputView}>
-              <TextInput style={styles.codeText}
-                keyboardType='numeric'
-                maxLength={1}/>
+      <View style={styles.forgetResetPassword}>
+        <View style={styles.autoLayoutVertical1}>
+          <View style={styles.autoLayoutVertical}>
+            <Text style={styles.codeHasBeenSendTo1111}>
+              Code has been send to +1 111 ******99
+            </Text>
+            <View style={[styles.codeInputView8, styles.mt60]}>
+              <View style={styles.codeInputView1}>
+                <View style={styles.codeInputView}>
+                  <TextInput style={styles.codeText}
+                    ref={pin1Ref}
+                    keyboardType='numeric'
+                    maxLength={1}
+                    onChangeText={onChangeNumber}
+                    onChange={(pin1) => {
+                      setPin1(pin1);
+                      if (pin1 !== "") {
+                        pin2Ref.current.focus();
+                      }
+                    }} />
+                </View>
+              </View>
+              <View style={[styles.codeInputView1, styles.ml16]}>
+                <View style={styles.codeInputView}>
+                  <TextInput style={styles.codeText}
+                    ref={pin2Ref}
+                    keyboardType='numeric'
+                    maxLength={1}
+                    onChange={(pin2) => {
+                      setPin2(pin2);
+                      if (pin2 !== "") {
+                        pin3Ref.current.focus();
+                      }
+                    }} />
+                </View>
+              </View>
+              <View style={[styles.codeInputView1, styles.ml16]}>
+                <View style={styles.codeInputView}>
+                  <TextInput style={styles.codeText}
+                    ref={pin3Ref}
+                    keyboardType='numeric'
+                    maxLength={1}
+                    onChange={(pin3) => {
+                      setPin3(pin3);
+                      if (pin3 !== "") {
+                        pin4Ref.current.focus();
+                      }
+                    }} />
+                </View>
+              </View>
+              <View style={[styles.codeInputView1, styles.ml16]}>
+                <View style={styles.codeInputView}>
+                  <TextInput style={styles.codeText}
+                    ref={pin4Ref}
+                    keyboardType='numeric'
+                    maxLength={1}
+                    onChange={(pin4) => {
+                      setPin4(pin4)
+                    }} />
+                </View>
               </View>
             </View>
-            <View style={[styles.codeInputView1, styles.ml16]}>
-              <View style={styles.codeInputView}>
-              <TextInput style={styles.codeText}
-                keyboardType='numeric'
-                maxLength={1}/>
-              </View>
-            </View>
-            <View style={[styles.codeInputView1, styles.ml16]}>
-              <View style={styles.codeInputView}>
-              <TextInput style={styles.codeText}
-                keyboardType='numeric'
-                maxLength={1}/>
-              </View>
-            </View>
-            <View style={[styles.codeInputView1, styles.ml16]}>
-              <View style={styles.codeInputView}>
-                <TextInput style={styles.codeText}
-                keyboardType='numeric'
-                maxLength={1}/>
-              </View>
-            </View>
+            <Text style={[styles.resendCodeIn55S, styles.mt60]}>
+              <Text style={styles.resendCodeIn}>{`Resend code in `}</Text>
+              <Text style={styles.text}>55</Text>
+              <Text style={styles.sText}> s</Text>
+            </Text>
           </View>
-          <Text style={[styles.resendCodeIn55S, styles.mt60]}>
-            <Text style={styles.resendCodeIn}>{`Resend code in `}</Text>
-            <Text style={styles.text}>55</Text>
-            <Text style={styles.sText}> s</Text>
-          </Text>
+          <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("ForgetSuccess")}>
+            <Text style={styles.btnTxt}>Continue</Text>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("ForgetSuccess")}>
-        <Text style={styles.btnTxt}>Continue</Text>
-      </TouchableOpacity>
       </View>
-    </View>
     </ScrollView>
   );
 };
@@ -82,7 +120,7 @@ const styles = StyleSheet.create({
     fontFamily: "Urbanist, sans-serif",
     fontWeight: "700",
     lineHeight: 19,
-    marginLeft:15,
+    marginLeft: 15,
     color: "rgba(33,33,33,1)",
     textAlign: "center",
     justifyContent: "center",
@@ -105,7 +143,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "flex-start",
-    borderColor:"black"
+    borderColor: "black"
   },
   codeInputView8: {
     flexDirection: "row",
@@ -169,7 +207,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: GetColors.PrimaryBlue_500,
     width: '80%',
-    marginTop:150,
+    marginTop: 150,
     marginHorizontal: '10%',
   },
   btnTxt: {
