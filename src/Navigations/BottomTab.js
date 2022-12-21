@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Image, Text} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { View, Image, Text } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Pages/Home';
 import Trips from '../Pages/Trips/Trips';
 import Scan from '../Pages/Scan';
@@ -19,30 +19,30 @@ const RenderTabIcon = Props => {
     bottom,
   } = Props;
   return (
-    <View style={{alignItems: 'center', padding: 9}}>
+    <View style={{ alignItems: 'center', padding: 9 }}>
       <Image
         source={isFocused ? activeIcon : inactiveIcon}
         style={[
           isFocused
             ? {
-                width: width ? width : 40,
-                height: height ? height : 40,
-                resizeMode: 'contain',
-                tintColor: tint,
-                bottom,
-              }
+              width: width ? width : 40,
+              height: height ? height : 40,
+              resizeMode: 'contain',
+              tintColor: tint,
+              bottom,
+            }
             : {
-                width: width ? width : 35,
-                height: height ? height : 35,
-                resizeMode: 'contain',
-                bottom: bottom,
-                tintColor:'#6A6A6A'
-              },
+              width: width ? width : 35,
+              height: height ? height : 35,
+              resizeMode: 'contain',
+              bottom: bottom,
+              tintColor: '#6A6A6A'
+            },
         ]}
       />
-      {/* <Text style={{color: isFocused ? '#1A96F0' : '#6A6A6A', fontSize: 10}}>
+      <Text style={{color: isFocused ? '#0F437B' : '#6A6A6A', fontSize: 12,marginTop:10}}>
         {title}
-      </Text> */}
+      </Text>
     </View>
   );
 };
@@ -53,84 +53,87 @@ function BottomTab() {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: {height: 70, padding: 10,},
+        tabBarStyle: { height: 70, padding: 10,},
       }}
       initialRouteName="Home">
       <Tab.Screen
-        name="Home"
+        name=" "
         component={Home}
         options={{
           headerShown: false,
-          tabBarIcon: ({focused}) => {
+          tabBarIcon: ({ focused }) => {
             return (
               <RenderTabIcon
                 isFocused={focused}
-                width={20}
-                height={20}
+                width={25}
+                height={25}
                 activeIcon={GetImage.homeIcon}
                 inactiveIcon={GetImage.homeIcon}
                 tint={'#0F437B;'}
-                // title='Home'
+                title='Home'
               />
             );
           },
         }}
-        initialParams={{data:true,para:""}}
-        
+        initialParams={{ data: true, para: "" }}
+
       />
       <Tab.Screen
-        name="Trips"
+        name="  "
         component={Trips}
         options={{
           headerShown: false,
-          tabBarIcon: ({focused}) => {
+          tabBarIcon: ({ focused }) => {
             return (
               <RenderTabIcon
                 isFocused={focused}
-                width={20}
-                height={20}
+                width={25}
+                height={25}
                 activeIcon={GetImage.documentIcon}
                 inactiveIcon={GetImage.documentIcon}
                 tint={'#0F437B;'}
+                title={'Trips'}
               />
             );
           },
         }}
       />
       <Tab.Screen
-       // name="Scan"
-       name="ScanQR"
+        // name="Scan"
+        name="   "
         component={ScanQR}
         options={{
           headerShown: false,
-          tabBarIcon: ({focused}) => {
+          tabBarIcon: ({ focused }) => {
             return (
               <RenderTabIcon
-              width={20}
-              height={20}
+                width={25}
+                height={25}
                 isFocused={focused}
                 activeIcon={GetImage.scanIcon}
                 inactiveIcon={GetImage.scanIcon}
                 tint={'#0F437B;'}
+                title={'ScanQR'}
               />
             );
           },
         }}
       />
       <Tab.Screen
-        name="Profile"
+        name="    "
         component={Profile}
         options={{
           headerShown: false,
-          tabBarIcon: ({focused}) => {
+          tabBarIcon: ({ focused }) => {
             return (
               <RenderTabIcon
                 isFocused={focused}
-                width={20}
-                height={20}
+                width={25}
+                height={25}
                 activeIcon={GetImage.profileIcon}
                 inactiveIcon={GetImage.profileIcon}
                 tint={'#0F437B;'}
+                title={'Profile'}
               />
             );
           },

@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, Image, Text, View, ImageBackground } from "react-native"
+import { StyleSheet, Image, Text, View, ImageBackground,Button } from "react-native"
 
 export default function Fqa() {
   return (
@@ -470,7 +470,8 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "flex-start",
     // width: 380,
-    marginTop:10
+    marginTop:10,
+    marginRight:15
   },
   themeLightDividerIcon: {
     alignSelf: "stretch",

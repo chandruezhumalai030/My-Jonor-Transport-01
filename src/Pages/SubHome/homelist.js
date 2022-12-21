@@ -18,7 +18,7 @@ import GetImage from "../../assets/GetImage";
 import ReactModal from "../../Components/ReactModal";
 import GetColors from "../../assets/GetColors";
 
-export default function list(props) {
+export default function Homelist(props) {
     const navigation = useNavigation();
   const data = [
     {
@@ -26,7 +26,7 @@ export default function list(props) {
       img: GetImage.fire,
       title: "Larkin Stadium",
       time: "See Famous Places",
-      rate: "+ $5",
+      // rate: "+ $5",
       time1: "09:15 AM",
     },
     {
@@ -34,7 +34,7 @@ export default function list(props) {
       img: GetImage.fire,
       title: "Klinik Kesihatan Kempas",
       time: "See Famous Places",
-      rate: "+ $5",
+      // rate: "+ $5",
       time1: "09:15 AM",
     },
     {
@@ -42,7 +42,7 @@ export default function list(props) {
       img: GetImage.fire,
       title: "AEON Mall Tebrau City",
       time: "See Famous Places",
-      rate: "+ $5",
+      // rate: "+ $5",
       time1: "09:15 AM",
     },
     {
@@ -50,7 +50,7 @@ export default function list(props) {
       img: GetImage.fire,
       title: "Hutan Bandar MBJB",
       time: "See Famous Places",
-      rate: "+ $5",
+      // rate: "+ $5",
       time1: "09:15 AM",
     },
     {
@@ -66,7 +66,7 @@ export default function list(props) {
       img: GetImage.fire,
       title: "The Mall, Mid Valley Southkey",
       time: "See Famous Places",
-      rate: "+ $5",
+      // rate: "+ $5",
       time1: "09:15 AM",
     },
   ];
@@ -93,7 +93,7 @@ export default function list(props) {
         >
           Total Price
         </Text>
-        <Text
+        {/* <Text
           style={{
             fontSize: 20,
             fontFamily: "  Urbanist_regular",
@@ -101,13 +101,13 @@ export default function list(props) {
           }}
         >
           $0
-        </Text>
+        </Text> */}
       </View>
     );
   };
   return (
     <View style={styles.container}>
-      <Header {...props} rightIcon={false} title={"Trip Route"}>
+      <Header {...props} rightIcon={false} title={"Bus Route"}>
         <View style={{ flex: 1 }}>
           <FlatList
             data={data}
@@ -164,7 +164,7 @@ export default function list(props) {
                   />
                   </View>
                   <Text style={styles.headsubText}>{item.title}</Text>
-
+                  
                   <View
                     style={{
                       flexDirection: "row",
@@ -172,18 +172,19 @@ export default function list(props) {
                       alignItems: "center",
                     }}
                   >
-                   
+                    
                     <Image
                       source={item.img}
                       style={{ height: 15, width: 15, resizeMode: "contain" }}
                     />
-                     <Pressable  onPress={() => navigation.navigate("NotificationView")}>
+                    <Pressable  onPress={() => navigation.navigate("NotificationView")}>
                     <Text style={[styles.subText, { paddingLeft: 2, flex: 1 }]}>
                       {item.time}
                     </Text>
                     </Pressable>
-                    <Text style={styles.subText}>{item.rate}</Text>
+                    {/* <Text style={styles.subText}>{item.rate}</Text> */}
                   </View>
+                  
                 </View>
               </View>
             )}

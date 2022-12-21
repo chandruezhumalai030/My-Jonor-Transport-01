@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView, TouchableOpacity } from "react-native"
+import { StyleSheet, Image, Text, View, ScrollView, TouchableOpacity,Pressable } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 import { RadioButton } from 'react-native-paper';
 import GetImage from '../assets/GetImage';
@@ -12,207 +12,220 @@ export default function Address(props) {
   return (
     <Header
       {...props}
-        rightIcon={false}
+      rightIcon={false}
       // isBackground={true}
       title={"Add New Address"}
     >
-    <View style={styles.container}>
-      <View style={styles.Address_01}>
-        <View style={styles.Group}>
-          <View style={styles.AutoLayoutVertical3}>
-            {/* <View style={styles.AutoLayoutVertical2}> */}
-            <View style={styles.AutoLayoutVertical1}>
-              <View
-                style={
-                  styles.CategoryLocationEditThemeLightComponentLocationList
-                }
-              >
-                <View style={styles.AutoLayoutHorizontal}>
-                  <View>
-                    <RadioButton
-                      value="first"
-                      status={checked === 'first' ? 'checked' : 'unchecked'}
-                      onPress={() => setChecked('first')}
-                      color={'#0F437B'}
+      <ScrollView style={styles.container}>
+        <View style={styles.Address_01}>
+          <View style={styles.Group}>
+            <View style={styles.AutoLayoutVertical3}>
+              {/* <View style={styles.AutoLayoutVertical2}> */}
+              <View style={styles.AutoLayoutVertical1}>
+                <View
+                  style={
+                    styles.CategoryLocationEditThemeLightComponentLocationList
+                  }
+                >
+                  <View style={styles.AutoLayoutHorizontal}>
+                    <View>
+                      <RadioButton
+                        value="first"
+                        status={checked === 'first' ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked('first')}
+                        color={'#0F437B'}
+                      />
+                    </View>
+                    <View style={styles.AutoLayoutVertical}>
+                      <Text style={styles.Txt363}>Home</Text>
+                      <Text style={styles.Txt979}>
+                        364 Stillwater Ave. Attleboro, MA 02703
+                      </Text>
+                    </View>
+                  </View>
+                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                    <Image
+                      style={styles.IconlyBoldEdit}
+                      source={require('../assets/Profile/pencil.png')}
                     />
-                  </View>
-                  <View style={styles.AutoLayoutVertical}>
-                    <Text style={styles.Txt363}>Home</Text>
-                    <Text style={styles.Txt979}>
-                      364 Stillwater Ave. Attleboro, MA 02703
-                    </Text>
-                  </View>
+                  </Pressable>
                 </View>
                 <Image
-                  style={styles.IconlyBoldEdit}
-                  source={require('../assets/Profile/pencil.png')}
+                  style={[styles.themeLightDividerIcon, styles.mt16]}
+                  resizeMode="cover"
+                  source={require("../assets/Profile/themelight-divider1.png")}
                 />
-              </View>
-              <Image
-                style={[styles.themeLightDividerIcon, styles.mt16]}
-                resizeMode="cover"
-                source={require("../assets/Profile/themelight-divider1.png")}
-              />
-              <View
-                style={
-                  styles.CategoryLocationEditThemeLightComponentLocationList1
-                }
-              >
-                <View style={styles.AutoLayoutHorizontal}>
-                  <View>
-                    <RadioButton
-                      value="second"
-                      status={checked === 'second' ? 'checked' : 'unchecked'}
-                      onPress={() => setChecked('second')}
-                      // uncheckedColor={"#F0F0F0"}
-                      color={'#0F437B'}
+                <View
+                  style={
+                    styles.CategoryLocationEditThemeLightComponentLocationList1
+                  }
+                >
+                  <View style={styles.AutoLayoutHorizontal}>
+                    <View>
+                      <RadioButton
+                        value="second"
+                        status={checked === 'second' ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked('second')}
+                        // uncheckedColor={"#F0F0F0"}
+                        color={'#0F437B'}
+                      />
+                    </View>
+                    <View style={styles.AutoLayoutVertical}>
+                      <Text style={styles.Txt363}>Office</Text>
+                      <Text style={styles.Txt979}>
+                        73 Virginia Rd. Cuyahoga Falls, OH 44221
+                      </Text>
+                    </View>
+                  </View>
+                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                    <Image
+                      style={styles.IconlyBoldEdit}
+                      source={require('../assets/Profile/pencil.png')}
                     />
-                  </View>
-                  <View style={styles.AutoLayoutVertical}>
-                    <Text style={styles.Txt363}>Office</Text>
-                    <Text style={styles.Txt979}>
-                      73 Virginia Rd. Cuyahoga Falls, OH 44221
-                    </Text>
-                  </View>
+                  </Pressable>
                 </View>
                 <Image
-                  style={styles.IconlyBoldEdit}
-                  source={require('../assets/Profile/pencil.png')}
+                  style={[styles.themeLightDividerIcon, styles.mt16]}
+                  resizeMode="cover"
+                  source={require("../assets/Profile/themelight-divider1.png")}
                 />
-              </View>
-              <Image
-                style={[styles.themeLightDividerIcon, styles.mt16]}
-                resizeMode="cover"
-                source={require("../assets/Profile/themelight-divider1.png")}
-              />
-              <View
-                style={
-                  styles.CategoryLocationEditThemeLightComponentLocationList1
-                }
-              >
-                <View style={styles.AutoLayoutHorizontal}>
-                  <View>
-                    <RadioButton
-                      value="three"
-                      status={checked === 'three' ? 'checked' : 'unchecked'}
-                      onPress={() => setChecked('three')}
-                      color={'#0F437B'}
+                <View
+                  style={
+                    styles.CategoryLocationEditThemeLightComponentLocationList1
+                  }
+                >
+                  <View style={styles.AutoLayoutHorizontal}>
+                    <View>
+                      <RadioButton
+                        value="three"
+                        status={checked === 'three' ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked('three')}
+                        color={'#0F437B'}
+                      />
+                    </View>
+                    <View style={styles.AutoLayoutVertical}>
+                      <Text style={styles.Txt363}>Mall Plaza</Text>
+                      <Text style={styles.Txt979}>
+                        55 Summerhouse Dr. Apopka, FL 32703
+                      </Text>
+                    </View>
+                  </View>
+                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                    <Image
+                      style={styles.IconlyBoldEdit}
+                      source={require('../assets/Profile/pencil.png')}
                     />
-                  </View>
-                  <View style={styles.AutoLayoutVertical}>
-                    <Text style={styles.Txt363}>Mall Plaza</Text>
-                    <Text style={styles.Txt979}>
-                      55 Summerhouse Dr. Apopka, FL 32703
-                    </Text>
-                  </View>
+                  </Pressable>
                 </View>
                 <Image
-                  style={styles.IconlyBoldEdit}
-                  source={require('../assets/Profile/pencil.png')}
+                  style={[styles.themeLightDividerIcon, styles.mt16]}
+                  resizeMode="cover"
+                  source={require("../assets/Profile/themelight-divider1.png")}
                 />
-              </View>
-              <Image
-                style={[styles.themeLightDividerIcon, styles.mt16]}
-                resizeMode="cover"
-                source={require("../assets/Profile/themelight-divider1.png")}
-              />
-              <View
-                style={
-                  styles.CategoryLocationEditThemeLightComponentLocationList1
-                }
-              >
-                <View style={styles.AutoLayoutHorizontal}>
-                  <View>
-                    <RadioButton
-                      value="four"
-                      status={checked === 'four' ? 'checked' : 'unchecked'}
-                      onPress={() => setChecked('four')}
-                      color={'#0F437B'}
+                <View
+                  style={
+                    styles.CategoryLocationEditThemeLightComponentLocationList1
+                  }
+                >
+                  <View style={styles.AutoLayoutHorizontal}>
+                    <View>
+                      <RadioButton
+                        value="four"
+                        status={checked === 'four' ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked('four')}
+                        color={'#0F437B'}
+                      />
+                    </View>
+                    <View style={styles.AutoLayoutVertical}>
+                      <Text style={styles.Txt363}>Grand City Park</Text>
+                      <Text style={styles.Txt979}>
+                        26 State St. Daphne, AL 36526
+                      </Text>
+                    </View>
+                  </View>
+                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                    <Image
+                      style={styles.IconlyBoldEdit}
+                      source={require('../assets/Profile/pencil.png')}
                     />
-                  </View>
-                  <View style={styles.AutoLayoutVertical}>
-                    <Text style={styles.Txt363}>Grand City Park</Text>
-                    <Text style={styles.Txt979}>
-                      26 State St. Daphne, AL 36526
-                    </Text>
-                  </View>
+                  </Pressable>
                 </View>
                 <Image
-                  style={styles.IconlyBoldEdit}
-                  source={require('../assets/Profile/pencil.png')}
+                  style={[styles.themeLightDividerIcon, styles.mt16]}
+                  resizeMode="cover"
+                  source={require("../assets/Profile/themelight-divider1.png")}
                 />
-              </View>
-              <Image
-                style={[styles.themeLightDividerIcon, styles.mt16]}
-                resizeMode="cover"
-                source={require("../assets/Profile/themelight-divider1.png")}
-              />
-              <View
-                style={
-                  styles.CategoryLocationEditThemeLightComponentLocationList1
-                }
-              >
-                <View style={styles.AutoLayoutHorizontal}>
-                  <View>
-                    <RadioButton
-                      value="five"
-                      status={checked === 'five' ? 'checked' : 'unchecked'}
-                      onPress={() => setChecked('five')}
-                      color={'#0F437B'}
+                <View
+                  style={
+                    styles.CategoryLocationEditThemeLightComponentLocationList1
+                  }
+                >
+                  <View style={styles.AutoLayoutHorizontal}>
+                    <View>
+                      <RadioButton
+                        value="five"
+                        status={checked === 'five' ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked('five')}
+                        color={'#0F437B'}
+                      />
+                    </View>
+                    <View style={styles.AutoLayoutVertical}>
+                      <Text style={styles.Txt363}>Town Square</Text>
+                      <Text style={styles.Txt979}>
+                        20 Applegate St. Hoboken, NJ 07030
+                      </Text>
+                    </View>
+                  </View>
+                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                    <Image
+                      style={styles.IconlyBoldEdit}
+                      source={require('../assets/Profile/pencil.png')}
                     />
-                  </View>
-                  <View style={styles.AutoLayoutVertical}>
-                    <Text style={styles.Txt363}>Town Square</Text>
-                    <Text style={styles.Txt979}>
-                      20 Applegate St. Hoboken, NJ 07030
-                    </Text>
-                  </View>
+                  </Pressable>
                 </View>
                 <Image
-                  style={styles.IconlyBoldEdit}
-                  source={require('../assets/Profile/pencil.png')}
+                  style={[styles.themeLightDividerIcon, styles.mt16]}
+                  resizeMode="cover"
+                  source={require("../assets/Profile/themelight-divider1.png")}
                 />
-              </View>
-              <Image
-                style={[styles.themeLightDividerIcon, styles.mt16]}
-                resizeMode="cover"
-                source={require("../assets/Profile/themelight-divider1.png")}
-              />
-              <View
-                style={
-                  styles.CategoryLocationEditThemeLightComponentLocationList2
-                }
-              >
-                <View style={styles.AutoLayoutHorizontal}>
-                  <View>
-                    <RadioButton
-                      value="six"
-                      status={checked === 'six' ? 'checked' : 'unchecked'}
-                      onPress={() => setChecked('six')}
-                      color={'#0F437B'}
+                <View
+                  style={
+                    styles.CategoryLocationEditThemeLightComponentLocationList2
+                  }
+                >
+                  <View style={styles.AutoLayoutHorizontal}>
+                    <View>
+                      <RadioButton
+                        value="six"
+                        status={checked === 'six' ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked('six')}
+                        color={'#0F437B'}
+                      />
+                    </View>
+                    <View style={styles.AutoLayoutVertical}>
+                      <Text style={styles.Txt363}>Bank</Text>
+                      <Text style={styles.Txt979}>
+                        917 W. Pine Street Easton, PA 18042
+                      </Text>
+                    </View>
+                  </View>
+                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                    <Image
+                      style={styles.IconlyBoldEdit}
+                      source={require('../assets/Profile/pencil.png')}
                     />
-                  </View>
-                  <View style={styles.AutoLayoutVertical}>
-                    <Text style={styles.Txt363}>Bank</Text>
-                    <Text style={styles.Txt979}>
-                      917 W. Pine Street Easton, PA 18042
-                    </Text>
-                  </View>
+                  </Pressable>
+
                 </View>
-                <Image
-                  style={styles.IconlyBoldEdit}
-                  source={require('../assets/Profile/pencil.png')}
-                />
               </View>
+              {/* </View> */}
+              <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
+                <Text style={styles.btnTxt}>Add new</Text>
+              </TouchableOpacity>
             </View>
-            {/* </View> */}
-            <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
-              <Text style={styles.btnTxt}>Add new</Text>
-            </TouchableOpacity>
           </View>
         </View>
-      </View>
-    </View>
+      </ScrollView>
     </Header>
   )
 }

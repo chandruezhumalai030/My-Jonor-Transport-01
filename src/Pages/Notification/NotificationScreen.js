@@ -142,32 +142,32 @@ export default function NotificationScreen(props) {
           <View style={{ flex: 1, margin: 20, }}>
             <Text onPress={() => setOptionModal(!optionModal)} style={{
               paddingTop: 10, fontSize: (height / 100) * 1.8,
-              fontFamily: "Urbanist_semibold",
+              fontFamily: "Urbanist,sans-serif",
               color: "#0F437B",
             }}>{"Mark all as read"}</Text>
             <View style={{ flex: 0.7, borderTopWidth: 0.2, justifyContent: 'space-around', top: 10, borderBottomWidth: 0.2, paddingTop: 5, paddingBottom: 5 }}>
               <Text onPress={() => setOptionModal(!optionModal)} style={{
                 fontSize: (height / 100) * 1.8,
-                fontFamily: "Urbanist_semibold",
+                fontFamily: "Urbanist,sans-serif",
                 color: "#000",
               }} >{"Delete notification (Older > 30 Days)"}</Text>
               <Text onPress={() => setOptionModal(!optionModal)} style={{
                 fontSize: (height / 100) * 1.8,
-                fontFamily: "Urbanist_semibold",
+                fontFamily: "Urbanist,sans-serif",
                 color: "#000",
               }}>{"Delete notification (Older > 60 Days)"}</Text>
               <Text
                 onPress={() => setOptionModal(!optionModal)}
                 style={{
                   fontSize: (height / 100) * 1.8,
-                  fontFamily: "Urbanist_semibold",
+                  fontFamily: "Urbanist,sans-serif",
                   color: "#000",
                 }}>{"Delete notification (Older >90 Days)"}</Text>
               <Text
                 onPress={() => setOptionModal(!optionModal)}
                 style={{
                   fontSize: (height / 100) * 1.8,
-                  fontFamily: "Urbanist_semibold",
+                  fontFamily: "Urbanist,sans-serif",
                   color: "#000",
                 }}>{"Delete all"}</Text>
             </View>
@@ -181,7 +181,7 @@ export default function NotificationScreen(props) {
 
 const styles = StyleSheet.create({
   list_font: {
-    fontFamily: "Urbanist_semibold",
+    fontFamily: "Urbanist,sans-serif",
     color: "#616161",
     fontWeight: 'bold',
   }

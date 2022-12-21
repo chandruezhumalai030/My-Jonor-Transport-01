@@ -56,6 +56,17 @@ import NotificationView from '../Pages/Notification/NotificationView';
 import ScanQR from '../Pages/QR/ScanQR';
 import routerlist from '../Pages/QR/routerlist';
 import list from '../Pages/Trips/list';
+import Success from '../Pages/Helpcenter/success';
+import Saved from '../Pages/SavedDestionation/saved1';
+import Addresspage from '../Pages/SavedDestionation/addressPages';
+import Success1 from '../Pages/SavedDestionation/success';
+import Savedlocation from '../Pages/SavedDestionation/location';
+import SavedAddress from '../Pages/SavedDestionation/savedaddress';
+import SavedDelete from '../Pages/SavedDestionation/savedDelete';
+
+import HomeAction from '../Pages/SubHome/Bus';
+import Homelist from '../Pages/SubHome/homelist';
+import Successaddress from '../Pages/Address/success';
 
 
 const Stack = createNativeStackNavigator();
@@ -305,6 +316,56 @@ function Routes() {
         <Stack.Screen
           name="list"
           component={list}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Success"
+          component={Success}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Saved"
+          component={Saved}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Addresspage"
+          component={Addresspage}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Success1"
+          component={Success1}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Savedlocation"
+          component={Savedlocation}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SavedDelete"
+          component={SavedDelete}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SavedAddress"
+          component={SavedAddress}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HomeAction"
+          component={HomeAction}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Homelist"
+          component={Homelist}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Successaddress"
+          component={Successaddress}
           options={{ headerShown: false }}
         />
 

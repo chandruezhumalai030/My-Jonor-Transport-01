@@ -1,6 +1,7 @@
 import React from "react"
 import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity } from "react-native"
 import { useNavigation } from "@react-navigation/native";
+import GetColors from "../assets/GetColors";
 export default function Report() {
     const navigation = useNavigation();
   return (
@@ -65,9 +66,9 @@ export default function Report() {
         <View style={styles.Button}>
           <View style={styles._buttonBasePrimary}>
           <TouchableOpacity
-       onPress={() => navigation.navigate("Home", { data: true, para: '' })}
+       onPress={() => navigation.navigate("Success", { data: true, para: '' })}
       >
-        <Text>Submit</Text>
+        <Text style={{color: GetColors.white}}>Submit</Text>
       </TouchableOpacity>
           </View>
         </View>

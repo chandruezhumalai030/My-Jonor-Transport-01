@@ -3,75 +3,75 @@ import { StyleSheet, Image, Text, View, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Contact() {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-    <View style={styles.HelpCenter_02}>
-      <View style={styles.Group436}>
-        <View style={styles.AutoLayoutVertical3}>
-          <View style={styles.AutoLayoutVertical1}>
-          <Pressable
-           onPress={() => navigation.navigate("Home")}>
-            <View style={styles.AutoLayoutHorizontal1}>
-              <Image
-                style={styles.Frame}
-                source={require('../assets/Profile/whatsapp.png')}
-              />
-              <Text style={styles.Txt522}>WhatsApp</Text>
+      <View style={styles.HelpCenter_02}>
+        <View style={styles.Group436}>
+          <View style={styles.AutoLayoutVertical3}>
+            <View style={styles.AutoLayoutVertical1}>
+              <Pressable
+                onPress={() => navigation.navigate("Home",{data:false,para:''})}>
+                <View style={styles.AutoLayoutHorizontal1}>
+                  <Image
+                    style={styles.Frame}
+                    source={require('../assets/Profile/whatsapp.png')}
+                  />
+                  <Text style={styles.Txt522}>WhatsApp</Text>
+                </View>
+              </Pressable>
             </View>
-            </Pressable>
-          </View>
-          <View style={styles.AutoLayoutVertical1}>
-          <Pressable
-           onPress={() => navigation.navigate("Home")}>
-            <View style={styles.AutoLayoutHorizontal1}>
-              <Image
-                style={styles.Frame}
-                source={require('../assets/Profile/www.png')}
-              />
-              <Text style={styles.Txt522}>Website</Text>
+            <View style={styles.AutoLayoutVertical1}>
+              <Pressable
+                onPress={() => navigation.navigate("Home",{data:false,para:''})}>
+                <View style={styles.AutoLayoutHorizontal1}>
+                  <Image
+                    style={styles.Frame}
+                    source={require('../assets/Profile/www.png')}
+                  />
+                  <Text style={styles.Txt522}>Website</Text>
+                </View>
+              </Pressable>
             </View>
-            </Pressable>
-          </View>
-          <View style={styles.AutoLayoutVertical1}>
-          <Pressable
-           onPress={() => navigation.navigate("Home")}>
-            <View style={styles.AutoLayoutHorizontal1}>
-              <Image
-                style={styles.Frame}
-                source={require('../assets/Profile/facebook.png')}
-              />
-              <Text style={styles.Txt522}>Facebook</Text>
+            <View style={styles.AutoLayoutVertical1}>
+              <Pressable
+                onPress={() => navigation.navigate("Home",{data:false,para:''})}>
+                <View style={styles.AutoLayoutHorizontal1}>
+                  <Image
+                    style={styles.Frame}
+                    source={require('../assets/Profile/facebook.png')}
+                  />
+                  <Text style={styles.Txt522}>Facebook</Text>
+                </View>
+              </Pressable>
             </View>
-            </Pressable>
-          </View>
-          <View style={styles.AutoLayoutVertical1}>
-          <Pressable
-           onPress={() => navigation.navigate("Home")}>
-            <View style={styles.AutoLayoutHorizontal1}>
-              <Image
-                style={styles.Frame}
-                source={require('../assets/Profile/twitter.png')}
-              />
-              <Text style={styles.Txt522}>Twitter</Text>
+            <View style={styles.AutoLayoutVertical1}>
+              <Pressable
+                onPress={() => navigation.navigate("Home",{data:false,para:''})}>
+                <View style={styles.AutoLayoutHorizontal1}>
+                  <Image
+                    style={styles.Frame}
+                    source={require('../assets/Profile/twitter.png')}
+                  />
+                  <Text style={styles.Txt522}>Twitter</Text>
+                </View>
+              </Pressable>
             </View>
-            </Pressable>
-          </View>
-          <View style={styles.AutoLayoutVertical1}>
-          <Pressable
-           onPress={() => navigation.navigate("Home")}>
-            <View style={styles.AutoLayoutHorizontal1}>
-              <Image
-                style={styles.Frame}
-                source={require('../assets/Profile/instagram.png')}
-              />
-              <Text style={styles.Txt522}>Instagram</Text>
+            <View style={styles.AutoLayoutVertical1}>
+              <Pressable
+                onPress={() => navigation.navigate("Home",{data:false,para:''})}>
+                <View style={styles.AutoLayoutHorizontal1}>
+                  <Image
+                    style={styles.Frame}
+                    source={require('../assets/Profile/instagram.png')}
+                  />
+                  <Text style={styles.Txt522}>Instagram</Text>
+                </View>
+              </Pressable>
             </View>
-            </Pressable>
           </View>
         </View>
       </View>
-    </View>
     </View>
   )
 }
@@ -326,8 +326,8 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowOffset: { width: 0, height: 4 },
     width: 380,
-    marginTop:15,
-    marginLeft:23
+    marginTop: 15,
+    marginLeft: 23
   },
   AutoLayoutHorizontal1: {
     display: "flex",
@@ -335,7 +335,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "flex-start",
     // marginLeft:10,
-    width:500 ,
+    width: 500,
   },
   Frame: {
     width: 24,

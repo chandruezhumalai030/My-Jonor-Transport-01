@@ -200,13 +200,14 @@ const styles = StyleSheet.create({
     borderColor: "gray",
   },
   Txt415: {
-    fontSize: 24,
+    fontSize: 20,
     fontFamily: "Urbanist, sans-serif",
     fontWeight: "700",
     lineHeight: 29,
     color: "rgba(33,33,33,1)",
     textAlign: "center",
     justifyContent: "center",
+    marginTop:10
   },
   Button: {
     display: 'flex',

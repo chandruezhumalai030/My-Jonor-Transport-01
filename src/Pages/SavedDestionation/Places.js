@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView, TouchableOpacity } from "react-native"
+import { StyleSheet, Image, Text, View, ScrollView, TouchableOpacity,Pressable } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 import { RadioButton } from 'react-native-paper';
 import GetColors from '../../assets/GetColors';
@@ -35,10 +35,12 @@ export default function Places() {
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
                 <Image
                 style={[styles.themeLightDividerIcon, styles.mt16]}
@@ -66,10 +68,12 @@ export default function Places() {
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
                 <Image
                 style={[styles.themeLightDividerIcon, styles.mt16]}
@@ -97,10 +101,12 @@ export default function Places() {
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
                 <Image
                 style={[styles.themeLightDividerIcon, styles.mt16]}
@@ -128,10 +134,12 @@ export default function Places() {
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
                 <Image
                 style={[styles.themeLightDividerIcon, styles.mt16]}
@@ -159,10 +167,12 @@ export default function Places() {
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
                 <Image
                 style={[styles.themeLightDividerIcon, styles.mt16]}
@@ -190,20 +200,22 @@ export default function Places() {
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
               </View>
             {/* </View> */}
-            <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
+            <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Saved")}>
         <Text style={styles.btnTxt}>Add new</Text>
       </TouchableOpacity>
           </View>
         </View>
       </View>
-    </View>
+     </View>
   )
 }
 
@@ -245,8 +257,8 @@ const styles = StyleSheet.create({
     paddingBottom: 47,
     paddingLeft: 23,
     paddingRight: 23,
-    height: 600,
-    width: 428,
+    // height: 600,
+    // width: 428,
   },
   AutoLayoutVertical2: {
     display: "flex",
@@ -303,7 +315,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     letterSpacing: 0.2,
     color: "rgba(97,97,97,1)",
-    width: 301,
+    // width: 301,
   },
 
   IconlyBoldEdit: {
@@ -333,7 +345,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    top: 100,
+    top: 60,
     padding: 12,
     borderRadius: 100,
     backgroundColor: GetColors.PrimaryBlue_500,

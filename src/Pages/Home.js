@@ -533,7 +533,7 @@ if(from!==""){
               >
                 <TouchableOpacity
                   style={styles.btn3}
-                  onPress={()=>navigation.navigate("SavedDestionation")}
+                  onPress={()=>navigation.navigate("HomeAction")}
                 >
                   <Text
                     style={{

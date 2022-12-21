@@ -13,7 +13,7 @@ export default function SavedDestionation(props) {
       {...props}
       rightIcon={false}
       // isBackground={true}
-      title={"Saved Destionation"}
+      title={"Saved Destination"}
     >
       <Tab.Navigator screenOptions={{
         tabBarLabelStyle: { textTransform: 'capitalize' },
