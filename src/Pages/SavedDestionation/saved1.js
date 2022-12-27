@@ -28,7 +28,7 @@ const Saved = (props) => {
                             <Text style={styles.selectWhereDoYouWantToSa}>
                                 Select where do you want to save the address of quicklink
                             </Text>
-                            <View style={[styles.autoLayoutHorizontal1, styles.mt24]}>
+                            <View style={[styles.autoLayoutHorizontal3, styles.mt24]}>
                                 <View style={styles.featureIconView1}>
                                     <View style={styles.featureIconView}>
                                         <View style={styles.autoLayoutHorizontal}>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.2,
         lineHeight: 28,
         fontWeight: "600",
-        fontFamily: "Urbanist",
+        fontFamily: "Urbanist, sans-serif",
         color: "#fff",
         textAlign: "center",
     },
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.2,
         lineHeight: 25,
         fontWeight: "500",
-        fontFamily: "Urbanist",
+        fontFamily: "Urbanist, sans-serif",
         color: "#212121",
         textAlign: "left",
     },
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         letterSpacing: 0.2,
         fontWeight: "500",
-        fontFamily: "Urbanist",
+        fontFamily: "Urbanist, sans-serif",
         color: "#757575",
         textAlign: "left",
     },
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.2,
         lineHeight: 22,
         fontWeight: "700",
-        fontFamily: "Urbanist",
+        fontFamily: "Urbanist, sans-serif",
         color: "#000",
         textAlign: "left",
     },
@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         letterSpacing: 0.2,
         fontWeight: "500",
-        fontFamily: "Urbanist",
+        fontFamily: "Urbanist, sans-serif",
         color: "#757575",
         textAlign: "left",
     },
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.2,
         lineHeight: 22,
         fontWeight: "700",
-        fontFamily: "Urbanist",
+        fontFamily: "Urbanist, sans-serif",
         color: "#000",
         textAlign: "left",
     },
@@ -343,7 +343,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         letterSpacing: 0.2,
         fontWeight: "500",
-        fontFamily: "Urbanist",
+        fontFamily: "Urbanist, sans-serif",
         color: "#757575",
         textAlign: "left",
     },
@@ -354,7 +354,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.2,
         lineHeight: 22,
         fontWeight: "700",
-        fontFamily: "Urbanist",
+        fontFamily: "Urbanist, sans-serif",
         color: "#000",
         textAlign: "left",
     },
@@ -413,7 +413,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.2,
         lineHeight: 22,
         fontWeight: "600",
-        fontFamily: "Urbanist",
+        fontFamily: "Urbanist, sans-serif",
         color: "#121212",
         textAlign: "left",
     },
@@ -462,7 +462,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         lineHeight: 29,
         fontWeight: "700",
-        fontFamily: "Urbanist",
+        fontFamily: "Urbanist, sans-serif_semibold",
         color: "#212121",
         textAlign: "left",
     },

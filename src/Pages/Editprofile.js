@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     // width: 381,
     marginBottom: 80,
-    marginTop: 170
+    marginTop: 120
   },
   CodeInput: {
     display: "flex",

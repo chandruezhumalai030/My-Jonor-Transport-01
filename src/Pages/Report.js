@@ -1,8 +1,12 @@
-import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity } from "react-native"
+import React, { useState } from 'react';
+import { StyleSheet, Image, Text, View, Dimensions,ScrollView,TextInput,TouchableOpacity } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 import GetColors from "../assets/GetColors";
+import Lottie from 'lottie-react-native';
+import ReactModal from '../Components/ReactModal';
 export default function Report() {
+  const height = Dimensions.get("screen").height;
+  const [promoModal, setPromoModal] = useState(false)
     const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -66,7 +70,7 @@ export default function Report() {
         <View style={styles.Button}>
           <View style={styles._buttonBasePrimary}>
           <TouchableOpacity
-       onPress={() => navigation.navigate("Success", { data: true, para: '' })}
+       onPress={() => setPromoModal(true)}
       >
         <Text style={{color: GetColors.white}}>Submit</Text>
       </TouchableOpacity>
@@ -74,6 +78,89 @@ export default function Report() {
         </View>
       </View>
     </View>
+    <ReactModal
+        container={{
+          backgroundColor: "rgba(0,0,0,0.7)",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        visible={promoModal}
+      >
+        <View
+          style={{
+            backgroundColor: "#fff",
+            height: (height / 100) * 45,
+            width: "89%",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 10,
+          }}
+        >
+          <View style={{ flex: 0.4, }}>
+            {/* <Image
+              source={GetImage.promoSuccess}
+              style={{
+                height: (height / 100) * 18,
+                width: (height / 100) * 18,
+                resizeMode: "contain",
+              }}
+            /> */}
+            <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../assets/Animation/lf20_s2lryxtd.json")} autoPlay />
+          </View>
+          <View
+            style={{
+              flex: 0.2,
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Text
+              style={{
+                fontSize: (height / 100) * 2.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#000",
+              }}
+            >
+              {"Report Sent"}
+            </Text>
+            <Text
+              style={{
+                fontSize: (height / 100) * 1.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#616161",
+              }}
+            >
+             Your report has been submitted
+            </Text>
+          </View>
+
+          <View style={{ flex: 0.2, top: height / 100 * 5 }}>
+            <TouchableOpacity
+              onPress={() => setPromoModal(!promoModal)}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "#0F437B",
+                width: (height / 100) * 35,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist_semibold",
+                  color: "#fff",
+                }}
+              >
+                {"Okay"}
+              </Text>
+            </TouchableOpacity>
+            <View style={{ height: (height / 100) * 2 }}></View>
+
+          </View>
+        </View>
+      </ReactModal>
     </View>
   )
 }

@@ -108,6 +108,28 @@ export default function Homelist(props) {
   return (
     <View style={styles.container}>
       <Header {...props} rightIcon={false} title={"Bus Route"}>
+      <View style={[styles.labelPositionView, styles.ml16]}>
+          <View style={styles.labelView1}>
+            <View style={styles.labelView}>
+              <Image
+                style={styles.iconlyOtherBus}
+                resizeMode="cover"
+                source={require("../../assets/Home/iconlyotherbus.png")}
+              />
+              <Text style={[styles.text15, styles.ml4]}>345</Text>
+            </View>
+          </View>
+          <View style={styles.labelView3}>
+            <View style={styles.labelView2}>
+              <Image
+                style={styles.iconlyOtherSeats}
+                resizeMode="cover"
+                source={require("../../assets/Home/iconlyotherseats.png")}
+              />
+              <Text style={[styles.text16, styles.ml4]}>Seats</Text>
+            </View>
+          </View>
+        </View>
         <View style={{ flex: 1 }}>
           <FlatList
             data={data}
@@ -190,7 +212,7 @@ export default function Homelist(props) {
             )}
             keyExtractor={(item) => item.id}
           />
-          <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("ScanQR")}>
+          <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("NotificationView")}>
         <Text style={styles.btnTxt}>Go Onboard</Text>
       </TouchableOpacity>
         </View>
@@ -228,6 +250,89 @@ const styles = StyleSheet.create({
     color: GetColors.white,
     textAlign: 'center',
     justifyContent: 'center',
+  },
+  labelPositionView: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+  },
+  labelView1: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    marginLeft:260
+  },
+  labelView: {
+    borderRadius: 5,
+    backgroundColor: "#0f437b",
+    width: 65,
+    flexShrink: 0,
+    flexDirection: "row",
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    boxSizing: "border-box",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  iconlyOtherBus: {
+    position: "relative",
+    width: 14,
+    height: 14,
+    flexShrink: 0,
+    overflow: "hidden",
+  },
+  text15: {
+    position: "relative",
+    fontSize: 14,
+    letterSpacing: 0.2,
+    lineHeight: 20,
+    fontWeight: "600",
+    fontFamily: "Urbanist, sans-serif",
+    color: "#e7ecf2",
+    textAlign: "center",
+  },
+  ml4: {
+    marginLeft: 4,
+  },
+  ml16: {
+    marginLeft: 16,
+  },
+  labelView3: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    marginRight:10
+  },
+  labelView2: {
+    borderRadius: 5,
+    backgroundColor: "#fdddb3",
+    width: 65,
+    flexShrink: 0,
+    flexDirection: "row",
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    boxSizing: "border-box",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  iconlyOtherSeats: {
+    position: "relative",
+    width: 14,
+    height: 14,
+    flexShrink: 0,
+    overflow: "hidden",
+  },
+  text16: {
+    position: "relative",
+    fontSize: 14,
+    letterSpacing: 0.2,
+    lineHeight: 20,
+    fontWeight: "600",
+    fontFamily: "Urbanist, sans-serif",
+    color: "#e18308",
+    textAlign: "center",
   },
   headText: {
     fontSize: (height / 100) * 2.5,

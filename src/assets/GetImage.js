@@ -60,6 +60,8 @@ const GetImage = {
   Notifi1:require("../assets/Profile/Notifi1.png"),
   Notifi2:require("../assets/Profile/Notifi2.png"),
   promoSuccess:require("../assets/Profile/promoSuccess.png"),
+  promoDelete:require("../assets/SavedDestionation/-feature-pop-up-icon6.png"),
+  newspaper:require("../assets/Profile/newpaper.png"),
   
  
   qrimage:require("../assets/Notification/qrimage.png"),

@@ -8,7 +8,8 @@ import {
     TouchableOpacity,
     ScrollView,
     Platform,
-    PermissionsAndroid
+    PermissionsAndroid,
+    Linking
     
   } from "react-native";
 import GetImage from '../assets/GetImage';
@@ -18,7 +19,9 @@ function PromoImg(props) {
     const height = Dimensions.get("screen").height;
   return (
    <View style={{flex:1,backgroundColor:'#FFFFFF'}}>
-    <TouchableOpacity  style={{flex:0.1,justifyContent:"center",alignItems:'center',paddingTop:5}} >
+    <TouchableOpacity  
+    onPress={ ()=>{ Linking.openURL('https://google.com')}}
+    style={{flex:0.1,justifyContent:"center",alignItems:'center',paddingTop:5}} >
           <Image
             source={props.img}
             style={{ height: height/100*22, width: width/100*90, resizeMode: "contain" ,}}

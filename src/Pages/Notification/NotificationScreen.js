@@ -26,10 +26,10 @@ export default function NotificationScreen(props) {
     },
     {
       id: 3,
-      head: 'Top Up E-Wallet Successful!',
-      subhead: 'You have topup up your e-wallet',
-      time: '10 minutes ago',
-      img: GetImage.Notifi1
+      head: '3000 points',
+      subhead: 'Get points on the first install',
+      time: '2 minutes ago',
+      img: GetImage.newspaper
     },
 
 
@@ -46,14 +46,14 @@ export default function NotificationScreen(props) {
           <Text
             style={{
               fontSize: (height / 100) * 2.2,
-              fontFamily: "Urbanist_semibold",
+              fontFamily: "Urbanist, sans-serif",
               fontWeight: 'bold',
-              color: "#616161",
+              color: "black",
             }}
             onPress={() => alert("hi")}>Latest</Text>
           <Text style={{
             fontSize: (height / 100) * 1.8,
-            fontFamily: "Urbanist_semibold",
+            fontFamily: "Urbanist, sans-serif",
             color: "#0F437B",
           }}>View All</Text>
         </View>
@@ -79,14 +79,14 @@ export default function NotificationScreen(props) {
           <Text
             style={{
               fontSize: (height / 100) * 2.2,
-              fontFamily: "Urbanist_semibold",
+              fontFamily: "Urbanist, sans-serif",
               fontWeight: 'bold',
-              color: "#616161",
+              color: "black",
             }}
             onPress={() => alert("hi")}>{"Today"}</Text>
           <Text style={{
             fontSize: (height / 100) * 1.8,
-            fontFamily: "Urbanist_semibold",
+            fontFamily: "Urbanist, sans-serif",
             color: "#0F437B",
           }}>View All</Text>
         </View>
@@ -111,14 +111,14 @@ export default function NotificationScreen(props) {
           <Text
             style={{
               fontSize: (height / 100) * 2.2,
-              fontFamily: "Urbanist_semibold",
+              fontFamily: "Urbanist, sans-serif",
               fontWeight: 'bold',
-              color: "#616161",
+              color: "black",
             }}
             onPress={() => alert("hi")}>{"Older"}</Text>
           <Text style={{
             fontSize: (height / 100) * 1.8,
-            fontFamily: "Urbanist_semibold",
+            fontFamily: "Urbanist, sans-serif",
             color: "#0F437B",
           }}>View All</Text>
         </View>
@@ -181,7 +181,7 @@ export default function NotificationScreen(props) {
 
 const styles = StyleSheet.create({
   list_font: {
-    fontFamily: "Urbanist,sans-serif",
+    fontFamily: "Urbanist, sans-serif",
     color: "#616161",
     fontWeight: 'bold',
   }

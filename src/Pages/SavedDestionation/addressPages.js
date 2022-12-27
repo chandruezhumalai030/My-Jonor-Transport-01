@@ -1,11 +1,16 @@
-import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity } from "react-native"
+import React, { useState } from 'react';
+import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity,Dimensions } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../../assets/GetImage';
 import GetColors from '../../assets/GetColors';
 import Header from "../../Components/Header";
+import Lottie from 'lottie-react-native';
+import ReactModal from '../../Components/ReactModal';
+
 
 export default function Addresspage( props) {
+  const height = Dimensions.get("screen").height;
+  const [promoModal1, setPromoModal1] = useState(false)
     const navigation = useNavigation();
   return (
     <Header
@@ -136,13 +141,110 @@ export default function Addresspage( props) {
               </View>
             </View>
           </View>
-          <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Savedlocation")}>
+          <TouchableOpacity style={styles.Button} onPress={() => setPromoModal1(true)}>
         <Text style={styles.btnTxt}>Add</Text>
       </TouchableOpacity>
         </View>
       </View>
     </View>
     </ScrollView>
+    <ReactModal
+        container={{
+          backgroundColor: "rgba(0,0,0,0.7)",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        visible={promoModal1}
+      >
+        <View
+          style={{
+            backgroundColor: "#fff",
+            height: (height / 100) * 40,
+            width: "89%",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 10,
+          }}
+        >
+          <View
+            style={{
+              flex: 0.2,
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Text
+              style={{
+                fontSize: (height / 100) * 2.5,
+                fontFamily: "Urbanist, sans-serif",
+                color: "#000",
+              }}
+            >
+              {"Location Confimation"}
+            </Text>
+            <Text
+              style={{
+                fontSize: (height / 100) * 2,
+                fontFamily: "Urbanist, sans-serif",
+                color: "#616161",
+              }}
+            >
+              Are you currently on this new location right at this moment?
+            </Text>
+          </View>
+
+          <View style={{ flex: 0.2, top: height / 100 * 5,marginBottom:10 }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("SavedAddress")}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "#0F437B",
+                width: (height / 100) * 35,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+                marginBottom:10
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist, sans-serif",
+                  color: "#fff",
+                }}
+              >
+                {"Yes, Add Now"}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setPromoModal1(!promoModal1)}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "white",
+                borderColor:"#e0e0e0",
+                borderWidth: 1,
+                width: (height / 100) * 35,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+                marginBottom:5
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist, sans-serif",
+                  color: "gray",
+                }}
+              >
+                {"No, But Add Anyways"}
+              </Text>
+            </TouchableOpacity>
+            <View style={{ height: (height / 100) * 2 }}></View>
+
+          </View>
+        </View>
+      </ReactModal>
     </Header>
   )
 }

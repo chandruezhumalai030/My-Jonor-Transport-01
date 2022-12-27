@@ -6,7 +6,7 @@ import ReactModal from '../../Components/ReactModal';
 import GetImage from '../../assets/GetImage';
 import Lottie from 'lottie-react-native';
 
-export default function NotificationView(props) {
+export default function NotificationPayment(props) {
     const height = Dimensions.get("screen").height;
     const navigation = useNavigation();
 
@@ -18,22 +18,17 @@ export default function NotificationView(props) {
         <Header
             {...props}
             rightIcon={false}
-            title={"Special Offer & Promo"} >
-            <View style={{ flex: 0.3, marginTop:10,backgroundColor:'#fff'}}>
-
-
-                <Image style={styles.bg} source={require("../../assets/Profile/bg.png")} />
-            </View>
+            title={"Payment & Receipt"} >
             <View style={{ flex: 0.7 ,backgroundColor:'#fff'}}>
                 <ScrollView style={{ margin: 15, }}>
                     <Text style={[styles.font,{fontSize:height/100*2.5,paddingBottom:5}]
                         
 
-                    } >{"30% Special Discount!"}</Text>
+                    } >{"Top Up E-Wallet Successful!"}</Text>
                     <Text style={[styles.font,{fontSize:height/100*1.7,color: '#616161'}]
                         
 
-                    } >{"Special promotion only valid today"}</Text>
+                    } >{"You have topup up your e-wallet"}</Text>
 
 
 
@@ -58,7 +53,7 @@ export default function NotificationView(props) {
                 </ScrollView>
                 <View style={{ paddingBottom:5, justifyContent: 'center', alignItems: 'center', paddingTop: 0 }}>
                         <TouchableOpacity
-                            onPress={() => navigation.navigate("NotificationPayment")}
+                            onPress={() => navigation.navigate("NotificationGeneral")}
                             style={{
                                 height: (height / 100) * 7,
                                 backgroundColor: "#0F437B",
@@ -77,7 +72,7 @@ export default function NotificationView(props) {
                                     fontWeight: '600'
                                 }}
                             >
-                                {"Apply Promo"}
+                                {"View Receipt"}
                             </Text>
                         </TouchableOpacity>
                     </View>

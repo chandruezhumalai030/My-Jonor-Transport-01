@@ -31,7 +31,14 @@ export default function Profile(props) {
                                 <Text style={styles.Txt1}>Ahmad Fazri</Text>
                                 <Text style={styles.Txt2}>+60 11134667671</Text>
                             </View>
+                            <Image
+                                style={[styles.themeLightDividerIcon, styles.mt16]}
+                                resizeMode="cover"
+                                source={require("../assets/Profile/themelight-divider1.png")}
+                            />
                         </View>
+
+
                         <View style={styles.AutoLayoutVertical2}>
                             <Pressable style={styles.AutoLayoutHorizontal}
                                 onPress={() => navigation.navigate("Editprofile")}
@@ -195,8 +202,20 @@ const styles = StyleSheet.create({
         width: 130,
         height: 130,
         marginBottom: 14,
-        marginTop: 40
+        marginTop: 10
     },
+    themeLightDividerIcon: {
+        alignSelf: "stretch",
+        position: "relative",
+        maxWidth: "100%",
+        overflow: "hidden",
+        height: 1,
+        flexShrink: 0,
+      },
+      mt16: {
+        marginTop: 16,
+        marginBottom:10
+      },
     AutoLayoutVertical: {
         display: "flex",
         flexDirection: "column",
@@ -264,31 +283,33 @@ const styles = StyleSheet.create({
     Txt385: {
         fontSize: 18,
         fontFamily: "Urbanist, sans-serif",
-        fontWeight: "600",
+        fontWeight: "700",
         lineHeight: 28,
         letterSpacing: 0.2,
-        color: "rgba(33,33,33,1)",
+        color: "black",
         width: 305,
         marginRight: 16,
     },
     IconlyLightArrowRight2: {
         width: 10,
         height: 20,
+        marginRight:5
     },
     Txt2109: {
         fontSize: 18,
         fontFamily: "Urbanist, sans-serif",
-        fontWeight: "600",
+        fontWeight: "700",
         lineHeight: 28,
         letterSpacing: 0.2,
         color: "rgba(33,33,33,1)",
         width: 145,
         marginRight: 16,
+        bold :5
     },
     Txt241: {
         fontSize: 18,
         fontFamily: "Urbanist, sans-serif",
-        fontWeight: "600",
+        fontWeight: "700",
         lineHeight: 25,
         letterSpacing: 0.2,
         color: "rgba(0,43,127,1)",

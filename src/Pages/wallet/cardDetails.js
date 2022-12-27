@@ -61,9 +61,9 @@ const cardDetails = (props) => {
     },
   ];
 const _trigger=()=>{
-  Alert.alert("Card added successfully...")
+  // Alert.alert("Card added successfully...")
   setTimeout(()=>{
-    navigation.navigate("Home",{data:true,para:''})
+    navigation.navigate("TopupScreen")
   },2000)
 }
   return (
@@ -92,7 +92,7 @@ const _trigger=()=>{
                 source={require("../../assets/icons/debit.png")}
               ></Image>
             </View>
-          <View style={{height:height/100*5}}></View>
+          <View style={{height:height/100*2}}></View>
          
             <View >
               <Text

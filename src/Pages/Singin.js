@@ -1,78 +1,90 @@
-import React from "react"
+import React, {useRef} from 'react';
 import { StyleSheet, Image, Text, View, TextInput, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
-export default function SignIn_01() {
+import Header from "../Components/Header";
+
+
+export default function SignIn_01(props) {
+    const inputRef = useRef(null);
     const navigation = useNavigation();
+    
     return (
-        <View style={styles.container}>
-            <View style={styles.SignIn_01}>
-                <View style={styles.Group636}>
-                    <View style={styles.AutoLayoutVertical2}>
-                        <Image
-                            style={styles.Frame}
-                            source={require('../assets/Profile/singup.png')}
-                        />
-                        <Text style={styles.Txt804}>Welcome Back</Text>
-                        <View style={styles.AutoLayoutVertical1}>
-                            <View style={styles.AutoLayoutVertical}>
-                                <View style={styles.SignSignUpInput}>
-                                    <View style={styles.Text_field}>
-                                        <View style={styles.Content1}>
-                                            <View style={styles.Input}>
-                                                <View style={styles.Content}>
-                                                    <Image
-                                                        style={styles.IconlyBoldMessage}
-                                                        source={require('../assets/Profile/email.png')}
-                                                    />
-                                                    <TextInput style={styles.Txt543}
-                                                        underlineColorAndroid="transparent"
-                                                        placeholder="Email"
-                                                        autoCapitalize="none"
-                                                        placeholderTextColor="gray" />
+        <Header
+            {...props}
+            rightIcon={false}
+            // isBackground={true}
+            title={""}
+        >
+            <View style={styles.container}>
+                <View style={styles.SignIn_01}>
+                    <View style={styles.Group636}>
+                        <View style={styles.AutoLayoutVertical2}>
+                            <Image
+                                style={styles.Frame}
+                                source={require('../assets/Profile/singup.png')}
+                            />
+                            <Text style={styles.Txt804}>Welcome Back</Text>
+                            <View style={styles.AutoLayoutVertical1}>
+                                <View style={styles.AutoLayoutVertical}>
+                                    <View style={styles.SignSignUpInput}>
+                                        <View style={styles.Text_field}>
+                                            <View style={styles.Content1}>
+                                                <View style={styles.Input}>
+                                                    <View style={styles.Content}>
+                                                        <Image
+                                                            style={styles.IconlyBoldMessage}
+                                                            source={require('../assets/Profile/email.png')}
+                                                        />
+                                                        <TextInput style={styles.Txt543}
+                                                            underlineColorAndroid="transparent"
+                                                            placeholder="Email"
+                                                            autoCapitalize="none"
+                                                            placeholderTextColor="gray" />
+                                                    </View>
                                                 </View>
                                             </View>
                                         </View>
-                                    </View>
-                                    {/* <View style={styles.Content1}> */}
-                                    {/* <View style={styles.Content1}> */}
-                                    <View style={styles.Input}>
-                                        <View style={styles.Content2}>
+                                        {/* <View style={styles.Content1}> */}
+                                        {/* <View style={styles.Content1}> */}
+                                        <View style={styles.Input}>
+                                            <View style={styles.Content2}>
+                                                <Image
+                                                    style={styles.IconlyBoldMessage}
+                                                    source={require('../assets/Profile/password.png')}
+                                                />
+                                                <TextInput style={styles.Txt6104}
+                                                    underlineColorAndroid="transparent"
+                                                    placeholder="Password"
+                                                    autoCapitalize="none"
+                                                    placeholderTextColor="gray"
+                                                     />
+                                            </View>
                                             <Image
-                                                style={styles.IconlyBoldMessage}
-                                                source={require('../assets/Profile/password.png')}
+                                                style={styles.IconlyLightHide}
+                                                source={require('../assets/Profile/show.png')}
                                             />
-                                            <TextInput style={styles.Txt6104}
-                                                underlineColorAndroid="transparent"
-                                                placeholder="Password"
-                                                autoCapitalize="none"
-                                                placeholderTextColor="gray" />
                                         </View>
-                                        <Image
-                                            style={styles.IconlyLightHide}
-                                            source={require('../assets/Profile/show.png')}
-                                        />
+                                        {/* </View> */}
+                                        {/* </View> */}
                                     </View>
-                                    {/* </View> */}
-                                    {/* </View> */}
-                                </View>
-                                <View style={styles.ReminderForgetPassword}>
-                                    <View
-                                        style={
-                                            styles.StyleTextThemeLightStateUncheckedComponentCheckbox
-                                        }
-                                    >
-                                        <View style={styles.Rectangle} />
-                                        <Text style={styles.Txt446}>Remember me</Text>
+                                    <View style={styles.ReminderForgetPassword}>
+                                        <View
+                                            style={
+                                                styles.StyleTextThemeLightStateUncheckedComponentCheckbox
+                                            }
+                                        >
+                                            <View style={styles.Rectangle} />
+                                            <Text style={styles.Txt446}>Remember me</Text>
+                                        </View>
+                                        <TouchableOpacity
+                                            onPress={() => navigation.navigate("ForgetPassword")}
+                                        >
+                                            <Text style={styles.Txt454}>Forgot password?</Text>
+                                        </TouchableOpacity>
                                     </View>
-                                    <TouchableOpacity
-                                        onPress={() => navigation.navigate("ForgetPassword")}
-                                    >
-                                        <Text style={styles.Txt454}>Forgot password?</Text>
-                                    </TouchableOpacity>
-                                </View>
-                                {/* <View style={styles.Button}>
+                                    {/* <View style={styles.Button}>
                                 <View style={styles._buttonBasePrimary}>
                                     <TouchableOpacity
                                         onPress={() => navigation.navigate("Home")}
@@ -81,23 +93,24 @@ export default function SignIn_01() {
                                     </TouchableOpacity>
                                 </View>
                             </View> */}
-                                <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Home", { data: true, para: '' })}>
-                                    <Text style={styles.btnTxt}>Sign In</Text>
+                                    <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Home", { data: true, para: '' })}>
+                                        <Text style={styles.btnTxt}>Sign In</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+                            <View style={styles.AutoLayoutHorizontal}>
+                                <Text style={styles.Txt274}>Doesn’t have an account yet?</Text>
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate("Singup")}
+                                >
+                                    <Text style={styles.Txt862}>Sign Up</Text>
                                 </TouchableOpacity>
                             </View>
-                        </View>
-                        <View style={styles.AutoLayoutHorizontal}>
-                            <Text style={styles.Txt274}>Doesn’t have an account yet?</Text>
-                            <TouchableOpacity
-                                onPress={() => navigation.navigate("Singup")}
-                            >
-                                <Text style={styles.Txt862}>Sign Up</Text>
-                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
             </View>
-        </View>
+        </Header>
     )
 }
 
@@ -177,8 +190,8 @@ const styles = StyleSheet.create({
         lineHeight: 58,
         color: "rgba(33,33,33,1)",
         width: 381,
-        marginTop:50,
-        marginBottom:50,
+        marginTop: 50,
+        marginBottom: 50,
     },
     AutoLayoutVertical1: {
         display: "flex",
@@ -221,15 +234,15 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingTop: 0,
         paddingBottom: 0,
-        paddingLeft: 19.5,
-        paddingRight: 19.5,
+        paddingLeft: 18.5,
+        paddingRight: 18.5,
         borderRadius: 12,
         backgroundColor: "rgba(255, 255, 255, 1)",
-        borderWidth: 2,
+        borderWidth: 1,
         borderStyle: "solid",
         borderColor: "gray",
-        width: 380,
-        height: 56,
+        // width: 380,
+        // height: 56,
     },
     Content: {
         display: "flex",
@@ -268,7 +281,7 @@ const styles = StyleSheet.create({
         paddingLeft: 0,
         paddingRight: 0,
         marginRight: 12,
-        width: 308,
+        // width: 308,
     },
     IconlyBoldMessage: {
         width: 20,
@@ -281,7 +294,7 @@ const styles = StyleSheet.create({
         fontWeight: "400",
         lineHeight: 22,
         letterSpacing: 0.2,
-        color: "gray",
+        color: "black",
         width: 277,
     },
 
@@ -297,7 +310,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginBottom: 20,
         width: 380,
-        marginTop:50
+        marginTop: 50
     },
     StyleTextThemeLightStateUncheckedComponentCheckbox: {
         display: "flex",

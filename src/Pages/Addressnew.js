@@ -1,11 +1,15 @@
-import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity } from "react-native"
+import React, { useState } from 'react';
+import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity,Pressable,Dimensions } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
 import Header from "../Components/Header";
+import Lottie from 'lottie-react-native';
+import ReactModal from '../Components/ReactModal';
 
 export default function Addressnew( props) {
+  const height = Dimensions.get("screen").height;
+  const [promoModal, setPromoModal] = useState(false)
     const navigation = useNavigation();
   return (
     <Header
@@ -51,10 +55,12 @@ export default function Addressnew( props) {
                         placeholder = "Malaysia"
                         autoCapitalize = "none"
                         placeholderTextColor = "gray"/>
+                        <Pressable onPress={() => navigation.navigate("Addresssuccess")}>
                         <Image
                           style={styles.Dropdown}
                           source={require('../assets/Profile/down.png')}
                         />
+                        </Pressable>
                       </View>
                     </View>
                   </View>
@@ -71,10 +77,12 @@ export default function Addressnew( props) {
                         placeholder = "5600"
                         autoCapitalize = "none"
                         placeholderTextColor = "gray"/>
+                        <Pressable onPress={() => navigation.navigate("Addresssuccess")}>
                         <Image
                           style={styles.Dropdown}
                           source={require('../assets/Profile/down.png')}
                         />
+                        </Pressable>
                       </View>
                     </View>
                   </View>
@@ -136,13 +144,98 @@ export default function Addressnew( props) {
               </View>
             </View>
           </View>
-          <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addresssuccess")}>
+          <TouchableOpacity style={styles.Button}
+          onPress={() => setPromoModal(true)}
+          >
         <Text style={styles.btnTxt}>Add new</Text>
       </TouchableOpacity>
         </View>
       </View>
     </View>
     </ScrollView>
+    <ReactModal
+        container={{
+          backgroundColor: "rgba(0,0,0,0.7)",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        visible={promoModal}
+      >
+        <View
+          style={{
+            backgroundColor: "#fff",
+            height: (height / 100) * 45,
+            width: "89%",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 10,
+          }}
+        >
+          <View style={{ flex: 0.4, }}>
+            {/* <Image
+              source={GetImage.promoSuccess}
+              style={{
+                height: (height / 100) * 18,
+                width: (height / 100) * 18,
+                resizeMode: "contain",
+              }}
+            /> */}
+            <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../assets/Animation/lf20_s2lryxtd.json")} autoPlay />
+          </View>
+          <View
+            style={{
+              flex: 0.2,
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Text
+              style={{
+                fontSize: (height / 100) * 2.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#000",
+              }}
+            >
+              {"Succesfully Update"}
+            </Text>
+            <Text
+              style={{
+                fontSize: (height / 100) * 1.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#616161",
+              }}
+            >
+              Your profile has been updated
+            </Text>
+          </View>
+
+          <View style={{ flex: 0.2, top: height / 100 * 5 }}>
+            <TouchableOpacity
+               onPress={() => navigation.navigate("Successaddress")}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "#0F437B",
+                width: (height / 100) * 35,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist_semibold",
+                  color: "#fff",
+                }}
+              >
+                {"Okay"}
+              </Text>
+            </TouchableOpacity>
+            <View style={{ height: (height / 100) * 2 }}></View>
+
+          </View>
+        </View>
+      </ReactModal>
     </Header>
   )
 }
@@ -245,7 +338,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderStyle: "solid",
     borderColor: "rgba(15,67,123,1",
-    width: 380,
+    width: 370,
     height: 56,
   },
   Content1: {

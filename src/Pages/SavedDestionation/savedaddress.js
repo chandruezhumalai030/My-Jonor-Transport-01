@@ -1,12 +1,17 @@
-import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity,Button } from "react-native"
+import React, { useState } from 'react';
+import { StyleSheet, Image, Text, View, ScrollView,TextInput,Dimensions,TouchableOpacity,Button } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../../assets/GetImage';
 import GetColors from '../../assets/GetColors';
 import Header from "../../Components/Header";
 import { white } from "react-native-paper/lib/typescript/styles/colors";
+import Lottie from 'lottie-react-native';
+import ReactModal from '../../Components/ReactModal';
 
 export default function SavedAddress( props) {
+  const height = Dimensions.get("screen").height;
+  const [promoModal, setPromoModal] = useState(false)
+  const [promoModal1, setPromoModal1] = useState(false)
     const navigation = useNavigation();
   return (
     <Header
@@ -150,10 +155,10 @@ export default function SavedAddress( props) {
           title="Save"
           onPress={() => navigation.navigate("Success1")}
         /> */}
-        <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("SavedDelete")}>
+        <TouchableOpacity style={styles.Button} onPress={() => setPromoModal1(true)}>
         <Text style={styles.btnTxt}>Delete</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Button1} onPress={() => navigation.navigate("Success1")}>
+      <TouchableOpacity style={styles.Button1} onPress={() => setPromoModal(true)}>
         <Text style={styles.btnTxt1}>Save</Text>
       </TouchableOpacity>
       </View>
@@ -161,6 +166,198 @@ export default function SavedAddress( props) {
       </View>
     </View>
     </ScrollView>
+    <ReactModal
+        container={{
+          backgroundColor: "rgba(0,0,0,0.7)",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        visible={promoModal}
+      >
+        <View
+          style={{
+            backgroundColor: "#fff",
+            height: (height / 100) * 45,
+            width: "89%",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 10,
+          }}
+        >
+          <View style={{ flex: 0.4, }}>
+            {/* <Image
+              source={GetImage.promoSuccess}
+              style={{
+                height: (height / 100) * 18,
+                width: (height / 100) * 18,
+                resizeMode: "contain",
+              }}
+            /> */}
+            <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../../assets/Animation/lf20_s2lryxtd.json")} autoPlay />
+          </View>
+          <View
+            style={{
+              flex: 0.2,
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Text
+              style={{
+                fontSize: (height / 100) * 2.5,
+                fontFamily: "Urbanist, sans-serif",
+                color: "#000",
+              }}
+            >
+              {"Succesfully Update"}
+            </Text>
+            <Text
+              style={{
+                fontSize: (height / 100) * 1.5,
+                fontFamily: "Urbanist, sans-serif",
+                color: "#616161",
+              }}
+            >
+              Your profile has been updated
+            </Text>
+          </View>
+
+          <View style={{ flex: 0.2, top: height / 100 * 5 }}>
+            <TouchableOpacity
+              onPress={() => setPromoModal(!promoModal)}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "#0F437B",
+                width: (height / 100) * 35,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist, sans-serif",
+                  color: "#fff",
+                }}
+              >
+                {"Okay"}
+              </Text>
+            </TouchableOpacity>
+            <View style={{ height: (height / 100) * 2 }}></View>
+
+          </View>
+        </View>
+      </ReactModal>
+      <ReactModal
+        container={{
+          backgroundColor: "rgba(0,0,0,0.7)",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        visible={promoModal1}
+      >
+        <View
+          style={{
+            backgroundColor: "#fff",
+            height: (height / 100) * 60,
+            width: "95%",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 10,
+          }}
+        >
+          <View style={{ flex: 0.4, }}>
+            <Image
+              source={GetImage.promoDelete}
+              style={{
+                height: (height / 100) * 18,
+                width: (height / 100) * 18,
+                resizeMode: "contain",
+              }}
+            />
+            {/* <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../../assets/SavedDestionation/-feature-pop-up-icon6.png")} autoPlay /> */}
+          </View>
+          <View
+            style={{
+              flex: 0.2,
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Text
+              style={{
+                fontSize: (height / 100) * 2.5,
+                fontFamily: "Urbanist, sans-serif",
+                color: "#000",
+              }}
+            >
+              {"Are you sure?"}
+            </Text>
+            <Text
+              style={{
+                fontSize: (height / 100) * 2,
+                fontFamily: "Urbanist, sans-serif",
+                color: "#616161",
+              }}
+            >
+              Removing this means you won’t be able to see saved data ever
+              again
+            </Text>
+          </View>
+
+          <View style={{ flex: 0.2, top: height / 100 * 5,marginBottom:10 }}>
+            <TouchableOpacity
+              onPress={() => setPromoModal1(!promoModal1)}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "#f75555",
+                width: (height / 100) * 35,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+                marginBottom:10
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist, sans-serif",
+                  color: "#fff",
+                }}
+              >
+                {"Delete"}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setPromoModal1(!promoModal1)}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "white",
+                borderColor:"#e0e0e0",
+                borderWidth: 1,
+                width: (height / 100) * 35,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+                marginBottom:5
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist, sans-serif",
+                  color: "gray",
+                }}
+              >
+                {"Cancel"}
+              </Text>
+            </TouchableOpacity>
+            <View style={{ height: (height / 100) * 2 }}></View>
+
+          </View>
+        </View>
+      </ReactModal>
     </Header>
   )
 }

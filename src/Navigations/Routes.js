@@ -17,10 +17,13 @@ import PrivacyPolicy from '../Pages/Privacypolicy';
 import EditProfile from '../Pages/Editprofile';
 import EditProfile1 from '../Pages/EditProfile1';
 import Editsuccess from '../Pages/Editsuccess';
+
 import Helpcenter from '../Pages/Helpcenter';
 import Fqa from '../Pages/FQA';
 import Contact from '../Pages/Contact';
 import Report from '../Pages/Report';
+import General from '../Pages/Helpcenter/General';
+
 import Address from '../Pages/Address';
 import Addressnew from '../Pages/Addressnew';
 import Addresssuccess from '../Pages/Addresssuccess';
@@ -51,8 +54,12 @@ import addnewcard from '../Pages/wallet/addnewcard';
 import cardDetails from '../Pages/wallet/cardDetails';
 import EReceipt from '../Pages/wallet/EReceipt';
 import TopupScreen from '../Pages/wallet/TopupScreen';
+
 import NotificationScreen from '../Pages/Notification/NotificationScreen';
 import NotificationView from '../Pages/Notification/NotificationView';
+import NotificationPayment from '../Pages/Notification/NotificationPayment';
+import NotificationGeneral from '../Pages/Notification/NotificationGeneral';
+
 import ScanQR from '../Pages/QR/ScanQR';
 import routerlist from '../Pages/QR/routerlist';
 import list from '../Pages/Trips/list';
@@ -182,10 +189,12 @@ function Routes() {
         <Stack.Screen
           name="Singup"
           component={Singup}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Singin"
           component={Singin}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Invite"
@@ -268,6 +277,16 @@ function Routes() {
         <Stack.Screen
           name="NotificationView"
           component={NotificationView}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="NotificationPayment"
+          component={NotificationPayment}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="NotificationGeneral"
+          component={NotificationGeneral}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -367,6 +386,10 @@ function Routes() {
           name="Successaddress"
           component={Successaddress}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="General"
+          component={General}
         />
 
 

@@ -76,6 +76,7 @@ const Ewallet = (props) => {
             marginHorizontal: 15,
             height: 220,
             backgroundColor: "#071959",
+            marginTop:10
           }}
         >
           <ImageBackground source={GetImage.cardbg} style={{ flex: 1 }}>
@@ -117,7 +118,7 @@ const Ewallet = (props) => {
                     {"Your Balance"}
                   </Text>
                   <Text
-                    style={[styles.subText, { fontSize: 30, color: "#fff" ,fontWeight:'bold'}]}
+                    style={[styles.subText, { fontSize: 45, color: "#fff" ,fontWeight:'bold'}]}
                   >
                     {"$957,5"}
                   </Text>
@@ -129,9 +130,9 @@ const Ewallet = (props) => {
                       flexDirection: "row",
                       justifyContent: "center",
                       alignItems: "center",
-                      padding: 8,
+                      padding: 10,
                       borderRadius: 20,
-                      paddingHorizontal: 20,
+                      paddingHorizontal: 25,
                     }}
                   >
                     <Image
@@ -216,7 +217,7 @@ const styles = StyleSheet.create({
     color: "#000",
   },
   subText: {
-    fontSize: 14,
+    fontSize: 18,
     fontFamily: "  Urbanist_regular",
     color: "#616161",
   },
