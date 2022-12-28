@@ -7,7 +7,7 @@ import Helper from '../Components/utils/Helper';
 export default function Intro3({navigation}) {
   const goNext = () => {
     Helper.setData('userdata', 'VivekaJee');
-    navigation.navigate('BottomTab');
+    navigation.navigate('SignIn');
   };
   return (
     <View style={styles.Container}>

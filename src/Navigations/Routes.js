@@ -27,8 +27,8 @@ import General from '../Pages/Helpcenter/General';
 import Address from '../Pages/Address';
 import Addressnew from '../Pages/Addressnew';
 import Addresssuccess from '../Pages/Addresssuccess';
-import Singup from '../Pages/Singup';
-import Singin from '../Pages/Singin';
+import SingUp from '../Pages/SingUp';
+import SingIn from '../Pages/SingIn';
 import Invite from '../Pages/Invite';
 import FirstTimeRegister from '../Pages/FirstTimeReg';
 import ForgetPassword from '../Pages/ForgetReset';
@@ -88,6 +88,11 @@ function Routes() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="SingIn"
+          component={SingIn}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="Intro1"
           component={Intro1}
           options={{ headerShown: false }}
@@ -103,6 +108,11 @@ function Routes() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="SingUp"
+          component={SingUp}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="BottomTab"
           component={BottomTab}
           options={{ headerShown: false }}
@@ -112,14 +122,8 @@ function Routes() {
           component={Profile}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="Home"
-          component={Home}
-        />
-        <Stack.Screen
-          name="Notification"
-          component={Notification}
-        />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Notification" component={Notification} />
         <Stack.Screen
           name="PrivacyPolicy"
           component={PrivacyPolicy}
@@ -140,10 +144,7 @@ function Routes() {
           component={Editsuccess}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="Helpcenter"
-          component={Helpcenter}
-        />
+        <Stack.Screen name="Helpcenter" component={Helpcenter} />
         <Stack.Screen
           name="Helpcenter1"
           component={Fqa}
@@ -164,18 +165,9 @@ function Routes() {
           component={Address}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="Payment"
-          component={Payment}
-        />
-        <Stack.Screen
-          name="Security"
-          component={Security}
-        />
-        <Stack.Screen
-          name="Language"
-          component={Language}
-        />
+        <Stack.Screen name="Payment" component={Payment} />
+        <Stack.Screen name="Security" component={Security} />
+        <Stack.Screen name="Language" component={Language} />
         <Stack.Screen
           name="Addressnew"
           component={Addressnew}
@@ -186,29 +178,13 @@ function Routes() {
           component={Addresssuccess}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="Singup"
-          component={Singup}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Singin"
-          component={Singin}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Invite"
-          component={Invite}
-        />
+        <Stack.Screen name="Invite" component={Invite} />
         <Stack.Screen
           name="FirstTimeRegister"
           component={FirstTimeRegister}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="ForgetPassword"
-          component={ForgetPassword}
-        />
+        <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
         <Stack.Screen
           name="ForgetReset"
           component={ForgetReset}
@@ -310,7 +286,6 @@ function Routes() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-
           name="EReceipt"
           component={EReceipt}
           options={{ headerShown: false }}
@@ -387,12 +362,7 @@ function Routes() {
           component={Successaddress}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="General"
-          component={General}
-        />
-
-
+        <Stack.Screen name="General" component={General} />
       </Stack.Navigator>
       <FlashMessage position="top" />
     </NavigationContainer>

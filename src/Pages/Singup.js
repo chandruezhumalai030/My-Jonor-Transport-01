@@ -3,7 +3,7 @@ import { StyleSheet, Image, Text, View, TextInput, TouchableOpacity } from "reac
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
-export default function Singup() {
+export default function SingUp() {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
@@ -55,17 +55,7 @@ export default function Singup() {
                                         />
                                     </View>
                                 </View>
-                                {/* </View>
-                            </View> */}
-                                {/* <View style={styles.Button}>
-                                <View style={styles._buttonBasePrimary}>
-                                    <TouchableOpacity
-                                        onPress={() => navigation.navigate("Home")}
-                                    >
-                                        <Text>Sing up</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View> */}
+                                
                                 <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("FirstTimeRegister")}>
                                     <Text style={styles.btnTxt}>Sign up</Text>
                                 </TouchableOpacity>
@@ -74,7 +64,7 @@ export default function Singup() {
                         <View style={styles.AutoLayoutHorizontal}>
                             <Text style={styles.Txt8103}>Already have an account?</Text>
                             <TouchableOpacity
-                                onPress={() => navigation.navigate("Singin")}
+                                onPress={() => navigation.navigate("SingIn")}
                             >
                                 <Text style={styles.Txt901}>Sign in</Text>
                             </TouchableOpacity>
