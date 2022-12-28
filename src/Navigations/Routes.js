@@ -125,7 +125,9 @@ function Routes() {
           options={{ headerShown: false }}
         />
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Notification" component={Notification} />
+        <Stack.Screen name="Notification" 
+        component={Notification} 
+        options={{ headerShown: false }}/>
         <Stack.Screen
           name="PrivacyPolicy"
           component={PrivacyPolicy}

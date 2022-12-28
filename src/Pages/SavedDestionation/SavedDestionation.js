@@ -16,7 +16,7 @@ export default function SavedDestionation(props) {
       title={"Saved Destination"}
     >
       <Tab.Navigator screenOptions={{
-        tabBarLabelStyle: { textTransform: 'capitalize' },
+        tabBarLabelStyle: { textTransform: 'capitalize' },tabBarActiveTintColor: '#0F437B',
       }}>
         <Tab.Screen name="Home" component={HomeSaved} />
         <Tab.Screen name="Places" component={Places} />

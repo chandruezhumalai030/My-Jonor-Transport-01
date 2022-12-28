@@ -14,7 +14,7 @@ export default function Trips(props) {
       title={"Trip Planner"}
     >
       <Tab.Navigator screenOptions={{
-        tabBarLabelStyle: { textTransform: 'capitalize' },
+        tabBarLabelStyle: { textTransform: 'capitalize' },tabBarActiveTintColor: '#0F437B',
       }}>
         <Tab.Screen name="Favourite" component={Favourite} />
         <Tab.Screen name="Complete" component={Complete} />

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, StyleSheet, View, Pressable, Image } from "react-native";
+import { Text, StyleSheet, View, Pressable, Image,TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../Components/Header";
 
@@ -15,20 +15,22 @@ const Saved = (props) => {
         >
             <View style={styles.container}>
                 <View style={styles.savedDestination03View}>
-                    <Pressable
+                    {/* <Pressable
                         style={styles.buttonPressable}
                         onPress={() => navigation.navigate("Addresspage")}
                     >
                         <View style={styles.buttonBasePrimaryView}>
                             <Text style={styles.text}>Continue</Text>
                         </View>
-                    </Pressable>
+                    </Pressable> */}
                     <View style={styles.autoLayoutVertical4}>
                         <View style={styles.autoLayoutVertical3}>
                             <Text style={styles.selectWhereDoYouWantToSa}>
                                 Select where do you want to save the address of quicklink
                             </Text>
+                           
                             <View style={[styles.autoLayoutHorizontal3, styles.mt24]}>
+                            <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center',borderColor:'blue' }} onPress={() => navigation.navigate("Addresspage")}>
                                 <View style={styles.featureIconView1}>
                                     <View style={styles.featureIconView}>
                                         <View style={styles.autoLayoutHorizontal}>
@@ -44,8 +46,11 @@ const Saved = (props) => {
                                     <Text style={styles.saveAtText}>Save At</Text>
                                     <Text style={styles.homeText}>Home</Text>
                                 </View>
+                                </TouchableOpacity>
                             </View>
+                           
                             <View style={[styles.autoLayoutHorizontal3, styles.mt24]}>
+                            <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center',borderColor:'blue' }} onPress={() => navigation.navigate("Addresspage")}>
                                 <View style={styles.featureIconView3}>
                                     <View style={styles.featureIconView2}>
                                         <View style={styles.autoLayoutHorizontal2}>
@@ -61,8 +66,10 @@ const Saved = (props) => {
                                     <Text style={styles.saveAtText1}>Save At</Text>
                                     <Text style={styles.placesText}>Places</Text>
                                 </View>
+                                </TouchableOpacity>
                             </View>
                             <View style={[styles.autoLayoutHorizontal5, styles.mt24]}>
+                            <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center',borderColor:'blue' }} onPress={() => navigation.navigate("Addresspage")}>
                                 <View style={styles.featureIconView5}>
                                     <View style={styles.featureIconView4}>
                                         <View style={styles.autoLayoutHorizontal4}>
@@ -78,6 +85,7 @@ const Saved = (props) => {
                                     <Text style={styles.saveAtText2}>Save At</Text>
                                     <Text style={styles.workText}>Work</Text>
                                 </View>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>

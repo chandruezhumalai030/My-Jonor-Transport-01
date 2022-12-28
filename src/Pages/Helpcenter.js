@@ -8,7 +8,7 @@ const Tab = createMaterialTopTabNavigator();
 export default function Helpcenter() {
   return (
     <Tab.Navigator screenOptions={{
-      tabBarLabelStyle: { textTransform: 'capitalize' },
+      tabBarLabelStyle: { textTransform: 'capitalize' },tabBarActiveTintColor: '#0F437B'
     }}>
       <Tab.Screen name="FQA" component={FQA} />
       <Tab.Screen name="Contact" component={Contact} />
