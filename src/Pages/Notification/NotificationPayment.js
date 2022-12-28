@@ -51,11 +51,11 @@ export default function NotificationPayment(props) {
                   
 
                 </ScrollView>
-                <View style={{ paddingBottom:5, justifyContent: 'center', alignItems: 'center', paddingTop: 0 }}>
+                <View style={{ paddingBottom:5, justifyContent: 'center', alignItems: 'center', paddingTop: 5 }}>
                         <TouchableOpacity
                             onPress={() => navigation.navigate("NotificationGeneral")}
                             style={{
-                                height: (height / 100) * 7,
+                                height: (height / 100) * 6,
                                 backgroundColor: "#0F437B",
                                 width: (height / 100) * 40,
                                 justifyContent: "center",
