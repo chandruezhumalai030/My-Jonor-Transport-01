@@ -12,7 +12,7 @@ export default function SignIn(props) {
     const [email, setEmail] = useState("");
     const [emailValidError, setEmailValidError] = useState("");
     
-    const [password, setPasswordl] = useState("");
+    const [password, setPassword] = useState("");
     const [passwordValidError, setPasswordValidError] = useState("");
 
     const handleValidEmail = (val) => {
@@ -134,7 +134,7 @@ export default function SignIn(props) {
                     <TouchableOpacity
                       style={styles.Button}
                       onPress={() =>
-                        navigation.navigate("Home", { data: true, para: "" })
+                        navigation.navigate("FirstTimeRegister")
                       }
                     >
                       <Text style={styles.btnTxt}>Sign In</Text>

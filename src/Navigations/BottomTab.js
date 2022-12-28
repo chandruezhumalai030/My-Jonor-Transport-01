@@ -40,7 +40,7 @@ const RenderTabIcon = (Props) => {
               },
         ]}
       />
-      <Text style={{ color: isFocused ? "#1A96F0" : "#6A6A6A", fontSize: 10 }}>
+      <Text style={{ color: isFocused ? "#0F437B" : "#6A6A6A", fontSize: 10 }}>
         {title}
       </Text>
     </View>
@@ -67,11 +67,11 @@ function BottomTab() {
             return (
               <RenderTabIcon
                 isFocused={focused}
-                width={20}
-                height={20}
+                width={25}
+                height={25}
                 activeIcon={GetImage.homeIcon}
                 inactiveIcon={GetImage.homeLightIcon}
-                tint={"#1A96F0"}
+                tint={"#0F437B"}
                 title="Home"
               />
             );
@@ -89,11 +89,11 @@ function BottomTab() {
             return (
               <RenderTabIcon
                 isFocused={focused}
-                width={20}
-                height={20}
+                width={25}
+                height={25}
                 activeIcon={GetImage.documentIcon}
                 inactiveIcon={GetImage.documentLightIcon}
-                tint={"#1A96F0"}
+                tint={"#0F437B"}
                 title="Trip"
               />
             );
@@ -109,12 +109,12 @@ function BottomTab() {
           tabBarIcon: ({ focused }) => {
             return (
               <RenderTabIcon
-                width={20}
-                height={20}
+                width={25}
+                height={25}
                 isFocused={focused}
                 activeIcon={GetImage.scanIcon}
                 inactiveIcon={GetImage.scanLightIcon}
-                tint={"#1A96F0"}
+                tint={"#0F437B"}
                 title="Scan"
               />
             );
@@ -131,11 +131,11 @@ function BottomTab() {
             return (
               <RenderTabIcon
                 isFocused={focused}
-                width={20}
-                height={20}
+                width={25}
+                height={25}
                 activeIcon={GetImage.profileIcon}
                 inactiveIcon={GetImage.profileLightIcon}
-                tint={"#1A96F0"}
+                tint={"#0F437B"}
                 title="Profile"
               />
             );

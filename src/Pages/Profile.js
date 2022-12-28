@@ -153,7 +153,7 @@ export default function Profile(props) {
                                 />
                             </Pressable>
                             <Pressable style={styles.AutoLayoutHorizontal1}
-                                onPress={() => navigation.navigate("Singin")}>
+                                onPress={() => navigation.navigate("SingIn")}>
                                 {/* onPress={logOut}> */}
                                 <Image
                                     style={styles.IconlyLightOutlineProfile}

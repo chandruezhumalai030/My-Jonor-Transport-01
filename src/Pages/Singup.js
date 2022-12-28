@@ -1,10 +1,35 @@
-import React from "react"
+import React, { useRef, useState } from 'react';
 import { StyleSheet, Image, Text, View, TextInput, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
 export default function SingUp() {
     const navigation = useNavigation();
+    const inputRef = useRef(null);
+
+    const [email, setEmail] = useState("");
+    const [emailValidError, setEmailValidError] = useState("");
+
+    const [password, setPassword] = useState("");
+    const [passwordValidError, setPasswordValidError] = useState("");
+
+    const handleValidEmail = (val) => {
+        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+        if (val.length === 0) {
+            setEmailValidError("email address must be enter");
+        } else if (reg.test(val) === false) {
+            setEmailValidError("enter valid email address");
+        } else if (reg.test(val) === true) {
+            setEmailValidError("");
+        }
+    };
+
+    const handleValidPassword = (val) => {
+        if (val.length === 0) {
+            setPasswordValidError("Password must be enter");
+        }
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.Register_01}>
@@ -30,7 +55,12 @@ export default function SingUp() {
                                                     underlineColorAndroid="transparent"
                                                     placeholder="Email"
                                                     autoCapitalize="none"
-                                                    placeholderTextColor="gray" />
+                                                    placeholderTextColor="gray"
+                                                    value={email}
+                                                    onChangeText={(value) => {
+                                                        setEmail(value);
+                                                        handleValidEmail(value);
+                                                    }} />
                                             </View>
                                         </View>
                                         {/* </View> */}
@@ -47,7 +77,13 @@ export default function SingUp() {
                                                 underlineColorAndroid="transparent"
                                                 placeholder="Password"
                                                 autoCapitalize="none"
-                                                placeholderTextColor="gray" />
+                                                placeholderTextColor="gray"
+                                                value={password}
+                                                onChangeText={(value) => {
+                                                    setPassword(value);
+                                                    handleValidPassword(value);
+                                                }}
+                                            />
                                         </View>
                                         <Image
                                             style={styles.IconlyLightHide}
@@ -55,7 +91,7 @@ export default function SingUp() {
                                         />
                                     </View>
                                 </View>
-                                
+
                                 <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("FirstTimeRegister")}>
                                     <Text style={styles.btnTxt}>Sign up</Text>
                                 </TouchableOpacity>
@@ -151,8 +187,8 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         lineHeight: 58,
         color: "rgba(33,33,33,1)",
-        marginTop:50,
-        marginBottom:50,
+        marginTop: 50,
+        marginBottom: 50,
         width: 381,
     },
     AutoLayoutVertical1: {
@@ -291,7 +327,7 @@ const styles = StyleSheet.create({
         borderColor: GetColors.PrimaryBlue_500,
         width: '80%',
         marginHorizontal: '10%',
-        marginTop:50
+        marginTop: 50
     },
     btnTxt: {
         fontSize: 18,

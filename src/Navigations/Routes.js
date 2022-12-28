@@ -27,8 +27,10 @@ import General from '../Pages/Helpcenter/General';
 import Address from '../Pages/Address';
 import Addressnew from '../Pages/Addressnew';
 import Addresssuccess from '../Pages/Addresssuccess';
-import SingUp from '../Pages/SingUp';
-import SingIn from '../Pages/SingIn';
+
+import SingUp from '../Pages/Singup';
+import SingIn from '../Pages/Singin';
+
 import Invite from '../Pages/Invite';
 import FirstTimeRegister from '../Pages/FirstTimeReg';
 import ForgetPassword from '../Pages/ForgetReset';

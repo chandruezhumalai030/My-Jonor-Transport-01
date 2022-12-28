@@ -19,7 +19,7 @@ export default function SplashScreen({navigation}) {
       if (!userdata) {
         navigation.navigate("Intro1");
       } else {
-        navigation.navigate("SingIn");
+        navigation.navigate("BottomTab");
       }
     });
   };

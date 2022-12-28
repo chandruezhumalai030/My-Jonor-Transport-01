@@ -116,11 +116,11 @@ const HomeAction = (props) => {
             </TouchableOpacity>
           ))}
         </ScrollView>
-        <FileList
+        {/* <FileList
           data={dataList}
           keyExtractor={(e, i) => i.toString()}
           renderItem={renderItem}
-        />
+        /> */}
       </SafeAreaView>
     </Header>
   );
