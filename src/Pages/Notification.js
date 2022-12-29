@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 import ToggleSwitch from "toggle-switch-react-native";
@@ -7,7 +7,8 @@ const url0 = require("");
 const url1 = require("../assets/Notification/sound.png");
 const url2 = require("../assets/Notification/sound1.png");
 
-export default function Notification({ navigation }) {
+const Notification = () => {
+  
   const [state, setState] = useState({
     isOnBlueToggleSwitch: false,
     isOnBlueToggleSwitch1: false,
@@ -20,7 +21,7 @@ export default function Notification({ navigation }) {
     console.log("Changed to " + isOn);
   };
 
-const generalMode = (mode) => {
+  const generalMode = (mode) => {
     if (mode == 0) {
       generalUrl = url1;
       generalModeVal.setState(1);
@@ -32,7 +33,7 @@ const generalMode = (mode) => {
       generalModeVal.setState(0);
     }
   };
-    return (
+  return (
     <View style={styles.container}>
       <View style={styles.Notification}>
         <View style={styles.Group0}>
@@ -90,9 +91,8 @@ const generalMode = (mode) => {
         </View>
       </View>
     </View>
-    );
-  }
-
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -198,3 +198,5 @@ const styles = StyleSheet.create({
     width: 380,
   },
 });
+
+export default Notification;
