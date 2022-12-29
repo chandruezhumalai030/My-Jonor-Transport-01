@@ -3,7 +3,8 @@ import { View, Image, Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../Pages/Home";
 import Trip from "../Pages/Trips/Trips";
-import Scan from "../Pages/Scan";
+import ScanQR from "../Pages/QR/ScanQR";
+// import Scan from "../Pages/Scan";
 import Profile from "../Pages/Profile";
 import GetImage from "../assets/GetImage";
 
@@ -101,8 +102,8 @@ function BottomTab() {
         }}
       />
       <Tab.Screen
-        name="Scan"
-        component={Scan}
+        name="ScanQR"
+        component={ScanQR}
         options={{
           tabBarLabel: "",
           headerShown: false,

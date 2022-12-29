@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 const ForgetPassword = () => {
   const navigation = useNavigation();
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
     <View style={styles.forgetResetPassword}>
       <View style={styles.autoLayoutVertical3}>
         <Image
@@ -73,6 +73,10 @@ const ForgetPassword = () => {
 const styles = StyleSheet.create({
   ml20: {
     marginLeft: 20,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
   },
   mt24: {
     marginTop: 24,
@@ -311,6 +315,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 926,
     overflow: "hidden",
+    marginTop:15,
   },
 });
 

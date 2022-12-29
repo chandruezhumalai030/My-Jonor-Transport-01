@@ -21,7 +21,7 @@ function PromoImg(props) {
    <View style={{flex:1,backgroundColor:'#FFFFFF'}}>
     <TouchableOpacity  
     onPress={ ()=>{ Linking.openURL('https://google.com')}}
-    style={{flex:0.1,justifyContent:"center",alignItems:'center',paddingTop:5}} >
+    style={{flex:0.1,justifyContent:"center",alignItems:'center',paddingTop:0}} >
           <Image
             source={props.img}
             style={{ height: height/100*22, width: width/100*90, resizeMode: "contain" ,}}
