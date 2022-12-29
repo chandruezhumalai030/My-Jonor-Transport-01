@@ -183,7 +183,7 @@ const Home = (props) => {
           provider={PROVIDER_GOOGLE} // remove if not using Google Maps
           style={styles.map}
           scrollEnabled={true}
-          showsUserLocation={true}
+          showsUserLocation={false}
           initialRegion={{
             latitude: parseFloat(state.latitude),
             longitude: parseFloat(state.longitude),
@@ -249,7 +249,7 @@ const Home = (props) => {
             </TouchableOpacity>
             <View
               style={{
-                flex: 0.07,
+                flex: 0.08,
                 width: "85%",
                 flexDirection: "row",
                 justifyContent: "space-between",

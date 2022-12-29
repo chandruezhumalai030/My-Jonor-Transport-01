@@ -1,79 +1,85 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-
+import Header from "../Components/Header";
 import ToggleSwitch from "toggle-switch-react-native";
 
 export default class Notification extends Component {
   state = {
     isOnBlueToggleSwitch: false,
     isOnBlueToggleSwitch1: false,
-    isOnBlueToggleSwitch2: false
+    isOnBlueToggleSwitch2: false,
   };
 
   onToggle(isOn) {
     console.log("Changed to " + isOn);
   }
 
-  render() {
+  render(props) {
     return (
-      <View style={styles.container}>
-        <View style={styles.Notification}>
-          <View style={styles.Group0}>
-            <View style={styles.AutoLayoutVertical2}>
-              <View style={styles.AutoLayoutVertical1}>
-                <View style={styles.AutoLayoutVertical}>
-                  <View style={styles.AutoLayoutHorizontal}>
-                    <Text style={styles.Txt8109}>General</Text>
-                    <ToggleSwitch
-                      onColor="#0F437B"
-                      isOn={this.state.isOnBlueToggleSwitch}
-                      onToggle={isOnBlueToggleSwitch => {
-                        this.setState({ isOnBlueToggleSwitch });
-                        this.onToggle(isOnBlueToggleSwitch);
-                      }}
-                    />
-                    <Image
-                      style={styles._speakerIcon}
-                      source={require('../assets/Notification/sound.png')}
-                    />
+      <Header
+        {...props}
+        rightIcon={false}
+        // isBackground={true}
+        title={"Notification Settings"}
+      >
+        <View style={styles.container}>
+          <View style={styles.Notification}>
+            <View style={styles.Group0}>
+              <View style={styles.AutoLayoutVertical2}>
+                <View style={styles.AutoLayoutVertical1}>
+                  <View style={styles.AutoLayoutVertical}>
+                    <View style={styles.AutoLayoutHorizontal}>
+                      <Text style={styles.Txt8109}>General</Text>
+                      <ToggleSwitch
+                        onColor="#0F437B"
+                        isOn={this.state.isOnBlueToggleSwitch}
+                        onToggle={(isOnBlueToggleSwitch) => {
+                          this.setState({ isOnBlueToggleSwitch });
+                          this.onToggle(isOnBlueToggleSwitch);
+                        }}
+                      />
+                      <Image
+                        style={styles._speakerIcon}
+                        source={require("../assets/Notification/sound.png")}
+                      />
+                    </View>
+                    <View style={styles.AutoLayoutHorizontal}>
+                      <Text style={styles.Txt8109}>Special Offers & Promo</Text>
+                      <ToggleSwitch
+                        onColor="#0F437B"
+                        isOn={this.state.isOnBlueToggleSwitch1}
+                        onToggle={(isOnBlueToggleSwitch1) => {
+                          this.setState({ isOnBlueToggleSwitch1 });
+                          this.onToggle(isOnBlueToggleSwitch1);
+                        }}
+                      />
+                      <Image
+                        style={styles._speakerIcon}
+                        source={require("../assets/Notification/sound1.png")}
+                      />
+                    </View>
+                    <View style={styles.AutoLayoutHorizontal1}>
+                      <Text style={styles.Txt81091}>Payment & Receipt</Text>
+                      <ToggleSwitch
+                        onColor="#0F437B"
+                        isOn={this.state.isOnBlueToggleSwitch2}
+                        onToggle={(isOnBlueToggleSwitch2) => {
+                          this.setState({ isOnBlueToggleSwitch2 });
+                          this.onToggle(isOnBlueToggleSwitch2);
+                        }}
+                      />
+                      <Image
+                        style={styles._speakerIcon1}
+                        source={require("../assets/Notification/sound1.png")}
+                      />
+                    </View>
                   </View>
-                  <View style={styles.AutoLayoutHorizontal}>
-                    <Text style={styles.Txt8109}>Special Offers & Promo</Text>
-                    <ToggleSwitch
-                      onColor="#0F437B"
-                      isOn={this.state.isOnBlueToggleSwitch1}
-                      onToggle={isOnBlueToggleSwitch1 => {
-                        this.setState({ isOnBlueToggleSwitch1 });
-                        this.onToggle(isOnBlueToggleSwitch1);
-                      }}
-                    />
-                    <Image
-                      style={styles._speakerIcon}
-                      source={require('../assets/Notification/sound1.png')}
-                    />
-                  </View>
-                  <View style={styles.AutoLayoutHorizontal1}>
-                    <Text style={styles.Txt81091}>Payment & Receipt</Text>
-                    <ToggleSwitch
-                      onColor="#0F437B"
-                      isOn={this.state.isOnBlueToggleSwitch2}
-                      onToggle={isOnBlueToggleSwitch2 => {
-                        this.setState({ isOnBlueToggleSwitch2 });
-                        this.onToggle(isOnBlueToggleSwitch2);
-                      }}
-                    />
-                    <Image
-                      style={styles._speakerIcon1}
-                      source={require('../assets/Notification/sound1.png')}
-                    />
-                  </View>
-
                 </View>
               </View>
             </View>
           </View>
         </View>
-      </View>
+      </Header>
     );
   }
 }
@@ -81,7 +87,7 @@ export default class Notification extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   Notification: {
     display: "flex",
@@ -167,12 +173,12 @@ const styles = StyleSheet.create({
   _speakerIcon: {
     width: 28,
     height: 28,
-    marginLeft: 10
+    marginLeft: 10,
   },
   _speakerIcon1: {
     width: 28,
     height: 28,
-    marginLeft: 10
+    marginLeft: 10,
   },
   AutoLayoutHorizontal1: {
     display: "flex",
@@ -186,8 +192,6 @@ const styles = StyleSheet.create({
 // import React, { useState } from "react";
 // import { StyleSheet, Image, Text, View, Switch } from "react-native";
 // import ToggleSwitch from 'toggle-switch-react-native'
-
-
 
 // export default function Notification() {
 
