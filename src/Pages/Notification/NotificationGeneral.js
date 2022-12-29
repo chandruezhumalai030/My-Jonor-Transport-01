@@ -55,7 +55,7 @@ export default function NotificationGeneral(props) {
                         <TouchableOpacity
                             onPress={() => setPromoModal(true)}
                             style={{
-                                height: (height / 100) * 7,
+                                height: (height / 100) * 6,
                                 backgroundColor: "#0F437B",
                                 width: (height / 100) * 40,
                                 justifyContent: "center",
@@ -139,7 +139,7 @@ export default function NotificationGeneral(props) {
                             style={{
                                 height: (height / 100) * 6,
                                 backgroundColor: "#0F437B",
-                                width: (height / 100) * 35,
+                                width: (height / 100) * 33,
                                 justifyContent: "center",
                                 alignItems: "center",
                                 borderRadius: 25,
