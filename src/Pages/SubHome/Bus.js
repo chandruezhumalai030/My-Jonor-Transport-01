@@ -579,6 +579,7 @@ const styles = StyleSheet.create({
   },
   textTab: {
     fontSize: 16,
+    color:'black'
   },
   btnTabActive: {
     backgroundColor: "#C62453",
