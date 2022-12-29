@@ -150,14 +150,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   btnTabActive: {
-    backgroundColor: "#1A96F0",
+    backgroundColor: "#C62453",
   },
   textTabActive: {
     color: "#fff",
   },
-  itmeStyles:{
+  itmeStyles: {
     margin: 4,
-    backgroundColor:'#ddd'
+    backgroundColor: "#ddd",
   },
 });
 
