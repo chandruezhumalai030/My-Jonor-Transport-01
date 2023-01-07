@@ -4,6 +4,9 @@ import { useNavigation } from "@react-navigation/native";
 import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
 import Header from "../Components/Header";
+import { design } from '../config/design.config';
+import { colors } from '../config/colors.config';
+import { hs, ws } from '../utils/design/measurement.design';
 
 
 export default function SignIn(props) {
@@ -36,8 +39,7 @@ export default function SignIn(props) {
       <Header
         {...props}
         rightIcon={false}
-        // isBackground={true}
-        title={""}
+        isLeftIcon
       >
         <View style={styles.container}>
           <View style={styles.SignIn_01}>
@@ -46,8 +48,12 @@ export default function SignIn(props) {
                 <Image
                   style={styles.Frame}
                   source={require("../assets/Profile/singup.png")}
+                  resizeMode={'contain'}
                 />
+                <View style={{marginLeft: ws(24), marginTop: hs(60)}}>
                 <Text style={styles.Txt804}>Welcome Back</Text>
+                </View>
+                <View style={{ marginTop: hs(60)}} />
                 <View style={styles.AutoLayoutVertical1}>
                   <View style={styles.AutoLayoutVertical}>
                     <View style={styles.SignSignUpInput}>
@@ -209,34 +215,20 @@ const styles = StyleSheet.create({
   },
 
   AutoLayoutVertical2: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingTop: 20,
-    paddingBottom: 47,
-    paddingLeft: 2,
-    paddingRight: 7,
-    // height: 482,
-    // width: 428,
+    marginLeft: ws(24),
+    marginRight: ws(24)
   },
   ThemeLightComponentNavbar: {
     width: 380,
     height: 48,
   },
   Frame: {
-    width: 300,
+    width: ws(400),
     height: 200,
   },
   Txt804: {
-    fontSize: 38,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "700",
-    lineHeight: 58,
-    color: "rgba(33,33,33,1)",
-    width: 381,
-    marginTop: 50,
-    marginBottom: 50,
+    ...design.TEXT[700][48],
+    color: colors.C212121,
   },
   AutoLayoutVertical1: {
     display: "flex",
@@ -273,9 +265,8 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
   Input: {
-    display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     paddingTop: 0,
     paddingBottom: 0,
@@ -283,11 +274,10 @@ const styles = StyleSheet.create({
     paddingRight: 18.5,
     borderRadius: 12,
     backgroundColor: "rgba(255, 255, 255, 1)",
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderStyle: "solid",
-    borderColor: "gray",
-    // width: 380,
-    // height: 56,
+    borderColor: colors.CBDBDBD_400,
+    width: ws(380),
   },
   Content: {
     display: "flex",
@@ -307,13 +297,8 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   Txt543: {
-    fontSize: 16,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "400",
-    lineHeight: 22,
-    letterSpacing: 0.2,
-    color: "black",
-    width: 309,
+    ...design.TEXT[400][16],
+    color: colors.C9E9E9E_500,
   },
   Content2: {
     display: "flex",
@@ -326,7 +311,6 @@ const styles = StyleSheet.create({
     paddingLeft: 0,
     paddingRight: 0,
     marginRight: 12,
-    // width: 308,
   },
   IconlyBoldMessage: {
     width: 20,
@@ -334,13 +318,8 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   Txt6104: {
-    fontSize: 16,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "400",
-    lineHeight: 22,
-    letterSpacing: 0.2,
-    color: "black",
-    width: 277,
+    ...design.TEXT[400][16],
+    color: colors.C9E9E9E_500,
   },
 
   IconlyLightHide: {
@@ -349,19 +328,17 @@ const styles = StyleSheet.create({
   },
 
   ReminderForgetPassword: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 20,
-    width: 380,
-    marginTop: 50,
+    marginTop: hs(20),
   },
   StyleTextThemeLightStateUncheckedComponentCheckbox: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
+    justifyContent: 'space-between',
+    marginHorizontal: ws(50)
   },
   Rectangle: {
     borderWidth: 3,

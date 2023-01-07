@@ -7,6 +7,9 @@ import Header from "../../Components/Header";
 import { white } from "react-native-paper/lib/typescript/styles/colors";
 import Lottie from 'lottie-react-native';
 import ReactModal from '../../Components/ReactModal';
+import { design } from '../../config/design.config';
+import { colors } from '../../config/colors.config';
+import { hs, ws } from '../../utils/design/measurement.design';
 
 export default function Successaddress(props) {
   const height = Dimensions.get("screen").height;
@@ -17,8 +20,9 @@ export default function Successaddress(props) {
     <Header
       {...props}
       rightIcon={false}
-      // isBackground={true}
+      isLeftIcon
       title={"Edit Address"}
+      labelStyle={styles.labelStyle}
     >
       <ScrollView style={styles.container}>
         <View style={styles.Address_02}>
@@ -124,9 +128,17 @@ export default function Successaddress(props) {
                       </View>
                     </View>
 
-
+                    <View style={styles.buttonContainer}>
+                      <TouchableOpacity style={styles.Button} onPress={() => setPromoModal1(true)}>
+                        <Text style={styles.btnTxt}>Delete</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.Button1} onPress={() => setPromoModal(true)}>
+                        <Text style={styles.btnTxt1}>Save</Text>
+                      </TouchableOpacity>
+                    </View>
                   </View>
                 </View>
+
               </View>
               {/* <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Savedlocation")}>
         <Text style={styles.btnTxt}>Add</Text>
@@ -141,12 +153,6 @@ export default function Successaddress(props) {
           title="Save"
           onPress={() => navigation.navigate("Success1")}
         /> */}
-                <TouchableOpacity style={styles.Button} onPress={() => setPromoModal1(true)}>
-                  <Text style={styles.btnTxt}>Delete</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.Button1} onPress={() => setPromoModal(true)}>
-                  <Text style={styles.btnTxt1}>Save</Text>
-                </TouchableOpacity>
               </View>
             </View>
           </View>
@@ -210,7 +216,10 @@ export default function Successaddress(props) {
 
           <View style={{ flex: 0.2, top: height / 100 * 5 }}>
             <TouchableOpacity
-              onPress={() => setPromoModal(!promoModal)}
+              onPress={() => {
+                setPromoModal(!promoModal)
+                navigation.navigate("BottomTab")
+              }}
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#0F437B",
@@ -292,7 +301,7 @@ export default function Successaddress(props) {
             </Text>
           </View>
 
-          <View style={{ flex: 0.2, top: height / 100 * 5,marginBottom:10 }}>
+          <View style={{ flex: 0.2, top: height / 100 * 5, marginBottom: 10 }}>
             <TouchableOpacity
               onPress={() => setPromoModal1(!promoModal1)}
               style={{
@@ -302,7 +311,7 @@ export default function Successaddress(props) {
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
-                marginBottom:10
+                marginBottom: 10
               }}
             >
               <Text
@@ -320,13 +329,13 @@ export default function Successaddress(props) {
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "white",
-                borderColor:"#e0e0e0",
+                borderColor: "#e0e0e0",
                 borderWidth: 1,
                 width: (height / 100) * 35,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
-                marginBottom:5
+                marginBottom: 5
               }}
             >
               <Text
@@ -429,29 +438,18 @@ const styles = StyleSheet.create({
     // width: 380,
   },
   Txt860: {
-    fontSize: 18,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "700",
-    lineHeight: 25,
-    letterSpacing: 0.2,
-    color: "rgba(33,33,33,1)",
+    ...design.TEXT[700][18],
+    color: colors.C212121,
   },
   Input: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 20.5,
-    paddingRight: 20.5,
-    borderRadius: 11,
-    backgroundColor: "rgba(0,43,127,0.03)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(15,67,123,1",
-    width: 370,
-    height: 56,
+    width: ws(380),
+    height: hs(56),
+    borderRadius: 12,
+    borderWidth: 0.5,
+    borderColor: colors.CBDBDBD_400,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingLeft: ws(20)
   },
   Content1: {
     display: "flex",
@@ -487,54 +485,46 @@ const styles = StyleSheet.create({
   Dropdown: {
     width: 20,
     height: 56,
+    position: 'absolute',
+    right: ws(20)
   },
   Button: {
-    display: 'flex',
-    flexDirection: 'row',
+    width: ws(182),
+    height: hs(60),
+    borderWidth: 1,
+    borderRadius: 100,
+    borderColor: colors.CE0E0E0,
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 12,
-    borderRadius: 100,
-    backgroundColor: "white",
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'gray',
-    width: '50%',
-    // marginHorizontal: '10%',
+    marginTop: hs(30),
+    marginLeft: ws(0)
   },
   btnTxt: {
-    fontSize: 18,
-    fontFamily: 'Urbanist, sans-serif',
-    fontWeight: '600',
-    lineHeight: 28,
-    letterSpacing: 0.2,
-    color: 'gray',
-    textAlign: 'center',
-    justifyContent: 'center',
+    ...design.TEXT[600][18],
+    color: colors.C616161_700
   },
   Button1: {
-    display: 'flex',
-    flexDirection: 'row',
+    width: ws(182),
+    height: hs(60),
+    borderRadius: 100,
+    backgroundColor: colors.C0F437B_500,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 12,
-    borderRadius: 100,
-    backgroundColor: GetColors.PrimaryBlue_500,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: GetColors.PrimaryBlue_500,
-    width: '50%',
-    // marginHorizontal: '10%',
-    marginLeft: 10
+    marginTop: hs(30),
+    marginLeft: ws(16)
   },
   btnTxt1: {
-    fontSize: 18,
-    fontFamily: 'Urbanist, sans-serif',
-    fontWeight: '600',
-    lineHeight: 28,
-    letterSpacing: 0.2,
-    color: GetColors.white,
-    textAlign: 'center',
-    justifyContent: 'center',
+    ...design.TEXT[600][18],
+    color: colors.white
   },
+  labelStyle: {
+    ...design.TEXT[700][24],
+    color: colors.C212121
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: hs(100)
+  }
 })

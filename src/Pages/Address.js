@@ -5,6 +5,9 @@ import { RadioButton } from 'react-native-paper';
 import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
 import Header from "../Components/Header";
+import { design } from "../config/design.config";
+import { colors } from "../config/colors.config";
+import { hs, ws } from "../utils/design/measurement.design";
 
 export default function Address(props) {
   const navigation = useNavigation();
@@ -13,8 +16,9 @@ export default function Address(props) {
     <Header
       {...props}
       rightIcon={false}
-      // isBackground={true}
+      isLeftIcon
       title={"Add New Address"}
+      labelStyle={styles.labelStyle}
     >
       <ScrollView style={styles.container}>
         <View style={styles.Address_01}>
@@ -28,7 +32,7 @@ export default function Address(props) {
                   }
                 >
                   <View style={styles.AutoLayoutHorizontal}>
-                    <View>
+                    <View style={styles.ratioButtonContainer}>
                       <RadioButton
                         value="first"
                         status={checked === 'first' ? 'checked' : 'unchecked'}
@@ -43,7 +47,7 @@ export default function Address(props) {
                       </Text>
                     </View>
                   </View>
-                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                  <Pressable onPress={() => navigation.navigate("Successaddress")}>
                     <Image
                       style={styles.IconlyBoldEdit}
                       source={require('../assets/Profile/pencil.png')}
@@ -61,7 +65,7 @@ export default function Address(props) {
                   }
                 >
                   <View style={styles.AutoLayoutHorizontal}>
-                    <View>
+                    <View style={styles.ratioButtonContainer}>
                       <RadioButton
                         value="second"
                         status={checked === 'second' ? 'checked' : 'unchecked'}
@@ -77,7 +81,7 @@ export default function Address(props) {
                       </Text>
                     </View>
                   </View>
-                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                  <Pressable onPress={() => navigation.navigate("Successaddress")}>
                     <Image
                       style={styles.IconlyBoldEdit}
                       source={require('../assets/Profile/pencil.png')}
@@ -95,7 +99,7 @@ export default function Address(props) {
                   }
                 >
                   <View style={styles.AutoLayoutHorizontal}>
-                    <View>
+                    <View style={styles.ratioButtonContainer}>
                       <RadioButton
                         value="three"
                         status={checked === 'three' ? 'checked' : 'unchecked'}
@@ -110,7 +114,7 @@ export default function Address(props) {
                       </Text>
                     </View>
                   </View>
-                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                  <Pressable onPress={() => navigation.navigate("Successaddress")}>
                     <Image
                       style={styles.IconlyBoldEdit}
                       source={require('../assets/Profile/pencil.png')}
@@ -128,7 +132,7 @@ export default function Address(props) {
                   }
                 >
                   <View style={styles.AutoLayoutHorizontal}>
-                    <View>
+                    <View style={styles.ratioButtonContainer}>
                       <RadioButton
                         value="four"
                         status={checked === 'four' ? 'checked' : 'unchecked'}
@@ -143,7 +147,7 @@ export default function Address(props) {
                       </Text>
                     </View>
                   </View>
-                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                  <Pressable onPress={() => navigation.navigate("Successaddress")}>
                     <Image
                       style={styles.IconlyBoldEdit}
                       source={require('../assets/Profile/pencil.png')}
@@ -161,7 +165,7 @@ export default function Address(props) {
                   }
                 >
                   <View style={styles.AutoLayoutHorizontal}>
-                    <View>
+                    <View style={styles.ratioButtonContainer}>
                       <RadioButton
                         value="five"
                         status={checked === 'five' ? 'checked' : 'unchecked'}
@@ -176,7 +180,7 @@ export default function Address(props) {
                       </Text>
                     </View>
                   </View>
-                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                  <Pressable onPress={() => navigation.navigate("Successaddress")}>
                     <Image
                       style={styles.IconlyBoldEdit}
                       source={require('../assets/Profile/pencil.png')}
@@ -194,7 +198,7 @@ export default function Address(props) {
                   }
                 >
                   <View style={styles.AutoLayoutHorizontal}>
-                    <View>
+                    <View style={styles.ratioButtonContainer}>
                       <RadioButton
                         value="six"
                         status={checked === 'six' ? 'checked' : 'unchecked'}
@@ -231,12 +235,15 @@ export default function Address(props) {
 }
 
 const styles = StyleSheet.create({
+  ratioButtonContainer: {
+    marginRight: ws(14),
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
   },
   mt16: {
-    marginTop: 16,
+    // marginTop: 16,
   },
   Address_01: {
     display: "flex",
@@ -271,12 +278,9 @@ const styles = StyleSheet.create({
     width: 380,
   },
   themeLightDividerIcon: {
-    alignSelf: "stretch",
-    position: "relative",
-    maxWidth: "100%",
-    overflow: "hidden",
-    height: 1,
-    flexShrink: 0,
+    width: ws(380),
+    height: hs(1),
+    marginVertical: hs(16),
   },
   AutoLayoutVertical1: {
     display: "flex",
@@ -286,30 +290,22 @@ const styles = StyleSheet.create({
     width: 380,
   },
   CategoryLocationEditThemeLightComponentLocationList: {
-    display: "flex",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: 'space-evenly',
     alignItems: "center",
-    marginBottom: 16,
-    width: 380,
-    marginTop: 5
+    marginBottom: hs(10),
+    marginRight: ws(24),
+    marginLeft: ws(16)
   },
   AutoLayoutHorizontal: {
-    display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: 'flex-start',
     alignItems: "center",
-    flex: 1,
-    marginRight: 12,
-    width: 344,
   },
   AutoLayoutVertical: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    flex: 1,
-    width: 300,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+
   },
   Txt363: {
     fontSize: 18,
@@ -336,21 +332,19 @@ const styles = StyleSheet.create({
   },
 
   CategoryLocationEditThemeLightComponentLocationList1: {
-    display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: 'space-evenly',
     alignItems: "center",
-    marginBottom: 16,
-    width: 380,
-    marginTop: 5
+    marginBottom: hs(10),
+    marginRight: ws(24),
+    marginLeft: ws(16)
   },
   CategoryLocationEditThemeLightComponentLocationList2: {
-    display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: 'space-evenly',
     alignItems: "center",
-    width: 380,
-    marginTop: 5
+    marginRight: ws(24),
+    marginLeft: ws(16)
   },
   Button: {
     display: 'flex',
@@ -368,13 +362,11 @@ const styles = StyleSheet.create({
     marginHorizontal: '10%',
   },
   btnTxt: {
-    fontSize: 18,
-    fontFamily: 'Urbanist, sans-serif',
-    fontWeight: '600',
-    lineHeight: 28,
-    letterSpacing: 0.2,
-    color: GetColors.white,
-    textAlign: 'center',
-    justifyContent: 'center',
+    ...design.TEXT[600][18],
+    color: colors.white
   },
+  labelStyle: {
+    ...design.TEXT[700][24],
+    color: colors.C212121
+  }
 })

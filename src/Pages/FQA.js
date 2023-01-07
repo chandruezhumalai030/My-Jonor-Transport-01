@@ -1,6 +1,9 @@
 import React from "react"
 import { StyleSheet, Image, Text, View, ImageBackground, Button, TouchableOpacity } from "react-native"
 import { useNavigation } from "@react-navigation/native";
+import { design } from "../config/design.config";
+import { colors } from "../config/colors.config";
+
 export default function FQA(props) {
   const navigation = useNavigation();
   return (
@@ -360,14 +363,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
   },
   Txt575: {
-    fontSize: 16,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "600",
-    lineHeight: 22,
-    letterSpacing: 0.2,
-    color: "rgba(249,233,238,1)",
-    textAlign: "center",
-    justifyContent: "center",
+    ...design.TEXT[600][16],
+    color: colors.white
   },
 
   Chips: {
@@ -396,14 +393,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
   },
   Txt1056: {
-    fontSize: 16,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "600",
-    lineHeight: 22,
-    letterSpacing: 0.2,
-    color: "rgba(33,33,33,1)",
-    textAlign: "center",
-    justifyContent: "center",
+    ...design.TEXT[600][16],
+    color: colors.white
   },
 
   Chips: {

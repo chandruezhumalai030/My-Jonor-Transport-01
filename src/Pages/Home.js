@@ -19,6 +19,8 @@ import CustomMarker from "../Components/CustomMarker";
 import ReactModal from "../Components/ReactModal";
 import { request, PERMISSIONS, RESULTS } from 'react-native-permissions';
 import { icon } from "../assets/icons";
+import { ws } from "../utils/design/measurement.design";
+import { design } from "../config/design.config";
 const { width, height } = Dimensions.get("window");
 const Hight = Dimensions.get("screen").height;
 const ASPECT_RATIO = width / height;
@@ -59,31 +61,31 @@ const Home = (props) => {
   const navigation = useNavigation();
 
 
-  useEffect(async () => {
-    const granted = await PermissionsAndroid.check(
-      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+  // useEffect(async () => {
+  //   const granted = await PermissionsAndroid.check(
+  //     PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
 
-    );
+  //   );
 
-    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-      setLocationEnable(false)
-    } else {
-      setLocationEnable(true)
-    }
-    //     Geolocation.getCurrentPosition((info) => {
+  //   if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+  //     setLocationEnable(false)
+  //   } else {
+  //     setLocationEnable(true)
+  //   }
+  //   //     Geolocation.getCurrentPosition((info) => {
 
-    //       setLocationModal(false);
-    //       console.log("==>", info);
-    //       state["latitude"] = info?.coords?.latitude;
-    //       state["longitude"] = info?.coords?.longitude;
-    //       state["isLoading"] = false;
-    //       setState({ ...state });
-    //     },(error)=>{
-    //       Linking.openSettings();
-    // console.log("h==>",error)
-    // setLocationEnable(true)
-    //     })
-  }, [])
+  //   //       setLocationModal(false);
+  //   //       console.log("==>", info);
+  //   //       state["latitude"] = info?.coords?.latitude;
+  //   //       state["longitude"] = info?.coords?.longitude;
+  //   //       state["isLoading"] = false;
+  //   //       setState({ ...state });
+  //   //     },(error)=>{
+  //   //       Linking.openSettings();
+  //   // console.log("h==>",error)
+  //   // setLocationEnable(true)
+  //   //     })
+  // }, [])
   useEffect(() => {
     setLocationModal(true);
   }, []);
@@ -354,12 +356,7 @@ const Home = (props) => {
                       }}
                     />
                     <Text
-                      style={{
-                        fontSize: (height / 100) * 1.5,
-                        fontFamily: "Urbanist_regular",
-                        color: "#616161",
-                        fontWeight: '600'
-                      }}
+                      style={design.TEXT[700][12]}
                     >
                       {"Get me home"}
                     </Text>

@@ -28,8 +28,6 @@ import Address from '../Pages/Address';
 import Addressnew from '../Pages/Addressnew';
 import Addresssuccess from '../Pages/Addresssuccess';
 
-import SingUp from '../Pages/Singup';
-import SingIn from '../Pages/Singin';
 
 import Invite from '../Pages/Invite';
 import FirstTimeRegister from '../Pages/FirstTimeReg';
@@ -76,6 +74,8 @@ import SavedDelete from '../Pages/SavedDestionation/savedDelete';
 import HomeAction from '../Pages/SubHome/Bus';
 import Homelist from '../Pages/SubHome/homelist';
 import Successaddress from '../Pages/Address/success';
+import SignIn from '../Pages/SignIn';
+import SignUp from '../Pages/SignUp';
 
 
 const Stack = createNativeStackNavigator();
@@ -90,8 +90,8 @@ function Routes() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="SingIn"
-          component={SingIn}
+          name="SignIn"
+          component={SignIn}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -110,8 +110,8 @@ function Routes() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="SingUp"
-          component={SingUp}
+          name="SignUp"
+          component={SignUp}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -170,7 +170,7 @@ function Routes() {
           options={{ headerShown: false }}
         />
         <Stack.Screen name="Payment" component={Payment} />
-        <Stack.Screen name="Security" component={Security} />
+        <Stack.Screen name="Security" component={Security} options={{ headerShown: false }}  />
         <Stack.Screen name="Language" component={Language} />
         <Stack.Screen
           name="Addressnew"

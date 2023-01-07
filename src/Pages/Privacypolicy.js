@@ -1,20 +1,25 @@
 import React from "react"
 import { StyleSheet, Image, Text, View, ScrollView } from "react-native";
 import Header from "../Components/Header";
+import { design } from "../config/design.config";
+import { colors } from "../config/colors.config";
+import { hs } from "../utils/design/measurement.design";
 
 export default function PrivacyPolicy(props) {
   return (
     <Header
       {...props}
-        rightIcon={false}
-      // isBackground={true}
+      rightIcon={false}
+      isLeftIcon
       title={"Privacy Policy"}
+      labelStyle={styles.labelStyle}
     >
       <ScrollView style={styles.container}>
         <View style={styles.PrivacyPolicies}>
           <View style={styles.AutoLayoutVertical2}>
             <View style={styles.AutoLayoutVertical}>
               <Text style={styles.Txt215}>1. Types of Data We Collect</Text>
+            <View style={styles.textContainer}>
               <Text style={styles.Txt987}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -24,7 +29,9 @@ export default function PrivacyPolicy(props) {
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </Text>
+              </View>
               <Text style={styles.Txt215}>2. Use of Your Personal Data</Text>
+              <View style={styles.textContainer}>
               <Text style={styles.Txt987}>
                 Magna etiam tempor orci eu lobortis elementum nibh. Vulputate
                 enim nulla aliquet porttitor lacus. Orci sagittis eu volutpat
@@ -36,9 +43,11 @@ export default function PrivacyPolicy(props) {
                 ullamcorper. Pellentesque pulvinar pellentesque habitant morbi
                 tristique senectus et.
               </Text>
+              </View>
               <Text style={styles.Txt215}>
                 3. Disclosure of Your Personal Data
               </Text>
+              <View style={styles.textContainer}>
               <Text style={styles.Txt987}>
                 Consequat id porta nibh venenatis cras sed. Ipsum nunc aliquet
                 bibendum enim facilisis gravida neque. Nibh tellus molestie nunc
@@ -52,6 +61,7 @@ export default function PrivacyPolicy(props) {
                 Integer vitae justo eget magna fermentum iaculis. Eget gravida
                 cum sociis natoque penatibus et magnis.
               </Text>
+              </View>
             </View>
           </View>
         </View>
@@ -61,6 +71,9 @@ export default function PrivacyPolicy(props) {
 }
 
 const styles = StyleSheet.create({
+  textContainer: {
+    paddingVertical: hs(24),
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -87,32 +100,19 @@ const styles = StyleSheet.create({
     // height: 882,
   },
   AutoLayoutVertical: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    // width: 380,
-    // height: 707,
+    marginTop: hs(34),
   },
   Txt215: {
-    fontSize: 16,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "700",
-    lineHeight: 24,
-    color: "rgba(33,33,33,1)",
-    marginRight: 130,
-    // width: 500,
-    marginBottom: 20,
+    ...design.TEXT[700][20],
+    color: colors.C212121
   },
   Txt987: {
-    fontSize: 16,
-    fontFamily: 'Urbanist, sans-serif',
-    fontWeight: "600",
-    lineHeight: 20,
-    letterSpacing: 0.5,
-    color: "black",
-    // width: 381,
-    marginBottom: 20,
+    ...design.TEXT[400][14],
+    color: colors.C424242_800,
+    textAlign: 'justify'
   },
-
+  labelStyle: {
+    ...design.TEXT[700][24],
+    color: colors.C212121
+  }
 })
