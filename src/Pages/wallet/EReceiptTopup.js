@@ -11,7 +11,7 @@ import Header from "../../Components/Header";
 import { icon } from "../../assets/icons";
 import { height, View_Spacing } from "../../assets/fontsAndColors";
 
-export default function EReceipt(props) {
+export default function EReceiptTopup(props) {
   return (
     <View style={{ flex: 1 }}>
       <Header
@@ -23,75 +23,28 @@ export default function EReceipt(props) {
         title={"E- Receipt"}
       >
         <ScrollView style={{ flex: 1, margin: 15 }}>
-          <View style={styles.card}>
-            <Image
-              source={icon.barcode}
+       
+      
+          <View style={{ height: View_Spacing.VS_W3 }} />
+          <View style={[styles.card1, { height: (height / 100) * 7 ,}]}>
+            
+            <View
               style={{
-                height: (height / 100) * 19,
-                width: (height / 100) * 38,
-                resizeMode: "contain",
+              flex:1,
+               
+              justifyContent:'center',
+              alignItems:'center'
+                
               }}
             />
-          </View>
-          <View style={{ height: View_Spacing.VS_W3 }} />
-          <View
-            style={[
-              styles.card1,
-              { flexDirection: "row", height: (height / 100) * 10,padding:5 },
-            ]}
-          >
-            <View
-              style={{
-                justifyContent: "center",
-                flex: 0.8,
-                paddingLeft: View_Spacing.VS_W2,
-              }}
-            >
-              <Text style={styles.text}>BUS Ticket</Text>
-              <Text
-                style={{
-                  fontSize: (height / 100) * 1.8,
-                  fontFamily: "Urbanist_regular",
-
-                  color: "#616161",
-                  paddingTop: 5,
-                }}
-              >
-                Route no 4 - Route 5
-              </Text>
-            </View>
-            <View
-              style={{ justifyContent: "center", flex: 0.2, paddingTop: 17 }}
-            >
-              <Text style={[styles.text, { paddingLeft: 15 }]}>{"364"}</Text>
-            </View>
-          </View>
-
-          <View style={{ height: View_Spacing.VS_W3 }} />
-          <View style={[styles.card1, { height: (height / 100) * 23 ,padding:5}]}>
-            <View style={styles.Card_sub}>
+            <View style={ styles.Card_sub}>
               <Text style={styles.text1}>{"Amount"}</Text>
-              <Text style={styles.text}>$20.00</Text>
-            </View>
-            <View style={styles.Card_sub}>
-              <Text style={[styles.text1,{color:"#335599"}]}>{"Promo"}</Text>
-              <Text style={[styles.text,{color:'#002B7F'}]}>-$6.00</Text>
-            </View>
-            <View
-              style={{
-                height: View_Spacing.VS_W1,
-                borderTopWidth: 0.2,
-                margin: 10,
-                borderColor: "#E5E5E5",
-              }}
-            />
-            <View style={[{ bottom: 24 }, styles.Card_sub]}>
-              <Text style={styles.text1}>{"Total"}</Text>
-              <Text style={styles.text}>$14.00</Text>
+              <Text style={styles.text}>$40.00</Text>
             </View>
           </View>
           <View style={{ height: View_Spacing.VS_W3 }} />
-          <View style={[styles.card1, { height: (height / 100) * 23,padding:5 }]}>
+
+          <View style={[styles.card1, { height: (height / 100) * 20,padding:5 ,}]}>
             <View style={styles.Card_sub}>
               <Text style={styles.text1}>{"Payment Methods"}</Text>
               <Text style={styles.text}>Visa</Text>
@@ -122,7 +75,7 @@ export default function EReceipt(props) {
                 />
               </TouchableOpacity>
             </View>
-            <View style={[{ bottom: 36 }, styles.Card_sub]}>
+            <View style={[{ bottom: 35 }, styles.Card_sub]}>
               <Text style={styles.text1}>{"Status"}</Text>
               <View
                 style={{
@@ -133,7 +86,6 @@ export default function EReceipt(props) {
                   alignItems: "center",
                   borderRadius: 5,
                   padding:5
-
                 }}
               >
                 <Text
@@ -143,10 +95,12 @@ export default function EReceipt(props) {
                     color: "#fff",
                   }}
                 >
-                  paid
+                  Topup
                 </Text>
               </View>
+              
             </View>
+           
           </View>
         </ScrollView>
       </Header>

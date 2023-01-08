@@ -60,7 +60,7 @@ export default function Destination() {
         }}
       >
         <TouchableOpacity
-                   onPress={() => navigation.navigate("Home",{data:false,para:''})}
+                   onPress={() => navigation.navigate("BottomTab",{data:false,para:''})}
           style={{ flex: 0.15, justifyContent: "center", alignItems: "center" }}
         >
           <Image
@@ -85,7 +85,7 @@ export default function Destination() {
       <KeyboardAvoidingView style={{ flex: 1,}}   behavior={Platform.OS === "ios" ? "padding" : null}>
         <View style={{height:height/100*2}}></View>
          
-        < GetLocation 
+        <GetLocation 
         currentLocation={true}
         onPress={(data)=> navigation.navigate("Home",{data:false,para:data.description})}
         label={"Use my current location"}

@@ -24,9 +24,10 @@ function PromoImg(props) {
         }}
         style={{
           flex: 0.1,
-          marginBottom: -10,
+          marginBottom: 3,
           justifyContent: "center",
           alignItems: "center",
+          paddingBottom:15
         }}
       >
         <Image
@@ -37,7 +38,7 @@ function PromoImg(props) {
             resizeMode: "contain",
           }}
         ></Image>
-        <View
+        {/* <View
           style={{
             flex: 1,
             position: "absolute",
@@ -46,7 +47,7 @@ function PromoImg(props) {
         >
           <Text style={{ color: "#fff" }}> Get rewards </Text>
           <Text style={{ color: "#fff" }}> on every recharge</Text>
-        </View>
+        </View> */}
       </TouchableOpacity>
     </View>
   );

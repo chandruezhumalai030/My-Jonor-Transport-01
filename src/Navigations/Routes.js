@@ -73,6 +73,7 @@ import Homelist from '../Pages/SubHome/homelist';
 import Successaddress from '../Pages/Address/success';
 import SignIn from '../Pages/SignIn';
 import SignUp from '../Pages/SignUp';
+import EReceiptTopup from '../Pages/wallet/EReceiptTopup';
 
 
 const Stack = createNativeStackNavigator();
@@ -333,6 +334,12 @@ function Routes() {
           component={HomeAction}
           options={{ headerShown: false }}
         />
+          <Stack.Screen
+          name="EReceiptTopup"
+          component={EReceiptTopup}
+          options={{ headerShown: false }}
+        />
+
         <Stack.Screen
           name="Homelist"
           component={Homelist}
