@@ -151,9 +151,11 @@ export default function ForgetNewPassword(props) {
             </Text>
             <Text
               style={{
-                fontSize: (height / 100) * 1.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#616161",
+                fontSize: 14,
+                fontFamily: "Urbanist",
+                // color: "",
+                alignContent: 'center',
+                justifyContent:'center',
               }}
             >
               Your account is ready to use. You will be redirected to the Home page in a few seconds..

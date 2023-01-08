@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     width: 360,
-    marginTop: hs(50),
+   // marginTop: hs(20),
   },
   AvatarThumbail: {
     width: 140,
