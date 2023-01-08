@@ -7,7 +7,7 @@ import { icon } from '../assets/icons';
 export default function Header(props) {
     const height = Dimensions.get("screen").height;
     const navigation = useNavigation();
-    const { title, onPress, righticon ,isBackground,container,isCustom,showBuss,isLeftIcon, titleStyle, labelStyle, style } = props
+    const { title, onPress, righticon ,isBackground,container,isCustom,showBuss,showSeat,isLeftIcon, titleStyle, labelStyle, style } = props
     return (
         <View style={{ flex: 1, backgroundColor: isBackground ?'#002B7F':"#fff" }}>
             <View
@@ -41,6 +41,18 @@ export default function Header(props) {
                 <Image
                             source={icon.routerNo}
                             style={{
+                                height: 55,
+                                width: 55,
+                                resizeMode: 'contain'
+                            }}
+                        />
+                         
+                </View>}
+                {showSeat &&<View style={{flexDirection:'row',right:15,justifyContent:'center',alignItems:'center'}}>
+                <Image
+                            source={icon.seat}
+                            style={{
+                                marginLeft:10,
                                 height: 55,
                                 width: 55,
                                 resizeMode: 'contain'

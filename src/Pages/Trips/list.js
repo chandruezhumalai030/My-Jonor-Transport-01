@@ -26,7 +26,6 @@ export default function list(props) {
       img: GetImage.fire,
       title: "Larkin Stadium",
       time: "See Famous Places",
-      rate: "+ $5",
       time1: "09:15 AM",
     },
     {
@@ -34,7 +33,6 @@ export default function list(props) {
       img: GetImage.fire,
       title: "Klinik Kesihatan Kempas",
       time: "See Famous Places",
-      rate: "+ $5",
       time1: "09:15 AM",
     },
     {
@@ -42,7 +40,6 @@ export default function list(props) {
       img: GetImage.fire,
       title: "AEON Mall Tebrau City",
       time: "See Famous Places",
-      rate: "+ $5",
       time1: "09:15 AM",
     },
     {
@@ -50,7 +47,6 @@ export default function list(props) {
       img: GetImage.fire,
       title: "Hutan Bandar MBJB",
       time: "See Famous Places",
-      rate: "+ $5",
       time1: "09:15 AM",
     },
     {
@@ -58,7 +54,6 @@ export default function list(props) {
       img: GetImage.fire,
       title: "UTC Johor",
       time: "See Famous Places",
-      rate: "+ $5",
       time1: "09:15 AM",
     },
     {
@@ -66,50 +61,49 @@ export default function list(props) {
       img: GetImage.fire,
       title: "The Mall, Mid Valley Southkey",
       time: "See Famous Places",
-      rate: "+ $5",
       time1: "09:15 AM",
     },
   ];
-  const ListFooter = () => {
-    //View to set in Footer
-    return (
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginHorizontal: 5,
-          marginVertical: 10,
-          alignItems: "center",
-          paddingHorizontal: 30,
-        }}
-      >
-        <Text
-          style={{
-            fontFamily: "Urbanist_semibold",
-            fontWeight: "bold",
-            color: "#000",
-            fontSize: 20,
-          }}
-        >
-          Total Price
-        </Text>
-        <Text
-          style={{
-            fontSize: 20,
-            fontFamily: "  Urbanist_regular",
-            color: "#616161",
-          }}
-        >
-          $0
-        </Text>
-      </View>
-    );
-  };
+  // const ListFooter = () => {
+  //   //View to set in Footer
+  //   return (
+  //     <View
+  //       style={{
+  //         flexDirection: "row",
+  //         justifyContent: "space-between",
+  //         marginHorizontal: 5,
+  //         marginVertical: 10,
+  //         alignItems: "center",
+  //         paddingHorizontal: 30,
+  //       }}
+  //     >
+  //       <Text
+  //         style={{
+  //           fontFamily: "Urbanist_semibold",
+  //           fontWeight: "bold",
+  //           color: "#000",
+  //           fontSize: 20,
+  //         }}
+  //       >
+  //         Total Price
+  //       </Text>
+  //       <Text
+  //         style={{
+  //           fontSize: 20,
+  //           fontFamily: "  Urbanist_regular",
+  //           color: "#616161",
+  //         }}
+  //       >
+  //         $0
+  //       </Text>
+  //     </View>
+  //   );
+  // };
   return (
     <View style={styles.container}>
       <Header {...props} rightIcon={false}
-        isLeftIcon title={"Trip Route"}>
-        <View style={[styles.labelPositionView, styles.ml16]}>
+        isLeftIcon showSeat={true} showBuss={true} title={"Trip Route"}>
+        {/* <View style={[styles.labelPositionView, styles.ml16]}>
           <View style={styles.labelView1}>
             <View style={styles.labelView}>
               <Image
@@ -130,11 +124,11 @@ export default function list(props) {
               <Text style={[styles.text16, styles.ml4]}>Seats</Text>
             </View>
           </View>
-        </View>
+        </View> */}
         <View style={{ flex: 1 }}>
           <FlatList
             data={data}
-            ListFooterComponent={ListFooter}
+            // ListFooterComponent={ListFooter}
             renderItem={({ item, index }) => (
               <View
                 key={index}
@@ -200,19 +194,18 @@ export default function list(props) {
                       source={item.img}
                       style={{ height: 15, width: 15, resizeMode: "contain" }}
                     />
-                    <Pressable onPress={() => navigation.navigate("NotificationView")}>
+                    <Pressable onPress={() => navigation.navigate("SeeFamousPlaces")}>
                       <Text style={[styles.subText, { paddingLeft: 2, flex: 1 }]}>
                         {item.time}
                       </Text>
                     </Pressable>
-                    <Text style={styles.subText}>{item.rate}</Text>
                   </View>
                 </View>
               </View>
             )}
             keyExtractor={(item) => item.id}
           />
-          <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("NotificationView")}>
+          <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("ScanQR")}>
             <Text style={styles.btnTxt}>Go Onboard</Text>
           </TouchableOpacity>
         </View>
@@ -239,7 +232,7 @@ const styles = StyleSheet.create({
     borderColor: GetColors.PrimaryBlue_500,
     // width: '90%',
     marginHorizontal: '10%',
-    marginBottom: 50
+    marginBottom: 30
   },
   btnTxt: {
     fontSize: 18,

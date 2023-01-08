@@ -44,7 +44,7 @@ export default function EReceiptTopup(props) {
           </View>
           <View style={{ height: View_Spacing.VS_W3 }} />
 
-          <View style={[styles.card1, { height: (height / 100) * 20,padding:5 ,}]}>
+          <View style={[styles.card1, { height: (height / 100) * 23,padding:5 ,}]}>
             <View style={styles.Card_sub}>
               <Text style={styles.text1}>{"Payment Methods"}</Text>
               <Text style={styles.text}>Visa</Text>

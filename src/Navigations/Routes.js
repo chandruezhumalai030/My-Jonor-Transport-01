@@ -59,6 +59,7 @@ import NotificationScreen from '../Pages/Notification/NotificationScreen';
 import NotificationView from '../Pages/Notification/NotificationView';
 import NotificationPayment from '../Pages/Notification/NotificationPayment';
 import NotificationGeneral from '../Pages/Notification/NotificationGeneral';
+import SeeFamousPlaces from '../Pages/Notification/SeeFamousPlace';
 
 import ScanQR from '../Pages/QR/ScanQR';
 import routerlist from '../Pages/QR/routerlist';
@@ -353,6 +354,11 @@ function Routes() {
         <Stack.Screen
           name="ForgetNewPassword"
           component={ForgetNewPassword}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SeeFamousPlaces"
+          component={SeeFamousPlaces}
           options={{ headerShown: false }}
         />
         <Stack.Screen name="General" component={General} />

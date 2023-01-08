@@ -74,18 +74,18 @@ export default function routerlist(props) {
     return (
       <View
         style={{
-          borderTopWidth:1,
-          borderBottomWidth:1,
+          borderTopWidth: 1,
+          borderBottomWidth: 1,
           flexDirection: "row",
           justifyContent: "space-between",
           marginHorizontal: 20,
           marginVertical: 10,
-          height:45,
+          height: 45,
           alignItems: "center",
           paddingHorizontal: 30,
-          borderColor:'#EEEEEE',
-        
-          
+          borderColor: '#EEEEEE',
+
+
         }}
       >
         <Text
@@ -141,8 +141,8 @@ export default function routerlist(props) {
                         index == 0
                           ? "#002B7F"
                           : index == data.length - 1
-                          ? "green"
-                          : "#fff",
+                            ? "green"
+                            : "#fff",
                       marginTop: 18,
                     }}
                   />
@@ -160,13 +160,13 @@ export default function routerlist(props) {
                   style={{ flex: 1, justifyContent: "center", paddingLeft: 10 }}
                 >
 
-                  <View style={{flexDirection:'row',alignItems:'center'}}>
-                  <Text style={styles.headsubText1}>{item.time1}</Text>
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Text style={styles.headsubText1}>{item.time1}</Text>
 
-                  <Image
-                    source={GetImage.bell1}
-                    style={{ height: 15, width: 15, resizeMode: "contain" ,marginLeft:5}}
-                  />
+                    <Image
+                      source={GetImage.bell1}
+                      style={{ height: 15, width: 15, resizeMode: "contain", marginLeft: 5 }}
+                    />
                   </View>
                   <Text style={styles.headsubText}>{item.title}</Text>
 
@@ -177,21 +177,22 @@ export default function routerlist(props) {
                       alignItems: "center",
                     }}
                   >
-                   
+
                     <Image
                       source={item.img}
                       style={{ height: 15, width: 15, resizeMode: "contain" }}
-                    /> 
-                    <Pressable  onPress={() => props.navigation.navigate("NotificationView")}>
-                    <Text style={[styles.subText, { paddingLeft: 2, flex: 1 }]}>
-                      {item.time}
-                    </Text>
+                    />
+                    <Pressable onPress={() => props.navigation.navigate("SeeFamousPlaces")}>
+                      <Text style={[styles.subText, { paddingLeft: 2, flex: 1 }]}>
+                        {item.time}
+                      </Text>
                     </Pressable>
-                    <Text style={{ fontSize: 14,
-    fontFamily: "  Urbanist_regular",
-    color: "#616161",left:width/100*38
-  }}>{item.rate}</Text>
-                    
+                    <Text style={{
+                      fontSize: 14,
+                      fontFamily: "  Urbanist_regular",
+                      color: "#616161", left: width / 100 * 38
+                    }}>{item.rate}</Text>
+
                   </View>
                 </View>
               </View>
@@ -199,7 +200,7 @@ export default function routerlist(props) {
             keyExtractor={(item) => item.id}
           />
         </View>
-        <View style={{height:20}}></View>
+        <View style={{ height: 20 }}></View>
       </Header>
     </View>
   );

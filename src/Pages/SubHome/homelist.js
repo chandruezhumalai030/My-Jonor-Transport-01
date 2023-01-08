@@ -70,45 +70,46 @@ export default function Homelist(props) {
       time1: "09:15 AM",
     },
   ];
-  const ListFooter = () => {
-    //View to set in Footer
-    return (
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginHorizontal: 5,
-          marginVertical: 10,
-          alignItems: "center",
-          paddingHorizontal: 30,
-        }}
-      >
-        <Text
-          style={{
-            fontFamily: "Urbanist_semibold",
-            fontWeight: "bold",
-            color: "#000",
-            fontSize: 20,
-          }}
-        >
-          Total Price
-        </Text>
-        {/* <Text
-          style={{
-            fontSize: 20,
-            fontFamily: "  Urbanist_regular",
-            color: "#616161",
-          }}
-        >
-          $0
-        </Text> */}
-      </View>
-    );
-  };
+  // const ListFooter = () => {
+  //   //View to set in Footer
+  //   return (
+  //     <View
+  //       style={{
+  //         flexDirection: "row",
+  //         justifyContent: "space-between",
+  //         marginHorizontal: 5,
+  //         marginVertical: 10,
+  //         alignItems: "center",
+  //         paddingHorizontal: 30,
+  //       }}
+  //     >
+  //       <Text
+  //         style={{
+  //           fontFamily: "Urbanist_semibold",
+  //           fontWeight: "bold",
+  //           color: "#000",
+  //           fontSize: 20,
+  //         }}
+  //       >
+  //         Total Price
+  //       </Text>
+  //       {/* <Text
+  //         style={{
+  //           fontSize: 20,
+  //           fontFamily: "  Urbanist_regular",
+  //           color: "#616161",
+  //         }}
+  //       >
+  //         $0
+  //       </Text> */}
+  //     </View>
+  //   );
+  // };
   return (
     <View style={styles.container}>
-      <Header {...props} rightIcon={false} title={"Bus Route"}>
-      <View style={[styles.labelPositionView, styles.ml16]}>
+      <Header {...props} rightIcon={false}
+      showSeat={true} showBuss={true} title={"Bus Route"}>
+      {/* <View style={[styles.labelPositionView, styles.ml16]}>
           <View style={styles.labelView1}>
             <View style={styles.labelView}>
               <Image
@@ -129,11 +130,11 @@ export default function Homelist(props) {
               <Text style={[styles.text16, styles.ml4]}>Seats</Text>
             </View>
           </View>
-        </View>
+        </View> */}
         <View style={{ flex: 1 }}>
           <FlatList
             data={data}
-            ListFooterComponent={ListFooter}
+            // ListFooterComponent={ListFooter}
             renderItem={({ item, index }) => (
               <View
                 key={index}
