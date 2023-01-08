@@ -152,7 +152,7 @@ export default function SignIn(props) {
                     Doesn’t have an account yet?
                   </Text>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate("SingUp")}
+                    onPress={() => navigation.navigate("SignUp")}
                   >
                     <Text style={styles.Txt862}>Sign Up</Text>
                   </TouchableOpacity>
@@ -333,19 +333,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 20,
     marginTop: hs(20),
+    marginRight:90
   },
   StyleTextThemeLightStateUncheckedComponentCheckbox: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: 'space-between',
-    marginHorizontal: ws(50)
+    marginHorizontal: ws(90),
+    
+    
   },
   Rectangle: {
     borderWidth: 3,
     borderStyle: "solid",
     borderColor: "rgba(15,67,123,1)",
-    width: 20,
-    height: 20,
+    width: ws(20),
+    height: hs(20),
     borderRadius: 8,
     marginRight: 12,
   },
@@ -368,21 +370,17 @@ const styles = StyleSheet.create({
     textAlign: "right",
     justifyContent: "flex-end",
   },
+    Button: {
+      width: ws(380),
+      height: hs(60),
+      borderRadius: 100,
+      backgroundColor: colors.C0F437B_500,
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignSelf: 'center',
+      marginTop: hs(30)
+    },
 
-  Button: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 12,
-    borderRadius: 100,
-    backgroundColor: GetColors.PrimaryBlue_500,
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: GetColors.PrimaryBlue_500,
-    width: "80%",
-    marginHorizontal: "10%",
-  },
   btnTxt: {
     fontSize: 18,
     fontFamily: "Urbanist, sans-serif",

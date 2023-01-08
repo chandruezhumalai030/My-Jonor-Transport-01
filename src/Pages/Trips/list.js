@@ -107,7 +107,8 @@ export default function list(props) {
   };
   return (
     <View style={styles.container}>
-      <Header {...props} rightIcon={false} title={"Trip Route"}>
+      <Header {...props} rightIcon={false}
+        isLeftIcon title={"Trip Route"}>
         <View style={[styles.labelPositionView, styles.ml16]}>
           <View style={styles.labelView1}>
             <View style={styles.labelView}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Image, Text, View, ScrollView,TextInput,Dimensions,TouchableOpacity,Button } from "react-native"
+import { StyleSheet, Image, Text, View, ScrollView, Dimensions, TextInput, TouchableOpacity, Button, Pressable } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../../assets/GetImage';
 import GetColors from '../../assets/GetColors';
@@ -7,146 +7,163 @@ import Header from "../../Components/Header";
 import { white } from "react-native-paper/lib/typescript/styles/colors";
 import Lottie from 'lottie-react-native';
 import ReactModal from '../../Components/ReactModal';
+import { design } from '../../config/design.config';
+import { colors } from '../../config/colors.config';
+import { hs, ws } from '../../utils/design/measurement.design';
 
-export default function SavedAddress( props) {
+export default function SavedAddress(props) {
   const height = Dimensions.get("screen").height;
   const [promoModal, setPromoModal] = useState(false)
   const [promoModal1, setPromoModal1] = useState(false)
-    const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <Header
       {...props}
-        rightIcon={false}
-      // isBackground={true}
-      title={"Saved Destination"}
+      rightIcon={false}
+      isLeftIcon
+      title={"Edit Saved Destination"}
+      labelStyle={styles.labelStyle}
     >
-    <ScrollView style={styles.container}>
-    <View style={styles.Address_02}>
-      <View style={styles.Group6610}>
-        <View style={styles.AutoLayoutVertical2}>
-          <View style={styles.AutoLayoutVertical1}>
-            <View style={styles.AutoLayoutVertical}>
-              <View style={styles.ProfileInputForm}>
-                <View style={styles.Text_field}>
-                  <View style={styles.Content2}>
-                    <View style={styles.LabelText}>
-                      <Text style={styles.Txt860}>Name</Text>
-                    </View>
-                    <View style={styles.Content2}>
-                      <View style={styles.Input}>
-                        <View style={styles.Content1}>
-                          <TextInput style={styles.Txt606}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "Address Name"
-                           autoCapitalize = "none"
-                           placeholderTextColor = "gray"/>
+      <ScrollView style={styles.container}>
+        <View style={styles.Address_02}>
+          <View style={styles.Group6610}>
+            <View style={styles.AutoLayoutVertical2}>
+              <View style={styles.AutoLayoutVertical1}>
+                <View style={styles.AutoLayoutVertical}>
+                  <View style={styles.ProfileInputForm}>
+                    <View style={styles.Text_field}>
+                      <View style={styles.Content2}>
+                        <View style={styles.LabelText}>
+                          <Text style={styles.Txt860}>Name</Text>
+                        </View>
+                        <View style={styles.Content2}>
+                          <View style={styles.Input}>
+                            <View style={styles.Content1}>
+                              <TextInput style={styles.Txt606}
+                                underlineColorAndroid="transparent"
+                                placeholder="Name"
+                                autoCapitalize="none"
+                                placeholderTextColor="gray" />
+                            </View>
+                          </View>
                         </View>
                       </View>
                     </View>
-                  </View>
-                </View>
-                <View style={styles.Text_field}>
-                  <View style={styles.Content2}>
-                    <View style={styles.LabelText}>
-                      <Text style={styles.Txt860}>Country</Text>
-                    </View>
-                    <View style={styles.Content2}>
-                      <View style={styles.Input}>
-                        <TextInput style={styles.Txt606}
-                        underlineColorAndroid = "transparent"
-                        placeholder = "Malaysia"
-                        autoCapitalize = "none"
-                        placeholderTextColor = "gray"/>
-                        <Image
-                          style={styles.Dropdown}
-                          source={require('../../assets/Profile/down.png')}
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-                <View style={styles.Text_field}>
-                  <View style={styles.Content2}>
-                    <View style={styles.LabelText}>
-                      <Text style={styles.Txt860}>Postcode</Text>
-                    </View>
-                    <View style={styles.Content2}>
-                      <View style={styles.Input}>
-                        <TextInput style={styles.Txt606}
-                        underlineColorAndroid = "transparent"
-                        placeholder = "5600"
-                        autoCapitalize = "none"
-                        placeholderTextColor = "gray"/>
-                        <Image
-                          style={styles.Dropdown}
-                          source={require('../../assets/Profile/down.png')}
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-                <View style={styles.Text_field}>
-                  <View style={styles.Content2}>
-                    <View style={styles.LabelText}>
-                      <Text style={styles.Txt860}>State</Text>
-                    </View>
-                    <View style={styles.Content2}>
-                      <View style={styles.Input}>
-                        <View style={styles.Content1}>
-                          <TextInput style={styles.Txt606}
-                          underlineColorAndroid = "transparent"
-                          placeholder = "Address Line 1"
-                          autoCapitalize = "none"
-                          placeholderTextColor = "gray"/>
+                    <View style={styles.Text_field}>
+                      <View style={styles.Content2}>
+                        <View style={styles.LabelText}>
+                          <Text style={styles.Txt860}>Country</Text>
+                        </View>
+                        <View style={styles.Content2}>
+                          <View style={styles.Input}>
+                            <TextInput style={styles.Txt606}
+                              underlineColorAndroid="transparent"
+                              placeholder="Malaysia"
+                              autoCapitalize="none"
+                              placeholderTextColor="gray" />
+                            <Pressable onPress={() => navigation.navigate("Addresssuccess")}>
+                              <Image
+                                style={styles.Dropdown}
+                                source={require('../../assets/Profile/down.png')}
+                              />
+                            </Pressable>
+                          </View>
                         </View>
                       </View>
                     </View>
-                  </View>
-                </View>
-                <View style={styles.Text_field}>
-                  <View style={styles.Content2}>
-                    <View style={styles.LabelText}>
-                      <Text style={styles.Txt860}>City</Text>
-                    </View>
-                    <View style={styles.Content2}>
-                      <View style={styles.Input}>
-                        <View style={styles.Content1}>
-                          <TextInput style={styles.Txt606}
-                          underlineColorAndroid = "transparent"
-                          placeholder = "Address Line 1"
-                          autoCapitalize = "none"
-                          placeholderTextColor = "gray"/>
+                    <View style={styles.Text_field}>
+                      <View style={styles.Content2}>
+                        <View style={styles.LabelText}>
+                          <Text style={styles.Txt860}>Postcode</Text>
+                        </View>
+                        <View style={styles.Content2}>
+                          <View style={styles.Input}>
+                            <TextInput style={styles.Txt606}
+                              underlineColorAndroid="transparent"
+                              placeholder="5600"
+                              autoCapitalize="none"
+                              placeholderTextColor="gray" />
+                            <Image
+                              style={styles.Dropdown}
+                              source={require('../../assets/Profile/down.png')}
+                            />
+                          </View>
                         </View>
                       </View>
                     </View>
-                  </View>
-                </View>
-                <View style={styles.Text_field}>
-                  <View style={styles.Content2}>
-                    <View style={styles.LabelText}>
-                      <Text style={styles.Txt860}>Address Line 1</Text>
-                    </View>
-                    <View style={styles.Content2}>
-                      <View style={styles.Input}>
-                        <View style={styles.Content1}>
-                          <TextInput style={styles.Txt606}
-                          underlineColorAndroid = "transparent"
-                          placeholder = "Address Line 1"
-                          autoCapitalize = "none"
-                          placeholderTextColor = "gray"/>
+                    <View style={styles.Text_field}>
+                      <View style={styles.Content2}>
+                        <View style={styles.LabelText}>
+                          <Text style={styles.Txt860}>State</Text>
+                        </View>
+                        <View style={styles.Content2}>
+                          <View style={styles.Input}>
+                            <View style={styles.Content1}>
+                              <TextInput style={styles.Txt606}
+                                underlineColorAndroid="transparent"
+                                placeholder="State"
+                                autoCapitalize="none"
+                                placeholderTextColor="gray" />
+                            </View>
+                          </View>
                         </View>
                       </View>
                     </View>
+                    
+                    <View style={styles.Text_field}>
+                      <View style={styles.Content2}>
+                        <View style={styles.LabelText}>
+                          <Text style={styles.Txt860}>City</Text>
+                        </View>
+                        <View style={styles.Content2}>
+                          <View style={styles.Input}>
+                            <View style={styles.Content1}>
+                              <TextInput style={styles.Txt606}
+                                underlineColorAndroid="transparent"
+                                placeholder="KL"
+                                autoCapitalize="none"
+                                placeholderTextColor="gray" />
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View style={styles.Text_field}>
+                      <View style={styles.Content2}>
+                        <View style={styles.LabelText}>
+                          <Text style={styles.Txt860}>Address Line 1</Text>
+                        </View>
+                        <View style={styles.Content2}>
+                          <View style={styles.Input}>
+                            <View style={styles.Content1}>
+                              <TextInput style={styles.Txt606}
+                                underlineColorAndroid="transparent"
+                                placeholder="Address Line 1"
+                                autoCapitalize="none"
+                                placeholderTextColor="gray" />
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+
+                    <View style={styles.buttonContainer}>
+                      <TouchableOpacity style={styles.Button} onPress={() => setPromoModal1(true)}>
+                        <Text style={styles.btnTxt}>Delete</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.Button1} onPress={() => setPromoModal(true)}>
+                        <Text style={styles.btnTxt1}>Save</Text>
+                      </TouchableOpacity>
+                    </View>
                   </View>
                 </View>
+
               </View>
-            </View>
-          </View>
-          {/* <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Savedlocation")}>
+              {/* <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Savedlocation")}>
         <Text style={styles.btnTxt}>Add</Text>
       </TouchableOpacity> */}
-       <View style={styles.fixToText}>
-        {/* <Button
+              <View style={styles.fixToText}>
+                {/* <Button
           title="Delete"
           onPress={() => navigation.navigate("SavedDelete")}
           
@@ -155,18 +172,12 @@ export default function SavedAddress( props) {
           title="Save"
           onPress={() => navigation.navigate("Success1")}
         /> */}
-        <TouchableOpacity style={styles.Button} onPress={() => setPromoModal1(true)}>
-        <Text style={styles.btnTxt}>Delete</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.Button1} onPress={() => setPromoModal(true)}>
-        <Text style={styles.btnTxt1}>Save</Text>
-      </TouchableOpacity>
-      </View>
+              </View>
+            </View>
+          </View>
         </View>
-      </View>
-    </View>
-    </ScrollView>
-    <ReactModal
+      </ScrollView>
+      <ReactModal
         container={{
           backgroundColor: "rgba(0,0,0,0.7)",
           justifyContent: "center",
@@ -205,7 +216,7 @@ export default function SavedAddress( props) {
             <Text
               style={{
                 fontSize: (height / 100) * 2.5,
-                fontFamily: "Urbanist, sans-serif",
+                fontFamily: "Urbanist_semibold",
                 color: "#000",
               }}
             >
@@ -214,7 +225,7 @@ export default function SavedAddress( props) {
             <Text
               style={{
                 fontSize: (height / 100) * 1.5,
-                fontFamily: "Urbanist, sans-serif",
+                fontFamily: "Urbanist_semibold",
                 color: "#616161",
               }}
             >
@@ -224,7 +235,10 @@ export default function SavedAddress( props) {
 
           <View style={{ flex: 0.2, top: height / 100 * 5 }}>
             <TouchableOpacity
-              onPress={() => setPromoModal(!promoModal)}
+              onPress={() => {
+                setPromoModal(!promoModal)
+                navigation.navigate("SavedDestionation")
+              }}
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#0F437B",
@@ -237,7 +251,7 @@ export default function SavedAddress( props) {
               <Text
                 style={{
                   fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist, sans-serif",
+                  fontFamily: "Urbanist_semibold",
                   color: "#fff",
                 }}
               >
@@ -288,7 +302,7 @@ export default function SavedAddress( props) {
             <Text
               style={{
                 fontSize: (height / 100) * 2.5,
-                fontFamily: "Urbanist, sans-serif",
+                fontFamily: "Urbanist_semibold",
                 color: "#000",
               }}
             >
@@ -297,7 +311,7 @@ export default function SavedAddress( props) {
             <Text
               style={{
                 fontSize: (height / 100) * 2,
-                fontFamily: "Urbanist, sans-serif",
+                fontFamily: "Urbanist_semibold",
                 color: "#616161",
               }}
             >
@@ -306,9 +320,13 @@ export default function SavedAddress( props) {
             </Text>
           </View>
 
-          <View style={{ flex: 0.2, top: height / 100 * 5,marginBottom:10 }}>
+          <View style={{ flex: 0.2, top: height / 100 * 5, marginBottom: 10 }}>
             <TouchableOpacity
-              onPress={() => setPromoModal1(!promoModal1)}
+              onPress={() => {
+                navigation.navigate("SavedDestionation")
+                setPromoModal(!promoModal)
+                
+              }}
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#f75555",
@@ -316,13 +334,13 @@ export default function SavedAddress( props) {
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
-                marginBottom:10
+                marginBottom: 10
               }}
             >
               <Text
                 style={{
                   fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist, sans-serif",
+                  fontFamily: "Urbanist_semibold",
                   color: "#fff",
                 }}
               >
@@ -334,19 +352,19 @@ export default function SavedAddress( props) {
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "white",
-                borderColor:"#e0e0e0",
+                borderColor: "#e0e0e0",
                 borderWidth: 1,
                 width: (height / 100) * 35,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
-                marginBottom:5
+                marginBottom: 5
               }}
             >
               <Text
                 style={{
                   fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist, sans-serif",
+                  fontFamily: "Urbanist_semibold",
                   color: "gray",
                 }}
               >
@@ -443,29 +461,18 @@ const styles = StyleSheet.create({
     // width: 380,
   },
   Txt860: {
-    fontSize: 18,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "700",
-    lineHeight: 25,
-    letterSpacing: 0.2,
-    color: "rgba(33,33,33,1)",
+    ...design.TEXT[700][18],
+    color: colors.C212121,
   },
   Input: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 20.5,
-    paddingRight: 20.5,
+    width: ws(380),
+    height: hs(56),
     borderRadius: 12,
-    backgroundColor: "rgba(0,43,127,0.03)",
-    borderWidth: 1.5,
-    borderStyle: "solid",
-    borderColor: "rgba(15,67,123,1",
-    width: 380,
-    height: 56,
+    borderWidth: 0.5,
+    borderColor: colors.CBDBDBD_400,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingLeft: ws(20)
   },
   Content1: {
     display: "flex",
@@ -501,54 +508,46 @@ const styles = StyleSheet.create({
   Dropdown: {
     width: 20,
     height: 56,
+    position: 'absolute',
+    right: ws(20)
   },
   Button: {
-    display: 'flex',
-    flexDirection: 'row',
+    width: ws(182),
+    height: hs(60),
+    borderWidth: 1,
+    borderRadius: 100,
+    borderColor: colors.CE0E0E0,
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 12,
-    borderRadius: 100,
-    backgroundColor: "white",
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'gray',
-    width: '50%',
-    // marginHorizontal: '10%',
+    marginTop: hs(30),
+    marginLeft: ws(0)
   },
   btnTxt: {
-    fontSize: 18,
-    fontFamily: 'Urbanist, sans-serif',
-    fontWeight: '600',
-    lineHeight: 28,
-    letterSpacing: 0.2,
-    color: 'black',
-    textAlign: 'center',
-    justifyContent: 'center',
+    ...design.TEXT[600][18],
+    color: colors.C616161_700
   },
   Button1: {
-    display: 'flex',
-    flexDirection: 'row',
+    width: ws(182),
+    height: hs(60),
+    borderRadius: 100,
+    backgroundColor: colors.C0F437B_500,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 12,
-    borderRadius: 100,
-    backgroundColor: GetColors.PrimaryBlue_500,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: GetColors.PrimaryBlue_500,
-    width: '50%',
-    // marginHorizontal: '10%',
-    marginLeft:10
+    marginTop: hs(30),
+    marginLeft: ws(16)
   },
   btnTxt1: {
-    fontSize: 18,
-    fontFamily: 'Urbanist, sans-serif',
-    fontWeight: '600',
-    lineHeight: 28,
-    letterSpacing: 0.2,
-    color: GetColors.white,
-    textAlign: 'center',
-    justifyContent: 'center',
+    ...design.TEXT[600][18],
+    color: colors.white
   },
+  labelStyle: {
+    ...design.TEXT[700][24],
+    color: colors.C212121
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    // marginTop: hs(10)
+  }
 })

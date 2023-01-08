@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView, TouchableOpacity,Pressable } from "react-native"
+import { StyleSheet, Image, Text, View, ScrollView, TouchableOpacity, Pressable } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 import { RadioButton } from 'react-native-paper';
 import GetImage from '../assets/GetImage';
@@ -346,20 +346,16 @@ const styles = StyleSheet.create({
     marginRight: ws(24),
     marginLeft: ws(16)
   },
+
   Button: {
-    display: 'flex',
-    flexDirection: 'row',
+    width: ws(380),
+    height: hs(60),
+    borderRadius: 100,
+    backgroundColor: colors.C0F437B_500,
     justifyContent: 'center',
     alignItems: 'center',
-    top: 40,
-    padding: 12,
-    borderRadius: 100,
-    backgroundColor: GetColors.PrimaryBlue_500,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: GetColors.PrimaryBlue_500,
-    width: '80%',
-    marginHorizontal: '10%',
+    alignSelf: 'center',
+    marginTop: hs(30)
   },
   btnTxt: {
     ...design.TEXT[600][18],

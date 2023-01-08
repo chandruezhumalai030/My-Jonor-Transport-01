@@ -11,6 +11,7 @@ export default function Trips(props) {
     <Header
       {...props}
       rightIcon={false}
+      isLeftIcon
       title={"Trip Planner"}
     >
       <Tab.Navigator screenOptions={{

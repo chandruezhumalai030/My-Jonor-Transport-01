@@ -1,11 +1,14 @@
 import * as React from "react";
-import { Image, StyleSheet, Text, View, Pressable,ScrollView } from "react-native";
+import { Image, StyleSheet, Text, View, Pressable,TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { design } from "../config/design.config";
+import { colors } from '../config/colors.config';
+import { hs, ws } from '../utils/design/measurement.design';
 
 const ForgetPassword = () => {
   const navigation = useNavigation();
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
     <View style={styles.forgetResetPassword}>
       <View style={styles.autoLayoutVertical3}>
         <Image
@@ -56,17 +59,22 @@ const ForgetPassword = () => {
             </Pressable>
           </View>
         </View>
-        <Pressable
+        {/* <Pressable
           style={styles.buttonPressable}
           onPress={() => navigation.navigate("ForgetReset")}
         >
           <View style={styles.buttonBasePrimaryView}>
             <Text style={styles.text1}>Continue</Text>
           </View>
-        </Pressable>
+        </Pressable> */}
+        <TouchableOpacity style={styles.Button}
+          onPress={() => navigation.navigate("ForgetReset")}
+          >
+        <Text style={styles.btnTxt}>Add New</Text>
+      </TouchableOpacity>
       </View>
     </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -89,15 +97,15 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   selectWhichContactDetails: {
-    alignSelf: "stretch",
-    position: "relative",
-    fontSize: 18,
-    letterSpacing: 0.2,
-    lineHeight: 25,
-    fontWeight: "500",
-    fontFamily: "Urbanist,sans-serif",
-    color: "#212121",
-    textAlign: "left",
+    ...design.TEXT[500][18],
+    color: colors.C212121,
+    letterSpacing: ws(0.2),
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    // width: 381,
+    marginBottom: 10,
+    marginTop: 10
   },
   iconlyBoldChat: {
     position: "relative",
@@ -275,35 +283,29 @@ const styles = StyleSheet.create({
     color: "#fff",
     textAlign: "center",
   },
-  buttonBasePrimaryView: {
-    flex: 1,
+  Button: {
+    width: ws(380),
+    height: hs(60),
     borderRadius: 100,
-    backgroundColor: "#0f437b",
-    borderStyle: "solid",
-    borderColor: "#0f437b",
-    borderWidth: 1,
-    flexDirection: "row",
-    paddingHorizontal: 28,
-    paddingVertical: 16,
-    boxSizing: "border-box",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: colors.C0F437B_500,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: hs(30)
   },
-  buttonPressable: {
-    alignSelf: "stretch",
-    flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+  btnTxt: {
+    ...design.TEXT[600][18],
+    color: colors.white
   },
   autoLayoutVertical3: {
     position: "absolute",
     right: 0,
     left: 0,
-    height: 850,
+    height: 670,
     flexDirection: "column",
     paddingHorizontal: 24,
     paddingTop: 2,
-    paddingBottom: 48,
+    paddingBottom: 38,
     boxSizing: "border-box",
     alignItems: "center",
     justifyContent: "space-between",

@@ -1,5 +1,5 @@
-import React, {useRef, useState} from 'react';
-import { StyleSheet, Image, Text, View, TextInput, TouchableOpacity } from "react-native";
+import React, { useRef, useState } from 'react';
+import { StyleSheet, Image, Text, View, TextInput, TouchableOpacity,Dimensions } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
@@ -7,85 +7,37 @@ import Header from "../Components/Header";
 import { design } from '../config/design.config';
 import { colors } from '../config/colors.config';
 import { hs, ws } from '../utils/design/measurement.design';
+import Lottie from 'lottie-react-native';
+import ReactModal from '../Components/ReactModal';
 
 
-export default function SignIn(props) {
-    const inputRef = useRef(null);
-    const navigation = useNavigation();
-    const [email, setEmail] = useState("");
-    const [emailValidError, setEmailValidError] = useState("");
-    
-    const [password, setPassword] = useState("");
-    const [passwordValidError, setPasswordValidError] = useState("");
+export default function ForgetNewPassword(props) {
+  const [promoModal, setPromoModal] = useState(false)
+  const height = Dimensions.get("screen").height;
+  const navigation = useNavigation();
 
-    const handleValidEmail = (val) => {
-      let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
-      if (val.length === 0) {
-        setEmailValidError("email address must be enter");
-      } else if (reg.test(val) === false) {
-        setEmailValidError("enter valid email address");
-      } else if (reg.test(val) === true) {
-        setEmailValidError("");
-      }
-    };
-    
-    const handleValidPassword = (val) => {
-      if (val.length === 0) {
-        setPasswordValidError("Password must be enter");
-      } 
-    };
-    
-    return (
-      <Header
-        {...props}
-        rightIcon={false}
-        isLeftIcon
-      >
-        <View style={styles.container}>
-          <View style={styles.SignIn_01}>
-            <View style={styles.Group636}>
-              <View style={styles.AutoLayoutVertical2}>
-                <Image
-                  style={styles.Frame}
-                  source={require("../assets/Profile/singup.png")}
-                  resizeMode={'contain'}
-                />
-                <View style={{marginLeft: ws(24), marginTop: hs(60)}}>
-                <Text style={styles.Txt804}>Create Your Account</Text>
-                </View>
-                <View style={{ marginTop: hs(60)}} />
-                <View style={styles.AutoLayoutVertical1}>
-                  <View style={styles.AutoLayoutVertical}>
-                    <View style={styles.SignSignUpInput}>
-                      <View style={styles.Text_field}>
-                        <View style={styles.Content1}>
-                          <View style={styles.Input}>
-                            <View style={styles.Content}>
-                              <Image
-                                style={styles.IconlyBoldMessage}
-                                source={require("../assets/Profile/email.png")}
-                              />
-                              <TextInput
-                                style={styles.Txt543}
-                                underlineColorAndroid="transparent"
-                                placeholder="Email"
-                                autoCapitalize="none"
-                                placeholderTextColor="gray"
-                                value={email}
-                                onChangeText={(value) => {
-                                  setEmail(value);
-                                  handleValidEmail(value);
-                                }}
-                              />
-                            </View>
-                          </View>
-                          <View style={{ marginLeft: 4 }}>
-                            <Text style={styles.txtErr}>{emailValidError}</Text>
-                          </View>
-                        </View>
-                      </View>
-                      {/* <View style={styles.Content1}> */}
-                      {/* <View style={styles.Content1}> */}
+
+  return (
+    <Header
+      {...props}
+      rightIcon={false}
+      isLeftIcon
+      title={"Create New Password"}
+    >
+      <View style={styles.container}>
+        <View style={styles.SignIn_01}>
+          <View style={styles.Group636}>
+            <View style={styles.AutoLayoutVertical2}>
+              <Image
+                style={styles.Frame}
+                source={require("../assets/Profile/ForgetPassword/CNP.png")}
+                resizeMode={'contain'}
+              />
+              <View style={{ marginTop: hs(60) }} />
+              <View style={styles.AutoLayoutVertical1}>
+                <View style={styles.AutoLayoutVertical}>
+                  <View style={styles.SignSignUpInput}>
+                    <View style={styles.Text_field}>
                       <View style={styles.Input}>
                         <View style={styles.Content2}>
                           <Image
@@ -98,11 +50,6 @@ export default function SignIn(props) {
                             placeholder="Password"
                             autoCapitalize="none"
                             placeholderTextColor="gray"
-                            value={password}
-                            onChangeText={(value) => {
-                              setPassword(value);
-                              handleValidPassword(value);
-                            }}
                           />
                         </View>
                         <Image
@@ -110,10 +57,32 @@ export default function SignIn(props) {
                           source={require("../assets/Profile/show.png")}
                         />
                       </View>
-                      {/* </View> */}
-                      {/* </View> */}
                     </View>
-                    {/* <View style={styles.Button}>
+                    {/* <View style={styles.Content1}> */}
+                    {/* <View style={styles.Content1}> */}
+                    <View style={styles.Input}>
+                      <View style={styles.Content2}>
+                        <Image
+                          style={styles.IconlyBoldMessage}
+                          source={require("../assets/Profile/password.png")}
+                        />
+                        <TextInput
+                          style={styles.Txt6104}
+                          underlineColorAndroid="transparent"
+                          placeholder="Retype Password"
+                          autoCapitalize="none"
+                          placeholderTextColor="gray"
+                        />
+                      </View>
+                      <Image
+                        style={styles.IconlyLightHide}
+                        source={require("../assets/Profile/show.png")}
+                      />
+                    </View>
+                    {/* </View> */}
+                    {/* </View> */}
+                  </View>
+                  {/* <View style={styles.Button}>
                                 <View style={styles._buttonBasePrimary}>
                                     <TouchableOpacity
                                         onPress={() => navigation.navigate("Home")}
@@ -122,32 +91,107 @@ export default function SignIn(props) {
                                     </TouchableOpacity>
                                 </View>
                             </View> */}
-                    <TouchableOpacity
-                      style={styles.Button}
-                      onPress={() =>
-                        navigation.navigate("FirstTimeRegister")
-                      }
-                    >
-                      <Text style={styles.btnTxt}>Sign Up</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-                <View style={styles.AutoLayoutHorizontal}>
-                  <Text style={styles.Txt274}>
-                    Doesn’t have an account yet?
-                  </Text>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate("SignIn")}
+                    style={styles.Button}
+                      onPress={() => setPromoModal(true)}
                   >
-                    <Text style={styles.Txt862}>Sign In</Text>
+                    <Text style={styles.btnTxt}>Continue</Text>
                   </TouchableOpacity>
                 </View>
               </View>
             </View>
           </View>
         </View>
-      </Header>
-    );
+      </View>
+
+      <ReactModal
+        container={{
+          backgroundColor: "rgba(0,0,0,0.7)",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        visible={promoModal}
+      >
+        <View
+          style={{
+            backgroundColor: "#fff",
+            height: (height / 100) * 45,
+            width: "89%",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 10,
+          }}
+        >
+          <View style={{ flex: 0.4, }}>
+            {/* <Image
+              source={GetImage.promoSuccess}
+              style={{
+                height: (height / 100) * 18,
+                width: (height / 100) * 18,
+                resizeMode: "contain",
+              }}
+            /> */}
+            <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../assets/Animation/lf20_s2lryxtd.json")} autoPlay />
+          </View>
+          <View
+            style={{
+              flex: 0.2,
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Text
+              style={{
+                fontSize: (height / 100) * 2.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#000",
+              }}
+            >
+              {"Congratulations"}
+            </Text>
+            <Text
+              style={{
+                fontSize: (height / 100) * 1.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#616161",
+              }}
+            >
+              Your account is ready to use. You will be redirected to the Home page in a few seconds..
+            </Text>
+          </View>
+
+          <View style={{ flex: 0.2, top: height / 100 * 5 }}>
+            <TouchableOpacity
+              onPress={() => {
+                setPromoModal(!promoModal)
+                navigation.navigate("SignIn")
+              }}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "#0F437B",
+                width: (height / 100) * 35,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist_semibold",
+                  color: "#fff",
+                }}
+              >
+                {"Got It"}
+              </Text>
+            </TouchableOpacity>
+            <View style={{ height: (height / 100) * 2 }}></View>
+
+          </View>
+        </View>
+      </ReactModal>
+    </Header>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -209,7 +253,8 @@ const styles = StyleSheet.create({
   },
   Frame: {
     width: ws(400),
-    height: 200,
+    height: 300,
+    marginTop:10
   },
   Txt804: {
     ...design.TEXT[700][48],
@@ -235,6 +280,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "flex-start",
     marginBottom: 20,
+    marginTop:10
   },
   Text_field: {
     display: "flex",
@@ -318,14 +364,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 20,
     marginTop: hs(20),
-    marginRight:90
+    marginRight: 90
   },
   StyleTextThemeLightStateUncheckedComponentCheckbox: {
     flexDirection: "row",
     justifyContent: 'space-between',
     marginHorizontal: ws(90),
-    
-    
+
+
   },
   Rectangle: {
     borderWidth: 3,
@@ -355,16 +401,16 @@ const styles = StyleSheet.create({
     textAlign: "right",
     justifyContent: "flex-end",
   },
-    Button: {
-      width: ws(380),
-      height: hs(60),
-      borderRadius: 100,
-      backgroundColor: colors.C0F437B_500,
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignSelf: 'center',
-      marginTop: hs(30)
-    },
+  Button: {
+    width: ws(380),
+    height: hs(60),
+    borderRadius: 100,
+    backgroundColor: colors.C0F437B_500,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: hs(80)
+  },
 
   btnTxt: {
     fontSize: 18,
