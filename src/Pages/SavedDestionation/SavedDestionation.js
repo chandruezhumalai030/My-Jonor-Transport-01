@@ -12,7 +12,7 @@ export default function SavedDestionation(props) {
     <Header
       {...props}
       rightIcon={false}
-      // isBackground={true}
+      isLeftIcon
       title={"Saved Destination"}
     >
       <Tab.Navigator screenOptions={{

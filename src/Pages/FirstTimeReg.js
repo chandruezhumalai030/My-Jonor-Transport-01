@@ -1,25 +1,31 @@
-import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView, TextInput, TouchableOpacity } from "react-native";
+import React, { useState } from 'react';
+import { StyleSheet, Image, Text, View, ScrollView,Dimensions, TextInput, TouchableOpacity } from "react-native";
 import { RadioButton } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
-import GetColors from '../assets/GetColors';
 import Header from "../Components/Header";
+import { design } from "../config/design.config";
+import { colors } from '../config/colors.config';
+import { hs, ws } from '../utils/design/measurement.design';
 
 export default function FirstTimeRegister(props) {
+
+  const height = Dimensions.get("screen").height;
+
   const navigation = useNavigation();
   const [checked, setChecked] = React.useState('first');
   return (
     <Header
       {...props}
-        rightIcon={false}
-      // isBackground={true}
+      rightIcon={false}
+      isLeftIcon
       title={"Edit Profile"}
+      labelStyle={styles.labelStyle}
     >
-    <View style={styles.container}>
-      <View style={styles.EditProfile_03}>
-        <View style={styles.Group642}>
-          <View style={styles.AutoLayoutVertical2}>
-            <View style={styles.AutoLayoutVertical1}>
+      <ScrollView style={styles.container}>
+        <View style={styles.EditProfile_03}>
+          <View style={styles.Group642}>
+            <View style={styles.AutoLayoutVertical2}>
+              {/* <View style={styles.AutoLayoutVertical1}> */}
               <View style={styles.AutoLayoutVertical}>
                 <Image
                   style={styles.AvatarThumbail}
@@ -53,24 +59,22 @@ export default function FirstTimeRegister(props) {
                   <View style={styles.Text_field}>
                     <View style={styles.Input1}>
                       <View style={styles.Content1}>
-                        {/* <TextInput style={styles.Txt674}>Ahmad Fazri</TextInput> */}
                         <TextInput style={styles.Txt754}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "NRIC"
-                           autoCapitalize = "none"
-                           placeholderTextColor = "gray"/>
+                          underlineColorAndroid="transparent"
+                          placeholder="NRIC"
+                          autoCapitalize="none"
+                          placeholderTextColor="gray" />
                       </View>
                     </View>
                   </View>
                   <View style={styles.Text_field}>
                     <View style={styles.Input1}>
                       <View style={styles.Content1}>
-                        {/* <TextInput style={styles.Txt855}>920505-05-8723</TextInput> */}
                         <TextInput style={styles.Txt754}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "Ahmad Fazi"
-                           autoCapitalize = "none"
-                           placeholderTextColor = "gray"/>
+                          underlineColorAndroid="transparent"
+                          placeholder="Ahmad Fazi"
+                          autoCapitalize="none"
+                          placeholderTextColor="gray" />
                       </View>
                     </View>
                   </View>
@@ -80,26 +84,26 @@ export default function FirstTimeRegister(props) {
                         <Image
                           style={styles.Frame23}
                           source={require('../assets/Profile/phone.png')}
+                          resizeMode={'contain'}
                         />
-                        {/* <TextInput style={styles.Txt1073}>Phone Number</TextInput> */}
                         <TextInput style={styles.Txt754}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "Phone Number"
-                           autoCapitalize = "none"
-                           placeholderTextColor = "gray"/>
+                          underlineColorAndroid="transparent"
+                          placeholder="Phone Number"
+                          autoCapitalize="none"
+                          placeholderTextColor="gray" />
                       </View>
                     </View>
                   </View>
                 </View>
               </View>
+              {/* </View> */}
+              <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Editprofile")}>
+                <Text style={styles.btnTxt}>Continue</Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Editprofile")}>
-              <Text style={styles.btnTxt}>Continue</Text>
-            </TouchableOpacity>
           </View>
         </View>
-      </View>
-    </View>
+      </ScrollView>
     </Header>
   )
 }
@@ -108,15 +112,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-},
+  },
   EditProfile_03: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
-    // backgroundColor: "rgba(255, 255, 255, 1)",
-    // width: '100%',
-    // height: '100%',
+    backgroundColor: "rgba(255, 255, 255, 1)",
+    width: '100%',
+    height: '100%',
   },
   Group642: {
     display: "flex",
@@ -127,7 +131,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    marginLeft:15
   },
   AutoLayoutVertical2: {
     display: "flex",
@@ -138,14 +141,14 @@ const styles = StyleSheet.create({
     paddingBottom: 47,
     paddingLeft: 23,
     paddingRight: 23,
-    height: 700,
+    height: 750,
     width: 428,
   },
   AutoLayoutVertical1: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-    alignItems: "flex-start",
+    alignItems: "center",
     width: 380,
   },
   AutoLayoutVertical: {
@@ -154,6 +157,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     width: 360,
+    marginTop: hs(50),
   },
   AvatarThumbail: {
     width: 140,
@@ -168,13 +172,6 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     width: 380,
   },
-  Radio: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginRight: 24,
-  },
   Group3: {
     marginRight: 12,
     borderRadius: 12,
@@ -188,55 +185,37 @@ const styles = StyleSheet.create({
   Content: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
   },
   Txt754: {
-    fontSize: 16,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "400",
-    lineHeight: 22,
-    letterSpacing: 0.2,
-    // marginLeft:10,
-    color: "black",
-    width: 341,
+    ...design.TEXT[400][16],
+    color: colors.C9E9E9E_500
   },
   Txt914: {
-    fontSize: 14,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "600",
-    lineHeight: 20,
-    letterSpacing: 0.2,
-    color: "rgba(33,33,33,1)",
+    ...design.TEXT[600][14],
+    color: colors.C212121,
   },
 
   Text_field: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     marginBottom: 16,
-    marginLeft:15
+    // marginRight: -25
   },
   Input: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 19.5,
-    paddingRight: 19.5,
+    width: ws(380),
+    height: hs(56),
     borderRadius: 12,
-    backgroundColor: "rgba(255, 255, 255, 1)",
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(224,224,224,1)",
-    width: 380,
-    height: 56,
+    borderColor: colors.CBDBDBD_400,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: ws(16)
   },
   Content1: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
@@ -257,21 +236,16 @@ const styles = StyleSheet.create({
     width: 341,
   },
   Input1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 18.5,
-    paddingRight: 18.5,
+    width: ws(380),
+    height: hs(56),
     borderRadius: 12,
-    backgroundColor: "rgba(0,43,127,0.03)",
-    borderWidth: 1.5,
-    borderStyle: "solid",
-    borderColor: "rgba(15,67,123,1)",
-    width: 380,
-    height: 56,
+    borderWidth: 0.5,
+    borderColor: colors.CBDBDBD_400,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: ws(20),
+    marginLeft : ws(24),
+    marginRight: ws(24)
   },
   Txt855: {
     fontSize: 16,
@@ -287,7 +261,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    paddingTop: 0,
+    paddingTop: 5,
     paddingBottom: 0,
     paddingLeft: 19.5,
     paddingRight: 19.5,
@@ -341,44 +315,23 @@ const styles = StyleSheet.create({
   },
 
   Button: {
-    display: 'flex',
-    flexDirection: 'row',
+    width: ws(380),
+    height: hs(60),
+    borderRadius: 100,
+    backgroundColor: colors.C0F437B_500,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 12,
-    borderRadius: 100,
-    backgroundColor: GetColors.PrimaryBlue_500,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: GetColors.PrimaryBlue_500,
-    width: '80%',
-    marginHorizontal: '10%',
+    marginTop: hs(70),
+    marginBottom: hs(44)
   },
   btnTxt: {
-    fontSize: 18,
-    fontFamily: 'Urbanist, sans-serif',
-    fontWeight: '600',
-    lineHeight: 28,
-    letterSpacing: 0.2,
-    color: GetColors.white,
-    textAlign: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    ...design.TEXT[600][18],
+    color: colors.white
   },
-  _buttonBasePrimary: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,
-    paddingTop: 15,
-    paddingBottom: 15,
-    paddingLeft: 27,
-    paddingRight: 27,
-    borderRadius: 100,
-    backgroundColor: "rgba(15,67,123,1)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(15,67,123,1)",
-    width: 380,
-  },
+  labelStyle: {
+    ...design.TEXT[700][24],
+    color: colors.C212121
+  }
 })

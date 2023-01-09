@@ -7,6 +7,9 @@ import GetColors from '../assets/GetColors';
 import Header from "../Components/Header";
 import Lottie from 'lottie-react-native';
 import ReactModal from '../Components/ReactModal';
+import { design } from "../config/design.config";
+import { colors } from '../config/colors.config';
+import { hs, ws } from '../utils/design/measurement.design';
 
 export default function Editprofile1(props) {
 
@@ -20,8 +23,9 @@ export default function Editprofile1(props) {
     <Header
       {...props}
       rightIcon={false}
-      // isBackground={true}
+      isLeftIcon
       title={"Edit Profile"}
+      labelStyle={styles.labelStyle}
     >
       <ScrollView style={styles.container}>
         <View style={styles.EditProfile_03}>
@@ -61,7 +65,6 @@ export default function Editprofile1(props) {
                   <View style={styles.Text_field}>
                     <View style={styles.Input1}>
                       <View style={styles.Content1}>
-                        {/* <TextInput style={styles.Txt674}>Ahmad Fazri</TextInput> */}
                         <TextInput style={styles.Txt754}
                           underlineColorAndroid="transparent"
                           placeholder="Name"
@@ -73,7 +76,6 @@ export default function Editprofile1(props) {
                   <View style={styles.Text_field}>
                     <View style={styles.Input1}>
                       <View style={styles.Content1}>
-                        {/* <TextInput style={styles.Txt855}>920505-05-8723</TextInput> */}
                         <TextInput style={styles.Txt754}
                           underlineColorAndroid="transparent"
                           placeholder="Number"
@@ -85,9 +87,6 @@ export default function Editprofile1(props) {
                   <View style={styles.Text_field}>
                     <View style={styles.Input1}>
                       <View style={styles.Content1}>
-                        {/* <TextInput style={styles.Txt591}>
-                          ahmadfazri23@gmail.com
-                        </TextInput> */}
                         <TextInput style={styles.Txt754}
                           underlineColorAndroid="transparent"
                           placeholder="Gmail"
@@ -99,7 +98,6 @@ export default function Editprofile1(props) {
                   <View style={styles.Text_field}>
                     <View style={styles.Input1}>
                       <View style={styles.Content1}>
-                        {/* <TextInput style={styles.Txt591}>Nationality</TextInput> */}
                         <TextInput style={styles.Txt754}
                           underlineColorAndroid="transparent"
                           placeholder="Nationality"
@@ -114,8 +112,8 @@ export default function Editprofile1(props) {
                         <Image
                           style={styles.Frame23}
                           source={require('../assets/Profile/phone.png')}
+                          resizeMode={'contain'}
                         />
-                        {/* <TextInput style={styles.Txt1073}>Phone Number</TextInput> */}
                         <TextInput style={styles.Txt754}
                           underlineColorAndroid="transparent"
                           placeholder="Phone Number"
@@ -153,14 +151,6 @@ export default function Editprofile1(props) {
           }}
         >
           <View style={{ flex: 0.4, }}>
-            {/* <Image
-              source={GetImage.promoSuccess}
-              style={{
-                height: (height / 100) * 18,
-                width: (height / 100) * 18,
-                resizeMode: "contain",
-              }}
-            /> */}
             <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../assets/Animation/lf20_s2lryxtd.json")} autoPlay />
           </View>
           <View
@@ -192,7 +182,10 @@ export default function Editprofile1(props) {
 
           <View style={{ flex: 0.2, top: height / 100 * 5 }}>
             <TouchableOpacity
-              onPress={() => setPromoModal(!promoModal)}
+              onPress={() => {
+                setPromoModal(!promoModal)
+                navigation.navigate("BottomTab")
+              }}
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#0F437B",
@@ -270,6 +263,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     width: 360,
+   // marginTop: hs(20),
   },
   AvatarThumbail: {
     width: 140,
@@ -301,21 +295,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   Txt754: {
-    fontSize: 16,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "400",
-    lineHeight: 22,
-    letterSpacing: 0.2,
-    color: "black",
-    width: 350,
+    ...design.TEXT[400][16],
+    color: colors.C9E9E9E_500
   },
   Txt914: {
-    fontSize: 14,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "600",
-    lineHeight: 20,
-    letterSpacing: 0.2,
-    color: "rgba(33,33,33,1)",
+    ...design.TEXT[600][14],
+    color: colors.C212121,
   },
 
   Text_field: {
@@ -324,27 +309,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 16,
-    marginRight: -25
+    // marginRight: -25
   },
   Input: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 19.5,
-    paddingRight: 19.5,
+    width: ws(380),
+    height: hs(56),
     borderRadius: 12,
-    backgroundColor: "rgba(255, 255, 255, 1)",
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(224,224,224,1)",
-    width: 380,
-    height: 56,
+    borderColor: colors.CBDBDBD_400,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: ws(16)
   },
   Content1: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
@@ -365,21 +342,16 @@ const styles = StyleSheet.create({
     width: 341,
   },
   Input1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 18.5,
-    paddingRight: 18.5,
+    width: ws(380),
+    height: hs(56),
     borderRadius: 12,
-    // backgroundColor: "rgba(0,43,127,0.03)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(15,67,123,1)",
-    width: 380,
-    height: 56,
+    borderWidth: 0.5,
+    borderColor: colors.CBDBDBD_400,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: ws(20),
+    marginLeft : ws(24),
+    marginRight: ws(24)
   },
   Txt855: {
     fontSize: 16,
@@ -449,28 +421,23 @@ const styles = StyleSheet.create({
   },
 
   Button: {
-    display: 'flex',
-    flexDirection: 'row',
+    width: ws(380),
+    height: hs(60),
+    borderRadius: 100,
+    backgroundColor: colors.C0F437B_500,
     justifyContent: 'center',
     alignItems: 'center',
-    top: 40,
-    padding: 12,
-    borderRadius: 100,
-    backgroundColor: GetColors.PrimaryBlue_500,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: GetColors.PrimaryBlue_500,
-    width: '90%',
-    marginHorizontal: '10%',
+    marginTop: hs(70),
+    marginBottom: hs(44)
   },
   btnTxt: {
-    fontSize: 18,
-    fontFamily: 'Urbanist, sans-serif',
-    fontWeight: '600',
-    lineHeight: 28,
-    letterSpacing: 0.2,
-    color: GetColors.white,
-    textAlign: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    ...design.TEXT[600][18],
+    color: colors.white
   },
+  labelStyle: {
+    ...design.TEXT[700][24],
+    color: colors.C212121
+  }
 })

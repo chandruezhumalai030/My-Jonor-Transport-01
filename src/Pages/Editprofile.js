@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput } from "react-nativ
 import { useNavigation } from "@react-navigation/native";
 import GetColors from '../assets/GetColors';
 import Header from "../Components/Header";
+import { design } from "../config/design.config";
+import { colors } from "../config/colors.config";
+import { hs, ws } from "../utils/design/measurement.design";
 
 export default function EditProfile(props) {
   const navigation = useNavigation();
@@ -22,13 +25,14 @@ export default function EditProfile(props) {
     <Header
       {...props}
       rightIcon={false}
-      // isBackground={true}
+      isLeftIcon
       title={"Edit Profile"}
+      labelStyle={styles.labelStyle}
     >
       <View style={styles.container}>
         <View style={styles.EditProfile}>
           <View style={styles.AutoLayoutVertical4}>
-            <View >
+            <View style={{justifyContent:'center', alignItems:'center'}}>
               <Text style={styles.Txt1081}>Enter Your Passcode</Text>
               <View style={styles.CodeInput}>
                 <View style={styles.CodeInput}>
@@ -46,6 +50,7 @@ export default function EditProfile(props) {
                           pin2Ref.current.focus();
                         }
                       }}
+                      cursorColor={colors.C757575}
                     />
                   </View>
                 </View>
@@ -61,6 +66,7 @@ export default function EditProfile(props) {
                           pin3Ref.current.focus();
                         }
                       }}
+                      cursorColor={colors.C757575}
                     />
                   </View>
                 </View>
@@ -76,6 +82,7 @@ export default function EditProfile(props) {
                           pin4Ref.current.focus();
                         }
                       }}
+                      cursorColor={colors.C757575}
                     />
                   </View>
                 </View>
@@ -88,12 +95,11 @@ export default function EditProfile(props) {
                       onChange={(pin4) => {
                         setPin4(pin4)
                       }}
+                      cursorColor={colors.C757575}
                     />
                   </View>
                 </View>
               </View>
-            </View>
-            <View style={styles.AutoLayoutVertical5}>
               <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("EditProfile1")}>
                 <Text style={styles.btnTxt}>Continue</Text>
               </TouchableOpacity>
@@ -121,54 +127,21 @@ const styles = StyleSheet.create({
     // height: 926,
   },
   AutoLayoutVertical5: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    top: 4,
-    left: 0,
-    right: 0,
-    paddingTop: 1,
-    paddingBottom: 23,
-    paddingLeft: 15,
-    paddingRight: 15,
-    marginTop: 450
-    // width: 428,
-    // height: 576,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   AutoLayoutVertical4: {
-    display: "flex",
-    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    position: "absolute",
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    top: 4,
-    left: 0,
-    right: 0,
-    paddingTop: 19,
-    paddingBottom: 23,
-    paddingLeft: 35,
-    paddingRight: 15,
-    // width: 428,
-    // height: 576,
   },
   AutoLayoutVertical3: {
-    display: "flex",
-    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    // width: 380,
   },
   Txt1081: {
-    fontSize: 18,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "400",
-    lineHeight: 25,
-    letterSpacing: 0.2,
-    color: "rgba(33,33,33,1)",
+    ...design.TEXT[400][18],
+    color: colors.C212121,
+    letterSpacing: ws(0.2),
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
@@ -185,53 +158,35 @@ const styles = StyleSheet.create({
     marginBottom: 50
   },
   _codeInput: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    paddingTop: .5,
-    paddingBottom: 15.5,
-    paddingLeft: 16.5,
-    paddingRight: 32,
+    width: ws(78),
+    height: hs(61),
+    borderWidth: 0.5,
+    borderColor: colors.CE0E0E0,
     borderRadius: 12,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "gray",
   },
   Txt415: {
-    fontSize: 20,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "700",
-    lineHeight: 29,
-    color: "rgba(33,33,33,1)",
+    ...design.TEXT[700][24],
+    color: colors.C212121,
     textAlign: "center",
     justifyContent: "center",
-    marginTop:10
   },
   Button: {
-    display: 'flex',
-    flexDirection: 'row',
+    width: ws(380),
+    height: hs(60),
+    backgroundColor: colors.C0F437B_500,
+    borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 12,
-    borderRadius: 100,
-    backgroundColor: GetColors.PrimaryBlue_500,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: GetColors.PrimaryBlue_500,
-    width: '100%',
-    marginHorizontal: '10%',
-    marginTop: 40,
+    marginTop: hs(84)
   },
   btnTxt: {
-    fontSize: 18,
-    fontFamily: 'Urbanist, sans-serif',
-    fontWeight: '600',
-    lineHeight: 28,
-    letterSpacing: 0.2,
-    color: GetColors.white,
+    ...design.TEXT[600][18],
+    color: colors.white,
     textAlign: 'center',
     justifyContent: 'center',
   },
+  labelStyle: {
+    ...design.TEXT[700][24],
+    color: colors.C212121
+  }
 })

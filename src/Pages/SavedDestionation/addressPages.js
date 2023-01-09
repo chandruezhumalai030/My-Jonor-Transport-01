@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
-import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity,Dimensions } from "react-native"
+import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity,Pressable,Dimensions } from "react-native"
 import { useNavigation } from "@react-navigation/native";
-import GetImage from '../../assets/GetImage';
-import GetColors from '../../assets/GetColors';
+
 import Header from "../../Components/Header";
 import Lottie from 'lottie-react-native';
 import ReactModal from '../../Components/ReactModal';
+import { design } from '../../config/design.config';
+import { colors } from '../../config/colors.config';
+import { hs, ws } from '../../utils/design/measurement.design';
 
-
-export default function Addresspage( props) {
+export default function Addressnew( props) {
   const height = Dimensions.get("screen").height;
-  const [promoModal1, setPromoModal1] = useState(false)
+  const [promoModal, setPromoModal] = useState(false)
+
     const navigation = useNavigation();
   return (
     <Header
       {...props}
         rightIcon={false}
-      // isBackground={true}
+        isLeftIcon
       title={"Saved Destination"}
+      labelStyle={styles.labelStyle}
     >
     <ScrollView style={styles.container}>
     <View style={styles.Address_02}>
@@ -56,10 +59,12 @@ export default function Addresspage( props) {
                         placeholder = "Malaysia"
                         autoCapitalize = "none"
                         placeholderTextColor = "gray"/>
+                        <Pressable onPress={() => navigation.navigate("Addresssuccess")}>
                         <Image
                           style={styles.Dropdown}
                           source={require('../../assets/Profile/down.png')}
                         />
+                        </Pressable>
                       </View>
                     </View>
                   </View>
@@ -76,10 +81,12 @@ export default function Addresspage( props) {
                         placeholder = "5600"
                         autoCapitalize = "none"
                         placeholderTextColor = "gray"/>
+                        <Pressable onPress={() => navigation.navigate("Addresssuccess")}>
                         <Image
                           style={styles.Dropdown}
                           source={require('../../assets/Profile/down.png')}
                         />
+                        </Pressable>
                       </View>
                     </View>
                   </View>
@@ -140,10 +147,12 @@ export default function Addresspage( props) {
                 </View>
               </View>
             </View>
-          </View>
-          <TouchableOpacity style={styles.Button} onPress={() => setPromoModal1(true)}>
+            <TouchableOpacity style={styles.Button}
+          onPress={() => setPromoModal(true)}
+          >
         <Text style={styles.btnTxt}>Add</Text>
       </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
@@ -154,7 +163,7 @@ export default function Addresspage( props) {
           justifyContent: "center",
           alignItems: "center",
         }}
-        visible={promoModal1}
+        visible={promoModal}
       >
         <View
           style={{
@@ -195,7 +204,7 @@ export default function Addresspage( props) {
 
           <View style={{ flex: 0.2, top: height / 100 * 5,marginBottom:10 }}>
             <TouchableOpacity
-              onPress={() => navigation.navigate("SavedAddress")}
+              onPress={() => navigation.navigate("SavedDestionation")}
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#0F437B",
@@ -217,7 +226,7 @@ export default function Addresspage( props) {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => setPromoModal1(!promoModal1)}
+              onPress={() => navigation.navigate("SavedDestionation")}
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "white",
@@ -294,11 +303,8 @@ const styles = StyleSheet.create({
     width: 380,
   },
   ProfileInputForm: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    height: 654,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   Text_field: {
     display: "flex",
@@ -326,29 +332,18 @@ const styles = StyleSheet.create({
     // width: 380,
   },
   Txt860: {
-    fontSize: 18,
-    fontFamily: "Urbanist, sans-serif",
-    fontWeight: "700",
-    lineHeight: 25,
-    letterSpacing: 0.2,
-    color: "rgba(33,33,33,1)",
+    ...design.TEXT[700][18],
+    color: colors.C212121,
   },
   Input: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 20.5,
-    paddingRight: 20.5,
+    width: ws(380),
+    height: hs(56),
     borderRadius: 12,
-    backgroundColor: "rgba(0,43,127,0.03)",
-    borderWidth: 1.5,
-    borderStyle: "solid",
-    borderColor: "rgba(15,67,123,1",
-    width: 380,
-    height: 56,
+    borderWidth: 0.5,
+    borderColor: colors.CBDBDBD_400,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingLeft: ws(20)
   },
   Content1: {
     display: "flex",
@@ -384,29 +379,25 @@ const styles = StyleSheet.create({
   Dropdown: {
     width: 20,
     height: 56,
+    position: 'absolute',
+    right: ws(20)
   },
   Button: {
-    display: 'flex',
-    flexDirection: 'row',
+    width: ws(380),
+    height: hs(60),
+    borderRadius: 100,
+    backgroundColor: colors.C0F437B_500,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 12,
-    borderRadius: 100,
-    backgroundColor: GetColors.PrimaryBlue_500,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: GetColors.PrimaryBlue_500,
-    width: '90%',
-    marginHorizontal: '10%',
+    alignSelf: 'center',
+    marginTop: hs(30)
   },
   btnTxt: {
-    fontSize: 18,
-    fontFamily: 'Urbanist, sans-serif',
-    fontWeight: '600',
-    lineHeight: 28,
-    letterSpacing: 0.2,
-    color: GetColors.white,
-    textAlign: 'center',
-    justifyContent: 'center',
+    ...design.TEXT[600][18],
+    color: colors.white
   },
+  labelStyle: {
+    ...design.TEXT[700][24],
+    color: colors.C212121
+  }
 })

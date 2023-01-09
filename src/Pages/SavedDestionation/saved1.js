@@ -2,6 +2,9 @@ import * as React from "react";
 import { Text, StyleSheet, View, Pressable, Image,TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../Components/Header";
+import { design } from "../../config/design.config";
+import { colors } from "../../config/colors.config";
+import { hs, ws } from "../../utils/design/measurement.design";
 
 const Saved = (props) => {
     const navigation = useNavigation();
@@ -10,19 +13,12 @@ const Saved = (props) => {
         <Header
             {...props}
             rightIcon={false}
-            // isBackground={true}
+            isLeftIcon
             title={"Saved Destination"}
         >
             <View style={styles.container}>
                 <View style={styles.savedDestination03View}>
-                    {/* <Pressable
-                        style={styles.buttonPressable}
-                        onPress={() => navigation.navigate("Addresspage")}
-                    >
-                        <View style={styles.buttonBasePrimaryView}>
-                            <Text style={styles.text}>Continue</Text>
-                        </View>
-                    </Pressable> */}
+     
                     <View style={styles.autoLayoutVertical4}>
                         <View style={styles.autoLayoutVertical3}>
                             <Text style={styles.selectWhereDoYouWantToSa}>
@@ -143,15 +139,8 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
     },
     selectWhereDoYouWantToSa: {
-        alignSelf: "stretch",
-        position: "relative",
-        fontSize: 18,
-        letterSpacing: 0.2,
-        lineHeight: 25,
-        fontWeight: "500",
-        fontFamily: "Urbanist, sans-serif",
-        color: "#212121",
-        textAlign: "left",
+        ...design.TEXT[500][18],
+        color: colors.C212121,
     },
     iconlyBoldHome: {
         position: "relative",

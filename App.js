@@ -1,8 +1,15 @@
 import React from 'react';
 import {View} from 'react-native';
 import Routes from './src/Navigations/Routes';
+import { Text } from 'react-native';
 
 export default function App() {
+
+  React.useEffect(() => {
+    Text.defaultProps = Text.defaultProps || {};
+    Text.defaultProps.allowFontScaling = false;
+  }, []);
+
   return (
     <View style={{flex: 1,position: 'static'}}>
       <Routes />

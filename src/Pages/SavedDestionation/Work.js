@@ -1,6 +1,9 @@
 import * as React from "react";
-import { Image, StyleSheet, Text, View, Pressable } from "react-native";
+import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { design } from "../../config/design.config";
+import { colors } from '../../config/colors.config';
+import { hs, ws } from '../../utils/design/measurement.design';
 
 const Work = () => {
   const navigation = useNavigation();
@@ -19,14 +22,19 @@ const Work = () => {
             No Record available yet
           </Text>
         </View>
-        <Pressable
+        {/* <Pressable
           style={styles.buttonPressable}
           onPress={() => navigation.navigate("Saved")}
         >
           <View style={styles.buttonBasePrimaryView}>
             <Text style={styles.text}>Add New</Text>
           </View>
-        </Pressable>
+        </Pressable> */}
+         <TouchableOpacity style={styles.Button}
+          onPress={() => navigation.navigate("Saved")}
+          >
+        <Text style={styles.btnTxt}>Add New</Text>
+      </TouchableOpacity>
       </View>
     </View>
     </View>
@@ -71,38 +79,34 @@ const styles = StyleSheet.create({
     height: 116,
     flexShrink: 0,
   },
+
   supportingText: {
-    position: "relative",
-    fontSize: 16,
-    letterSpacing: 0.2,
-    lineHeight: 22,
-    fontFamily: "Urbanist, sans-serif",
-    color: "#9e9e9e",
+    ...design.TEXT[400][18],
+    color: colors.C212121,
+    letterSpacing: ws(0.2),
     textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    // width: 381,
+    marginBottom: 80,
+    marginTop: 120
   },
   mt16: {
     marginTop: 16,
   },
-  buttonPressable: {
-    alignSelf: "stretch",
-    flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    marginBottom:100
-  },
-  buttonBasePrimaryView: {
-    flex: 1,
+  Button: {
+    width: ws(380),
+    height: hs(60),
     borderRadius: 100,
-    backgroundColor: "#0f437b",
-    borderStyle: "solid",
-    borderColor: "#0f437b",
-    borderWidth: 1,
-    flexDirection: "row",
-    paddingHorizontal: 28,
-    paddingVertical: 16,
-    boxSizing: "border-box",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: colors.C0F437B_500,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: hs(30)
+  },
+  btnTxt: {
+    ...design.TEXT[600][18],
+    color: colors.white
   },
   text: {
     position: "relative",
