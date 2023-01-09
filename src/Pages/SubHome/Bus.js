@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import {
   Text,
   StyleSheet,
@@ -11,6 +11,9 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../Components/Header";
+import { colors } from "../../config/colors.config";
+import { hs, ws } from "../../utils/design/measurement.design";
+import { design } from "../../config/design.config";
 
 const listTab = [
   {
@@ -64,23 +67,24 @@ const timeTab = [
 
 const HomeAction = (props) => {
   const navigation = useNavigation();
-    const [tabName, setTabName] = useState("Mon");
-    const [tabTime, setTabTime] = useState("9AM - 12PM");
+  const [tabName, setTabName] = useState("Mon");
+  const [tabTime, setTabTime] = useState("9AM - 12PM");
 
-    const setTab = (tabName) => {
-      setTabName(tabName);
-    };
+  const setTab = (tabName) => {
+    setTabName(tabName);
+  };
 
-    const setTime = (tabTime) => {
-      setTabName(tabTime);
-    };
+  const setTime = (tabTime) => {
+    setTabName(tabTime);
+  };
 
   return (
     <Header
       {...props}
-      rightIcon={false}
-      // isBackground={true}
       title={"Available Routes"}
+      isLeftIcon
+      titleStyle={styles.title}
+      labelStyle={design.TEXT[700][24]}
     >
       <ScrollView
         style={styles.container}
@@ -579,7 +583,7 @@ const styles = StyleSheet.create({
   },
   textTab: {
     fontSize: 16,
-    color:'black'
+    color: 'black'
   },
   btnTabActive: {
     backgroundColor: "#C62453",

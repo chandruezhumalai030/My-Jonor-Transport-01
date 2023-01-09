@@ -17,81 +17,86 @@ import GetImage from "../../assets/GetImage";
 import ReactModal from "../../Components/ReactModal";
 import { width } from "../../assets/fontsAndColors";
 import { icon } from "../../assets/icons";
+import { colors } from "../../config/colors.config";
+import { hs, ws } from "../../utils/design/measurement.design";
+import { design } from "../../config/design.config";
 
 function ScanQR(props) {
-    const[amountModal,setAmountModal]= React.useState(false)
-    const navigation = useNavigation();
+  const [amountModal, setAmountModal] = React.useState(false)
+  const navigation = useNavigation();
 
-    let data = [
-        {
-            id:1,
-            title:'Successfully Onboard',
-            sub:'We hope you will be having a pleasant & memorable journey',
-            img:GetImage.promoSuccess
+  let data = [
+    {
+      id: 1,
+      title: 'Successfully Onboard',
+      sub: 'We hope you will be having a pleasant & memorable journey',
+      img: GetImage.promoSuccess
 
-        },
-        {
-            id:2,
-            title:'Timeout',
-            sub:'You have pass the limit for QR Code. Refresh again',
-            img:GetImage.timeout
+    },
+    {
+      id: 2,
+      title: 'Timeout',
+      sub: 'You have pass the limit for QR Code. Refresh again',
+      img: GetImage.timeout
 
-        },
-        {
-            id:3,
-            title:'Unable to Onboard',
-            sub:'Looks like we got problem. Kindly check your internet connection.',
-            img:GetImage.wrong
+    },
+    {
+      id: 3,
+      title: 'Unable to Onboard',
+      sub: 'Looks like we got problem. Kindly check your internet connection.',
+      img: GetImage.wrong
 
-        },
-        {
-            id:4,
-            title:'Successfully Offboard',
-            sub:'Thank you for using our service.',
-            img:GetImage.promoSuccess
+    },
+    {
+      id: 4,
+      title: 'Successfully Offboard',
+      sub: 'Thank you for using our service.',
+      img: GetImage.promoSuccess
 
-        }
-    ]
-    const[ModalCount,setModalCount]= React.useState(0)
-const _Triggr = () =>{
-    if(ModalCount === 0 || ModalCount === 1 || ModalCount === 2  ){
-        setModalCount(ModalCount+1)
     }
-    else{
-        setModalCount(0)
-
-        setAmountModal(!amountModal)
+  ]
+  const [ModalCount, setModalCount] = React.useState(0)
+  const _Triggr = () => {
+    if (ModalCount === 0 || ModalCount === 1 || ModalCount === 2) {
+      setModalCount(ModalCount + 1)
     }
-}
+    else {
+      setModalCount(0)
+
+      setAmountModal(!amountModal)
+    }
+  }
   return (
     <View style={styles.container}>
       <Header
         {...props}
-        rightIcon={false}
-        isBackground={true}
-        title={"Scan QR"}
+        title={"San QR"}
+        isLeftIcon
+        isBackground
+        titleStyle={styles.title}
+        labelStyle={design.TEXT[700][24]}
       >
         <View
           style={{ justifyContent: "center", alignItems: "center", flex: 1 }}
         >
           <Text style={styles.headText}>Scan QR code for onboarding</Text>
-<Image source={icon.timer} style={{height:25,width:25,resizeMode:'contain',marginTop:25}}/>
-          
-          <TouchableOpacity onPress={()=>{    setAmountModal(!amountModal)}}>
-      <Image
-            source={GetImage.qrimage}
-            style={{
-              height: 345,
-              width: width/100*95,
-              resizeMode: "contain",
-              alignSelf: "center",
-              marginTop: 20,
-              
-            }}
-          />
+          <Image source={icon.timer} style={{ height: 25, width: 25, resizeMode: 'contain', marginTop: 25 }} />
 
-</TouchableOpacity>
-        
+          <TouchableOpacity onPress={() => { setAmountModal(!amountModal) }}>
+            <Image
+              source={GetImage.qrimage}
+              style={{
+                height: 345,
+                width: width / 100 * 95,
+                resizeMode: "contain",
+                alignSelf: "center",
+                marginTop: 20,
+
+              }}
+            />
+
+          </TouchableOpacity>
+
           <TouchableOpacity
             style={{
               backgroundColor: "#F6DA5C",
@@ -102,18 +107,18 @@ const _Triggr = () =>{
               borderRadius: 5,
               marginTop: 40,
             }}
-            
-            onPress={() => navigation.navigate("routerlist")}     
-            >
+
+            onPress={() => navigation.navigate("routerlist")}
+          >
             <Image
               source={GetImage.d}
               style={{
-                marginLeft:5,
+                marginLeft: 5,
                 height: 13,
                 width: 13,
                 resizeMode: "contain",
                 alignSelf: "center",
-                marginRight:3
+                marginRight: 3
               }}
             />
             <Text style={[styles.subText, { fontSize: 13, color: "#212121" }]}>
@@ -124,9 +129,9 @@ const _Triggr = () =>{
                 width: 1,
                 height: 20,
                 backgroundColor: "#E0C654",
-                marginHorizontal:10
-            
-                
+                marginHorizontal: 10
+
+
               }}
             />
             <Image
@@ -136,36 +141,36 @@ const _Triggr = () =>{
                 width: 13,
                 resizeMode: "contain",
                 alignSelf: "center",
-                marginRight:3
+                marginRight: 3
 
               }}
             />
-            <Text style={[styles.subText, { fontSize: 13, color: "#212121",    marginRight:5 }]}>
+            <Text style={[styles.subText, { fontSize: 13, color: "#212121", marginRight: 5 }]}>
               {"Zoo Johor"}
             </Text>
           </TouchableOpacity>
         </View>
       </Header>
       <ReactModal
-                container={{
-                    backgroundColor: "rgba(0,0,0,0.7)",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}
-                visible={amountModal}
-            >
-                <View
-                    style={{
-                        backgroundColor: "#fff",
-                        height: (height / 100) * 50,
-                        width: "95%",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        borderRadius: 10,
-                    }}
-                >
-                    <View style={{ flex: 0.4, }}>
-                        <Image
+        container={{
+          backgroundColor: "rgba(0,0,0,0.7)",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        visible={amountModal}
+      >
+        <View
+          style={{
+            backgroundColor: "#fff",
+            height: (height / 100) * 50,
+            width: "95%",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 10,
+          }}
+        >
+          <View style={{ flex: 0.4, }}>
+            <Image
               source={data[ModalCount].img}
               style={{
                 height: (height / 100) * 18,
@@ -173,65 +178,65 @@ const _Triggr = () =>{
                 resizeMode: "contain",
               }}
             />
-                        {/* <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../../assets/Animation/lf20_s2lryxtd.json")} autoPlay /> */}
-                    </View>
-                    <View
-                        style={{
-                            flex: 0.2,
-                            alignItems: "center",
-                            justifyContent: "flex-end",
-                        }}
-                    >
-                        <Text
-                            style={{
-                                fontSize: (height / 100) * 2.5,
-                                fontFamily: "Urbanist_semibold",
-                                color: "#000",
-                            }}
-                        >
-                            {data[ModalCount].title}
-                        </Text>
-                        <Text
-                            style={{
-                                fontSize: (height / 100) * 1.8,
-                                fontFamily: "Urbanist_semibold",
-                                color: "#616161",
-                                textAlign:'center',
-                                marginTop:2,
-                                paddingHorizontal:5
-                            }}
-                        >
-                            {data[ModalCount].sub}
-                        </Text>
-                    </View>
+            {/* <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../../assets/Animation/lf20_s2lryxtd.json")} autoPlay /> */}
+          </View>
+          <View
+            style={{
+              flex: 0.2,
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Text
+              style={{
+                fontSize: (height / 100) * 2.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#000",
+              }}
+            >
+              {data[ModalCount].title}
+            </Text>
+            <Text
+              style={{
+                fontSize: (height / 100) * 1.8,
+                fontFamily: "Urbanist_semibold",
+                color: "#616161",
+                textAlign: 'center',
+                marginTop: 2,
+                paddingHorizontal: 5
+              }}
+            >
+              {data[ModalCount].sub}
+            </Text>
+          </View>
 
-                    <View style={{ flex: 0.2, top: height / 100 * 5 }}>
-                        <TouchableOpacity
-                            onPress={() => _Triggr()}
-                            style={{
-                                height: (height / 100) * 6,
-                                backgroundColor: "#0F437B",
-                                width: width/100*70,
-                                justifyContent: "center",
-                                alignItems: "center",
-                                borderRadius: 25,
-                            }}
-                        >
-                            <Text
-                                style={{
-                                    fontSize: (height / 100) * 2,
-                                    fontFamily: "Urbanist_semibold",
-                                    color: "#fff",
-                                }}
-                            >
-                                {"Okay"}
-                            </Text>
-                        </TouchableOpacity>
-                        <View style={{ height: (height / 100) * 2 }}></View>
+          <View style={{ flex: 0.2, top: height / 100 * 5 }}>
+            <TouchableOpacity
+              onPress={() => _Triggr()}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "#0F437B",
+                width: width / 100 * 70,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist_semibold",
+                  color: "#fff",
+                }}
+              >
+                {"Okay"}
+              </Text>
+            </TouchableOpacity>
+            <View style={{ height: (height / 100) * 2 }}></View>
 
-                    </View>
-                </View>
-            </ReactModal>
+          </View>
+        </View>
+      </ReactModal>
     </View>
   );
 }

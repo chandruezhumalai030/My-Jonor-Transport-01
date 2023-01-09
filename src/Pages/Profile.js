@@ -19,7 +19,7 @@ export default function Profile(props) {
             <Header
                 {...props}
                 title={"Profile"}
-                isLeftIcon={false}
+                isLeftIcon
                 titleStyle={styles.title}
                 labelStyle={design.TEXT[700][24]}
             >

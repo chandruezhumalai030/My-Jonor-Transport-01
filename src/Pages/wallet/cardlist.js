@@ -16,6 +16,7 @@ const height = Dimensions.get("screen").height;
 import Header from "../../Components/Header";
 // import CircleCheckBox, { LABEL_POSITION } from "react-native-circle-checkbox";
 import { useNavigation } from "@react-navigation/native";
+import { design } from "../../config/design.config";
 
 const cardlist = (props) => {
   const navigation = useNavigation();
@@ -59,6 +60,9 @@ const cardlist = (props) => {
         {...props}
         righticon={false}
         onPress={() => setOptionModal(!optionModal)}
+        isLeftIcon
+        titleStyle={styles.title}
+        labelStyle={design.TEXT[700][24]}
         title={"Top Up E-Wallet"}
       >
       <View style={{height:20}}></View>

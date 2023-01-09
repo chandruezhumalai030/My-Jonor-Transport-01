@@ -6,6 +6,7 @@ import Bt_Main from "../../Components/Bt_Main";
 import ReactModal from "../../Components/ReactModal";
 import GetImage from "../../assets/GetImage";
 import Lottie from 'lottie-react-native';
+import { design } from "../../config/design.config";
 
 const width = Dimensions.get("screen").width;
 export default function TopupScreen(props) {
@@ -65,6 +66,9 @@ setAmount(e.amount)
         {...props}
         righticon={false}
         onPress={() => setOptionModal(!optionModal)}
+        isLeftIcon
+            titleStyle={styles.title}
+            labelStyle={design.TEXT[700][24]}
         title={"Top Up E-Wallet"}
       >
       <View style={{height:View_Spacing.VS_W5}}></View>

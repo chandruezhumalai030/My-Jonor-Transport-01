@@ -6,6 +6,7 @@ import ReactModal from '../../Components/ReactModal';
 import GetImage from '../../assets/GetImage';
 import Lottie from 'lottie-react-native';
 import { width } from '../../assets/fontsAndColors';
+import { design } from "../../config/design.config";
 
 export default function SeeFamousPlaces(props) {
     const height = Dimensions.get("screen").height;
@@ -19,6 +20,9 @@ export default function SeeFamousPlaces(props) {
         <Header
             {...props}
             rightIcon={false}
+            isLeftIcon
+            titleStyle={styles.title}
+            labelStyle={design.TEXT[700][24]}
             title={"Details"} >
             <View style={{ flex: 0.3, marginTop:10,backgroundColor:'#fff'}}>
 

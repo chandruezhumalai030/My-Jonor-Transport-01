@@ -20,6 +20,7 @@ import Header from "../../Components/Header";
 import Bt_Main from "../../Components/Bt_Main";
 import ReactModal from '../../Components/ReactModal';
 import Lottie from 'lottie-react-native';
+import { design } from "../../config/design.config";
 
 const cardDetails = (props) => {
   const navigation = useNavigation();
@@ -76,6 +77,9 @@ const _trigger=()=>{
         {...props}
         righticon={false}
         onPress={() => setOptionModal(!optionModal)}
+        isLeftIcon
+            titleStyle={styles.title}
+            labelStyle={design.TEXT[700][24]}
         title={"Add New Card"}
       >
         <KeyboardAwareScrollView style={{ flex: 1 }}>

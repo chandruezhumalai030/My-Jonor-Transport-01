@@ -17,6 +17,8 @@ import {
   // import CircleCheckBox, { LABEL_POSITION } from "react-native-circle-checkbox";
   import { useNavigation } from "@react-navigation/native";
 import { width } from "../../assets/fontsAndColors";
+import { design } from "../../config/design.config";
+
 
   const addnewcard = (props) => {
     const navigation = useNavigation();
@@ -49,6 +51,9 @@ const[scan,setScan]=useState(true)
           {...props}
           righticon={false}
           onPress={() => setOptionModal(!optionModal)}
+          isLeftIcon
+            titleStyle={styles.title}
+            labelStyle={design.TEXT[700][24]}
           title={"Add New Card"}
         >
           <View style={{ flex: 0.8, marginTop: 10 }}>

@@ -14,6 +14,7 @@ import GetImage from "../../assets/GetImage";
 const height = Dimensions.get("screen").height;
 import { useNavigation } from "@react-navigation/native";
 import Header from '../../Components/Header'
+import { design } from "../../config/design.config";
 
 const Ewallet = (props) => {
   const navigation = useNavigation();
@@ -75,6 +76,9 @@ const Ewallet = (props) => {
     <View style={styles.container}>
       <Header {...props}
         rightIcon={false}
+        isLeftIcon
+            titleStyle={styles.title}
+            labelStyle={design.TEXT[700][24]}
         title={"E-Wallet"}>
         <ScrollView>
           <View style={{ flex: 0.4, justifyContent: "center", }}>

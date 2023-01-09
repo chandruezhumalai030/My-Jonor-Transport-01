@@ -23,8 +23,11 @@ const HomeAction = (props) => {
     <Header
       {...props}
       rightIcon={false}
+      isLeftIcon={true}
       // isBackground={true}
       title={"Available Routes"}
+      titleStyle={styles.title}
+                labelStyle={design.TEXT[700][24]}
     >
       <Tab.Navigator
         screenOptions={{

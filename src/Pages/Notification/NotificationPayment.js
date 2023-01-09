@@ -6,6 +6,7 @@ import ReactModal from '../../Components/ReactModal';
 import GetImage from '../../assets/GetImage';
 import Lottie from 'lottie-react-native';
 import { width } from '../../assets/fontsAndColors';
+import { design } from "../../config/design.config";
 
 export default function NotificationPayment(props) {
     const height = Dimensions.get("screen").height;
@@ -19,6 +20,9 @@ export default function NotificationPayment(props) {
         <Header
             {...props}
             rightIcon={false}
+            isLeftIcon
+            titleStyle={styles.title}
+            labelStyle={design.TEXT[700][24]}
             title={"Payment & Receipt"} >
             <View style={{ flex: 0.9 ,}}>
                 <ScrollView style={{ margin: 15, left:5}}>

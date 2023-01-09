@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import Header from "../../Components/Header";
 import { icon } from "../../assets/icons";
 import { height, View_Spacing } from "../../assets/fontsAndColors";
+import { design } from "../../config/design.config";
 
 export default function EReceiptTopup(props) {
   return (
@@ -19,6 +20,9 @@ export default function EReceiptTopup(props) {
         rightIcon={false}
         container={{ flex: 0.95, backgroundColor: "#fcfcfc" }}
         isCustom={true}
+        isLeftIcon
+            titleStyle={styles.title}
+            labelStyle={design.TEXT[700][24]}
         marginstyle={{ backgroundColor: "red" }}
         title={"E- Receipt"}
       >

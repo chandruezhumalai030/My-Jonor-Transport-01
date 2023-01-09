@@ -213,7 +213,7 @@ export default function Address(props) {
                       </Text>
                     </View>
                   </View>
-                  <Pressable onPress={() => navigation.navigate("Addressnew")}>
+                  <Pressable onPress={() => navigation.navigate("Successaddress")}>
                     <Image
                       style={styles.IconlyBoldEdit}
                       source={require('../assets/Profile/pencil.png')}
@@ -223,10 +223,13 @@ export default function Address(props) {
                 </View>
               </View>
               {/* </View> */}
-              <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
+              {/* <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
+                <Text style={styles.btnTxt}>Add new</Text>
+              </TouchableOpacity> */}
+            </View>
+            <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
                 <Text style={styles.btnTxt}>Add new</Text>
               </TouchableOpacity>
-            </View>
           </View>
         </View>
       </ScrollView>

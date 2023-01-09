@@ -215,6 +215,7 @@ const Home = (props) => {
       {/* latitude: this.state.latitude,
       longitude: this.state.longitude, */}
 
+
       <View
         style={{
         top:height/100*50,
@@ -398,7 +399,8 @@ const Home = (props) => {
                     }}
                   >
                     <TouchableOpacity
-                      onPress={() => navigation.navigate("SavedDestionation")}
+                    onPress={() => setSome(false)}
+                      // onPress={() => navigation.navigate("SavedDestionation")}
                       style={{
                         flex: 0.5,
                         justifyContent: "center",
@@ -408,7 +410,8 @@ const Home = (props) => {
                       <Image source={GetImage.work} style={styles.Img_2} />
                     </TouchableOpacity>
                     <TouchableOpacity
-                      onPress={() => navigation.navigate("SavedDestionation")}
+                    onPress={() => setSome(false)}
+                      // onPress={() => navigation.navigate("SavedDestionation")}
                       style={{
                         flex: 0.5,
                         justifyContent: "center",
@@ -425,6 +428,7 @@ const Home = (props) => {
             </View>
           </>
         ) : (
+          
           <View
             style={{
             
@@ -453,7 +457,10 @@ const Home = (props) => {
                 }}
               >
                 <TouchableOpacity
-                  onPress={() => navigation.navigate("CurrentLocation")}
+                  // onPress={() => navigation.navigate("CurrentLocation")}
+                  onPress={() =>{ 
+                    setSome(true)
+                    navigation.navigate("CurrentLocation")}}
                   style={styles.sub_Con}
                 >
                   <Image
@@ -478,7 +485,10 @@ const Home = (props) => {
                 </TouchableOpacity>
                 <View style={{ height: (height / 100) * 1 }} />
                 <TouchableOpacity
-                  onPress={() => navigation.navigate("Destination")}
+                  // onPress={() => navigation.navigate("Destination")}
+                  onPress={() =>{ 
+                    setSome(true)
+                    navigation.navigate("Destination")}}
                   style={styles.sub_Con}
                 >
                   <Image
@@ -585,6 +595,7 @@ const Home = (props) => {
               </View>
             </ScrollView>
           </View>
+
         )}
       </View>
 

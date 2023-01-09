@@ -17,6 +17,7 @@ import { useNavigation } from "@react-navigation/native";
 import Header from "../../Components/Header";
 import GetImage from "../../assets/GetImage";
 import ReactModal from "../../Components/ReactModal";
+import { design } from "../../config/design.config";
 
 export default function routerlist(props) {
   const data = [
@@ -112,7 +113,11 @@ export default function routerlist(props) {
   };
   return (
     <View style={styles.container}>
-      <Header {...props} rightIcon={false} showBuss={true} title={"Current Trip"}>
+      <Header {...props} rightIcon={false} showBuss={true} 
+      isLeftIcon
+      titleStyle={styles.title}
+      labelStyle={design.TEXT[700][24]}
+      title={"Current Trip"}>
         <View style={{ flex: 1 }}>
           <FlatList
             data={data}

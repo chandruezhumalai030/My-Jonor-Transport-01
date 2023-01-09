@@ -17,6 +17,7 @@ import Header from "../../Components/Header";
 import GetImage from "../../assets/GetImage";
 import ReactModal from "../../Components/ReactModal";
 import GetColors from "../../assets/GetColors";
+import { design } from "../../config/design.config";
 
 export default function Homelist(props) {
     const navigation = useNavigation();
@@ -108,6 +109,9 @@ export default function Homelist(props) {
   return (
     <View style={styles.container}>
       <Header {...props} rightIcon={false}
+      isLeftIcon
+      titleStyle={styles.title}
+      labelStyle={design.TEXT[700][24]}
       showSeat={true} showBuss={true} title={"Bus Route"}>
       {/* <View style={[styles.labelPositionView, styles.ml16]}>
           <View style={styles.labelView1}>
@@ -213,7 +217,7 @@ export default function Homelist(props) {
             )}
             keyExtractor={(item) => item.id}
           />
-          <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("NotificationView")}>
+          <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("ScanQR")}>
         <Text style={styles.btnTxt}>Go Onboard</Text>
       </TouchableOpacity>
         </View>

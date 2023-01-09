@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import ReactModal from '../../Components/ReactModal';
 import GetImage from '../../assets/GetImage';
 import Lottie from 'lottie-react-native';
+import { design } from "../../config/design.config";
 
 export default function NotificationGeneral(props) {
     const height = Dimensions.get("screen").height;
@@ -17,8 +18,11 @@ export default function NotificationGeneral(props) {
 
         <Header
             {...props}
-            rightIcon={false}
-            title={"General"} >
+            title={"General"}
+        isLeftIcon
+        titleStyle={styles.title}
+        labelStyle={design.TEXT[700][24]}
+             >
             <View style={{ flex: 0.7 ,backgroundColor:'#fff'}}>
                 <ScrollView style={{ margin: 15,left:5}}>
                     <Text style={[styles.font,{fontSize:height/100*2.5,paddingBottom:5}]

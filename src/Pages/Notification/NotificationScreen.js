@@ -6,6 +6,7 @@ import GetImage from '../../assets/GetImage';
 import NotificationList from '../../Components/Notofication/NotificationList';
 import BottomModal from '../../Components/BottomModal';
 import { icon } from '../../assets/icons';
+import { design } from "../../config/design.config";
 
 export default function NotificationScreen(props) {
   const height = Dimensions.get("screen").height;
@@ -83,6 +84,9 @@ export default function NotificationScreen(props) {
         {...props}
         righticon={true}
         onPress={() => setOptionModal(!optionModal)}
+        isLeftIcon
+      titleStyle={styles.title}
+      labelStyle={design.TEXT[700][24]}
         title={"Notification"}
       >
         <ScrollView showsVerticalScrollIndicator={false}>
