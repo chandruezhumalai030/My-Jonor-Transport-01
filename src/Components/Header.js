@@ -14,16 +14,18 @@ export default function Header(props) {
                 style={styles.container}
             >
             
-                <TouchableOpacity
-                    onPress={() => props.navigation.goBack(null)}
-                    style={styles.sub_Con}
-                >
-                    <Image
-                        source={GetImage.leftArrow}
-                        style={styles.img}
-                        tintColor={isBackground? '#fff':'#000'}
-                    />
-                </TouchableOpacity>
+            {isLeftIcon && (
+                    <TouchableOpacity
+                        onPress={() => navigation.goBack('')}
+                        style={styles.sub_Con}
+                    >
+                        <Image
+                            source={GetImage.leftArrow}
+                            style={styles.img}
+                            tintColor={isBackground ? '#fff' : '#000'}
+                        />
+                    </TouchableOpacity>
+                )}
                 <View style={{ flex: 0.85, justifyContent: "center" }}>
                     <Text
                         style={{
