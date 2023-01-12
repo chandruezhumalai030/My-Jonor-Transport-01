@@ -133,7 +133,7 @@ export default function Profile(props) {
                                         source={require('../assets/Profile/left.png')}
                                     />
                                 </Pressable>
-                                {/* <Pressable style={styles.AutoLayoutHorizontal}
+                                <Pressable style={styles.AutoLayoutHorizontal}
                                     onPress={() => navigation.navigate("Helpcenter")}>
                                     <Image
                                         style={styles.IconlyLightOutlineProfile}
@@ -144,8 +144,8 @@ export default function Profile(props) {
                                         style={styles.IconlyLightArrowRight2}
                                         source={require('../assets/Profile/left.png')}
                                     />
-                                </Pressable> */}
-                                <Pressable style={styles.AutoLayoutHorizontal}
+                                </Pressable>
+                                {/* <Pressable style={styles.AutoLayoutHorizontal}
                                     onPress={() => navigation.navigate("Invite")}>
                                     <Image
                                         style={styles.IconlyLightOutlineProfile}
@@ -156,7 +156,7 @@ export default function Profile(props) {
                                         style={styles.IconlyLightArrowRight2}
                                         source={require('../assets/Profile/left.png')}
                                     />
-                                </Pressable>
+                                </Pressable> */}
                                 <Pressable style={styles.AutoLayoutHorizontal1}
                                     onPress={() => navigation.navigate("SignUp")}>
                                     {/* onPress={logOut}> */}

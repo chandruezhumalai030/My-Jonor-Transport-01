@@ -132,7 +132,7 @@ export default function list(props) {
             renderItem={({ item, index }) => (
               <View
                 key={index}
-                style={{ flex: 1, flexDirection: "row", padding: 20 }}
+                style={{ flex: 1, flexDirection: "row", padding: 12 }}
               >
                 {/* <Image
                   source={item.img}
@@ -164,7 +164,7 @@ export default function list(props) {
                       width: 1,
                       borderStyle: index == 0 ? "solid" : "dashed",
                       borderLeftWidth: index == data.length - 1 ? 0 : 1,
-                      marginTop: 5,
+                      marginTop: 2,
                     }}
                   />
                 </View>

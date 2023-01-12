@@ -256,7 +256,7 @@ export default function NotificationScreen(props) {
           
           }}
         >
-        <Image source={icon.pull} style={{height:20,width:25,resizeMode:'contain',alignSelf:'center'}}></Image>
+        <Image source={icon.pull} style={{height:20,width:40,resizeMode:'contain',alignSelf:'center'}}></Image>
           <View style={{ flex: 1, margin: 20 ,paddingLeft:2}}>
             <Text
               onPress={() => setOptionModal(!optionModal)}
