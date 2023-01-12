@@ -213,13 +213,13 @@ export default function Places() {
             </View>
           </View>
           {/* </View> */}
-          {/* <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Saved")}>
+           <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Saved")}>
+            <Text style={styles.btnTxt}>Add new</Text>
+          </TouchableOpacity> 
+        </View>
+        {/* <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Saved")}>
             <Text style={styles.btnTxt}>Add new</Text>
           </TouchableOpacity> */}
-        </View>
-        <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Saved")}>
-            <Text style={styles.btnTxt}>Add new</Text>
-          </TouchableOpacity>
       </View>
     </View>
   </ScrollView>
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingTop: 43,
+    paddingTop: 20,
     paddingBottom: 47,
     paddingLeft: 23,
     paddingRight: 23,

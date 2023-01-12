@@ -223,13 +223,13 @@ export default function Address(props) {
                 </View>
               </View>
               {/* </View> */}
-              {/* <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
-                <Text style={styles.btnTxt}>Add new</Text>
-              </TouchableOpacity> */}
-            </View>
-            <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
+              <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
                 <Text style={styles.btnTxt}>Add new</Text>
               </TouchableOpacity>
+            </View>
+            {/* <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
+                <Text style={styles.btnTxt}>Add new</Text>
+              </TouchableOpacity> */}
           </View>
         </View>
       </ScrollView>
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingTop: 43,
+    paddingTop: 30,
     paddingBottom: 47,
     paddingLeft: 23,
     paddingRight: 23,
@@ -358,7 +358,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    marginTop: hs(30)
+    marginTop: hs(130),
   },
   btnTxt: {
     ...design.TEXT[600][18],

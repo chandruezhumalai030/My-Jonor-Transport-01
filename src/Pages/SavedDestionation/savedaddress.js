@@ -192,7 +192,7 @@ export default function SavedAddress(props) {
             width: "89%",
             justifyContent: "center",
             alignItems: "center",
-            borderRadius: 10,
+            borderRadius: 24,
           }}
         >
           <View style={{ flex: 0.4, }}>
@@ -215,19 +215,19 @@ export default function SavedAddress(props) {
           >
             <Text
               style={{
-                fontSize: (height / 100) * 2.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#000",
-              }}
+                ...design.TEXT[700][24],
+                color: colors.C181A20_700,
+                textAlign:'center'
+            }}
             >
               {"Succesfully Update"}
             </Text>
             <Text
               style={{
-                fontSize: (height / 100) * 1.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#616161",
-              }}
+                ...design.TEXT[400][16],
+                color: colors.C212121_400,
+                textAlign:'center'
+            }}
             >
               Your profile has been updated
             </Text>
@@ -242,7 +242,7 @@ export default function SavedAddress(props) {
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#0F437B",
-                width: (height / 100) * 35,
+                width: (height / 100) * 33,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
@@ -250,10 +250,10 @@ export default function SavedAddress(props) {
             >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  color: "#fff",
-                }}
+                  ...design.TEXT[400][16],
+                  color: colors.white,
+                  textAlign:'center'
+              }}
               >
                 {"Okay"}
               </Text>
@@ -274,11 +274,11 @@ export default function SavedAddress(props) {
         <View
           style={{
             backgroundColor: "#fff",
-            height: (height / 100) * 60,
+            height: (height / 100) * 55,
             width: "95%",
             justifyContent: "center",
             alignItems: "center",
-            borderRadius: 10,
+            borderRadius: 24,
           }}
         >
           <View style={{ flex: 0.4, }}>
@@ -301,26 +301,26 @@ export default function SavedAddress(props) {
           >
             <Text
               style={{
-                fontSize: (height / 100) * 2.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#000",
-              }}
+                ...design.TEXT[700][24],
+                color: colors.C181A20_700,
+                textAlign:'center'
+            }}
             >
               {"Are you sure?"}
             </Text>
             <Text
               style={{
-                fontSize: (height / 100) * 2,
-                fontFamily: "Urbanist_semibold",
-                color: "#616161",
-              }}
+                ...design.TEXT[400][16],
+                color: colors.C212121_400,
+                textAlign:'center'
+            }}
             >
-              Removing this means you won’t be able to see saved data ever
+              Removing this means you won’t be {"\n"}able to see saved data ever
               again
             </Text>
           </View>
 
-          <View style={{ flex: 0.2, top: height / 100 * 5, marginBottom: 10 }}>
+          <View style={{ flex: 0.2, top: height / 100 * 3, marginBottom: 10 }}>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate("SavedDestionation")
@@ -339,10 +339,10 @@ export default function SavedAddress(props) {
             >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  color: "#fff",
-                }}
+                  ...design.TEXT[600][18],
+                  color: colors.white,
+                  textAlign:'center'
+              }}
               >
                 {"Delete"}
               </Text>
@@ -363,10 +363,10 @@ export default function SavedAddress(props) {
             >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  color: "gray",
-                }}
+                  ...design.TEXT[600][18],
+                  color: colors.C616161,
+                  textAlign:'center'
+              }}
               >
                 {"Cancel"}
               </Text>

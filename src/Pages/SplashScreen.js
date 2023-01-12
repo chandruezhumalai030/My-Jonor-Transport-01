@@ -23,7 +23,7 @@ export default function SplashScreen({navigation}) {
       }
     });
   };
-  return (
+  return ( 
     <View style={styles.Container}>
       <Image style={styles.BrandLogo} source={GetImage.mainLogo} />
       <Text style={styles.lodingTxt}>Loading{dot.repeat(seconds-5)}</Text>

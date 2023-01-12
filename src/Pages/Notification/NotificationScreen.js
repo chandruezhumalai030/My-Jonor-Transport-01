@@ -8,6 +8,9 @@ import BottomModal from '../../Components/BottomModal';
 import { icon } from '../../assets/icons';
 import { design } from "../../config/design.config";
 
+import { colors } from "../../config/colors.config";
+import { hs, ws } from "../../utils/design/measurement.design";
+
 export default function NotificationScreen(props) {
   const height = Dimensions.get("screen").height;
   const navigation = useNavigation();
@@ -258,12 +261,17 @@ export default function NotificationScreen(props) {
             <Text
               onPress={() => setOptionModal(!optionModal)}
               style={{
-                paddingTop: 1,
-                fontSize: (height / 100) * 1.8,
-                fontFamily: "Urbanist,sans-serif",
-                color: "#0F437B",
+                ...design.TEXT[600][14],
+                color: colors.C0F437B_600,
                 padding:5
-              }}
+            }}
+              // style={{
+              //   paddingTop: 1,
+              //   fontSize: (height / 100) * 1.8,
+              //   fontFamily: "Urbanist,sans-serif",
+              //   color: "#0F437B",
+              //   padding:5
+              // }}
             >
               {"Mark all as read"}
             </Text>
@@ -283,49 +291,69 @@ export default function NotificationScreen(props) {
               <Text
                 onPress={() => setOptionModal(!optionModal)}
                 style={{
-                  fontSize: (height / 100) * 1.8,
-                  fontFamily: "Urbanist,sans-serif",
-                  color: "#000",
-                 
+                  ...design.TEXT[600][14],
+                  color: colors.C1F222A_600,
                   padding:5
-                }}
+              }}
+                // style={{
+                //   fontSize: (height / 100) * 1.8,
+                //   fontFamily: "Urbanist,sans-serif",
+                //   color: "#000",
+                 
+                //   padding:5
+                // }}
               >
                 {"Delete notification (Older > 30 Days)"}
               </Text>
               <Text
                 onPress={() => setOptionModal(!optionModal)}
                 style={{
-                  fontSize: (height / 100) * 1.8,
-                  fontFamily: "Urbanist,sans-serif",
-                  color: "#000",
-                 padding:5
+                  ...design.TEXT[600][14],
+                  color: colors.C1F222A_600,
+                  padding:5
+              }}
+                // style={{
+                //   fontSize: (height / 100) * 1.8,
+                //   fontFamily: "Urbanist,sans-serif",
+                //   color: "#000",
+                //  padding:5
 
-                }}
+                // }}
               >
                 {"Delete notification (Older > 60 Days)"}
               </Text>
               <Text
                 onPress={() => setOptionModal(!optionModal)}
                 style={{
-                  fontSize: (height / 100) * 1.8,
-                  fontFamily: "Urbanist,sans-serif",
-                  color: "#000",
-                padding:5
+                  ...design.TEXT[600][14],
+                  color: colors.C1F222A_600,
+                  padding:5
+              }}
+                // style={{
+                //   fontSize: (height / 100) * 1.8,
+                //   fontFamily: "Urbanist,sans-serif",
+                //   color: "#000",
+                // padding:5
 
-                }}
+                // }}
               >
                 {"Delete notification (Older >90 Days)"}
               </Text>
               <Text
                 onPress={() => setOptionModal(!optionModal)}
                 style={{
-                  fontSize: (height / 100) * 1.8,
-                  fontFamily: "Urbanist,sans-serif",
-                  color: "#000",
-                paddingBottom:5,
+                  ...design.TEXT[600][14],
+                  color: colors.C1F222A_600,
+                  padding:5
+              }}
+                // style={{
+                //   fontSize: (height / 100) * 1.8,
+                //   fontFamily: "Urbanist,sans-serif",
+                //   color: "#000",
+                // paddingBottom:5,
                  
-                  paddingLeft:5
-                }}
+                //   paddingLeft:5
+                // }}
               >
                 {"Delete all"}
               </Text>

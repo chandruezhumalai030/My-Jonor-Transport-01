@@ -82,7 +82,7 @@ export default function Profile(props) {
                                         source={require('../assets/Profile/left.png')}
                                     />
                                 </Pressable>
-                                <Pressable style={styles.AutoLayoutHorizontal}
+                                {/* <Pressable style={styles.AutoLayoutHorizontal}
                                     // onPress={() => navigation.navigate("Payment")}>
                                     onPress={() => navigation.navigate("Ewallet")}>
 
@@ -95,7 +95,7 @@ export default function Profile(props) {
                                         style={styles.IconlyLightArrowRight2}
                                         source={require('../assets/Profile/left.png')}
                                     />
-                                </Pressable>
+                                </Pressable> */}
                                 <Pressable style={styles.AutoLayoutHorizontal}
                                     onPress={() => navigation.navigate("Security")}>
                                     <Image
@@ -108,7 +108,7 @@ export default function Profile(props) {
                                         source={require('../assets/Profile/left.png')}
                                     />
                                 </Pressable>
-                                <Pressable style={styles.AutoLayoutHorizontal}
+                                {/* <Pressable style={styles.AutoLayoutHorizontal}
                                     onPress={() => navigation.navigate("Language")}>
                                     <Image
                                         style={styles.IconlyLightOutlineProfile}
@@ -120,7 +120,7 @@ export default function Profile(props) {
                                         style={styles.IconlyLightArrowRight2}
                                         source={require('../assets/Profile/left.png')}
                                     />
-                                </Pressable>
+                                </Pressable> */}
                                 <Pressable style={styles.AutoLayoutHorizontal}
                                     onPress={() => navigation.navigate("PrivacyPolicy")}>
                                     <Image
@@ -133,7 +133,7 @@ export default function Profile(props) {
                                         source={require('../assets/Profile/left.png')}
                                     />
                                 </Pressable>
-                                <Pressable style={styles.AutoLayoutHorizontal}
+                                {/* <Pressable style={styles.AutoLayoutHorizontal}
                                     onPress={() => navigation.navigate("Helpcenter")}>
                                     <Image
                                         style={styles.IconlyLightOutlineProfile}
@@ -144,7 +144,7 @@ export default function Profile(props) {
                                         style={styles.IconlyLightArrowRight2}
                                         source={require('../assets/Profile/left.png')}
                                     />
-                                </Pressable>
+                                </Pressable> */}
                                 <Pressable style={styles.AutoLayoutHorizontal}
                                     onPress={() => navigation.navigate("Invite")}>
                                     <Image
@@ -198,10 +198,7 @@ const styles = StyleSheet.create({
         // width: '100%',
         // height: 900,
     },
-    Group0: {
-        display: "flex",
-        flexDirection: "column",
-    },
+
     AutoLayoutVertical1: {
         display: "flex",
         flexDirection: "column",

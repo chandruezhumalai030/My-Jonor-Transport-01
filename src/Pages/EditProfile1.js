@@ -147,7 +147,7 @@ export default function Editprofile1(props) {
             width: "89%",
             justifyContent: "center",
             alignItems: "center",
-            borderRadius: 10,
+            borderRadius: 24,
           }}
         >
           <View style={{ flex: 0.4, }}>
@@ -161,20 +161,30 @@ export default function Editprofile1(props) {
             }}
           >
             <Text
-              style={{
-                fontSize: (height / 100) * 2.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#000",
-              }}
+            style={{
+              ...design.TEXT[700][24],
+              color: colors.C181A20_700,
+              textAlign:'center'
+          }}
+              // style={{
+              //   fontSize: (height / 100) * 2.5,
+              //   fontFamily: "Urbanist_semibold",
+              //   color: "#000",
+              // }}
             >
               {"Succesfully Update"}
             </Text>
             <Text
-              style={{
-                fontSize: (height / 100) * 1.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#616161",
-              }}
+             style={{
+              ...design.TEXT[400][16],
+              color: colors.C212121_400,
+              textAlign:'center'
+          }}
+              // style={{
+              //   fontSize: (height / 100) * 1.5,
+              //   fontFamily: "Urbanist_semibold",
+              //   color: "#616161",
+              // }}
             >
               Your profile has been updated
             </Text>
@@ -189,18 +199,23 @@ export default function Editprofile1(props) {
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#0F437B",
-                width: (height / 100) * 35,
+                width: (height / 100) * 33,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
               }}
             >
               <Text
-                style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  color: "#fff",
-                }}
+              style={{
+                ...design.TEXT[400][16],
+                color: colors.white,
+                textAlign:'center'
+            }}
+                // style={{
+                //   fontSize: (height / 100) * 2,
+                //   fontFamily: "Urbanist_semibold",
+                //   color: "#fff",
+                // }}
               >
                 {"Okay"}
               </Text>

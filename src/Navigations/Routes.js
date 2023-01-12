@@ -16,7 +16,6 @@ import Notification from '../Pages/Notification';
 import PrivacyPolicy from '../Pages/Privacypolicy';
 import EditProfile from '../Pages/Editprofile';
 import EditProfile1 from '../Pages/EditProfile1';
-import Editsuccess from '../Pages/Editsuccess';
 
 import Helpcenter from '../Pages/Helpcenter';
 import Fqa from '../Pages/FQA';
@@ -140,11 +139,6 @@ function Routes() {
         <Stack.Screen
           name="EditProfile1"
           component={EditProfile1}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Editsuccess"
-          component={Editsuccess}
           options={{ headerShown: false }}
         />
         <Stack.Screen name="Helpcenter" component={Helpcenter} />

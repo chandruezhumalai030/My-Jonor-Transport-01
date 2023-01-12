@@ -83,7 +83,7 @@ export default function Destination() {
       </View>
       <View style={{ flex: 0.93 ,}}>
       <KeyboardAvoidingView style={{ flex: 1,}}   behavior={Platform.OS === "ios" ? "padding" : null}>
-        <View style={{height:height/100*2}}></View>
+        {/* <View style={{height:height/100*2}}></View> */}
          
         <GetLocation 
         currentLocation={true}

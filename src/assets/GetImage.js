@@ -18,6 +18,11 @@ const GetImage = {
   introImg2: require("./Profile/imgs/intro2.png"),
   introImg3: require("./Profile/imgs/intro3.png"),
 
+  // Intro
+  pagination: require("./Profile/Pagination.png"),
+  pagination1: require("./Profile/Pagination1.png"),
+  pagination2: require("./Profile/Pagination2.png"),
+
   //Home
   search: require("../assets/Profile/search.png"),
   home: require("../assets/Profile/home.png"),

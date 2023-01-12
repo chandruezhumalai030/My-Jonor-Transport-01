@@ -71,41 +71,6 @@ export default function Homelist(props) {
       time1: "09:15 AM",
     },
   ];
-  // const ListFooter = () => {
-  //   //View to set in Footer
-  //   return (
-  //     <View
-  //       style={{
-  //         flexDirection: "row",
-  //         justifyContent: "space-between",
-  //         marginHorizontal: 5,
-  //         marginVertical: 10,
-  //         alignItems: "center",
-  //         paddingHorizontal: 30,
-  //       }}
-  //     >
-  //       <Text
-  //         style={{
-  //           fontFamily: "Urbanist_semibold",
-  //           fontWeight: "bold",
-  //           color: "#000",
-  //           fontSize: 20,
-  //         }}
-  //       >
-  //         Total Price
-  //       </Text>
-  //       {/* <Text
-  //         style={{
-  //           fontSize: 20,
-  //           fontFamily: "  Urbanist_regular",
-  //           color: "#616161",
-  //         }}
-  //       >
-  //         $0
-  //       </Text> */}
-  //     </View>
-  //   );
-  // };
   return (
     <View style={styles.container}>
       <Header {...props} rightIcon={false}
@@ -113,28 +78,6 @@ export default function Homelist(props) {
       titleStyle={styles.title}
       labelStyle={design.TEXT[700][24]}
       showSeat={true} showBuss={true} title={"Bus Route"}>
-      {/* <View style={[styles.labelPositionView, styles.ml16]}>
-          <View style={styles.labelView1}>
-            <View style={styles.labelView}>
-              <Image
-                style={styles.iconlyOtherBus}
-                resizeMode="cover"
-                source={require("../../assets/Home/iconlyotherbus.png")}
-              />
-              <Text style={[styles.text15, styles.ml4]}>345</Text>
-            </View>
-          </View>
-          <View style={styles.labelView3}>
-            <View style={styles.labelView2}>
-              <Image
-                style={styles.iconlyOtherSeats}
-                resizeMode="cover"
-                source={require("../../assets/Home/iconlyotherseats.png")}
-              />
-              <Text style={[styles.text16, styles.ml4]}>Seats</Text>
-            </View>
-          </View>
-        </View> */}
         <View style={{ flex: 1 }}>
           <FlatList
             data={data}
@@ -142,7 +85,7 @@ export default function Homelist(props) {
             renderItem={({ item, index }) => (
               <View
                 key={index}
-                style={{ flex: 1, flexDirection: "row", padding: 20 }}
+                style={{ flex: 1, flexDirection: "row", padding: 12 }}
               >
                 {/* <Image
                   source={item.img}
@@ -174,7 +117,7 @@ export default function Homelist(props) {
                       width: 1,
                       borderStyle: index == 0 ? "solid" : "dashed",
                       borderLeftWidth: index == data.length - 1 ? 0 : 1,
-                      marginTop: 5,
+                      marginTop: 2,
                     }}
                   />
                 </View>
@@ -204,7 +147,7 @@ export default function Homelist(props) {
                       source={item.img}
                       style={{ height: 15, width: 15, resizeMode: "contain" }}
                     />
-                    <Pressable  onPress={() => navigation.navigate("NotificationView")}>
+                    <Pressable  onPress={() => navigation.navigate("SeeFamousPlaces")}>
                     <Text style={[styles.subText, { paddingLeft: 2, flex: 1 }]}>
                       {item.time}
                     </Text>
@@ -244,7 +187,7 @@ const styles = StyleSheet.create({
     borderColor: GetColors.PrimaryBlue_500,
     // width: '90%',
     marginHorizontal: '10%',
-    marginBottom:50
+    marginBottom:30
   },
   btnTxt: {
     fontSize: 18,

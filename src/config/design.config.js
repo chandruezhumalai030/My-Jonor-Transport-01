@@ -31,6 +31,12 @@ export const design = {
                 fontFamily: fontsConfig[500],
                 letterSpacing: 0.2
             },
+            14: {
+                color : colors.black,
+                fontSize: ws(14),
+                fontFamily: fontsConfig[500],
+                letterSpacing: 0.2
+            },
         },
         600: {
             16: {
@@ -48,6 +54,12 @@ export const design = {
             14: {
                 color : colors.black,
                 fontSize: ws(14),
+                fontFamily: fontsConfig[600],
+                letterSpacing: 0.2
+            },
+            26: {
+                color : colors.black,
+                fontSize: ws(26),
                 fontFamily: fontsConfig[600],
                 letterSpacing: 0.2
             }

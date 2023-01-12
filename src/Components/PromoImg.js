@@ -24,10 +24,11 @@ function PromoImg(props) {
         }}
         style={{
           flex: 0.1,
-          marginBottom: 3,
+          // marginBottom: 3,
           justifyContent: "center",
           alignItems: "center",
-          paddingBottom:15
+          // paddingBottom:2,
+          //  backgroundColor:'red'
         }}
       >
         <Image
@@ -36,6 +37,8 @@ function PromoImg(props) {
             height: (height / 100) * 22,
             width: (width / 100) * 90,
             resizeMode: "contain",
+            top:10,
+            // marginBottom: 3
           }}
         ></Image>
         {/* <View

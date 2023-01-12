@@ -55,7 +55,7 @@ export default function GetLocation(props) {
           },
 
           textInput: {
-            height: 40,
+            height: 45,
             borderWidth: 0.3,
             width: "90%",
             borderRadius: 12,
@@ -139,7 +139,7 @@ onPress(data)
         // )}
         renderLeftButton={() => (
           <View style={{ position: "absolute" }}>
-            <TouchableOpacity style={{ paddingTop: 12, paddingLeft: 10 }}>
+            <TouchableOpacity style={{ paddingTop: 13, paddingLeft: 10 }}>
               <Image
                 source={GetImage.locaionSearch}
                 style={{
@@ -181,13 +181,13 @@ onPress(data)
               width: (height / 100) * 2,
               resizeMode: "contain",
 
-              left: 5,
+              left: 15,
             }} />
           <Text
             style={{
               fontSize: (height / 100) * 2,
               fontFamily: "Urbanist_semibold",
-              left: 15,
+              left: 25,
               fontWeight: "bold",
               color: "#000",
             }}

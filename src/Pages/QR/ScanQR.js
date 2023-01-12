@@ -30,6 +30,7 @@ function ScanQR(props) {
       id: 1,
       title: 'Successfully Onboard',
       sub: 'We hope you will be having a pleasant & memorable journey',
+      but:'Refresh',
       img: GetImage.promoSuccess
 
     },
@@ -37,6 +38,7 @@ function ScanQR(props) {
       id: 2,
       title: 'Timeout',
       sub: 'You have pass the limit for QR Code. Refresh again',
+      but: 'Okay',
       img: GetImage.timeout
 
     },
@@ -44,6 +46,7 @@ function ScanQR(props) {
       id: 3,
       title: 'Unable to Onboard',
       sub: 'Looks like we got problem. Kindly check your internet connection.',
+      but: 'Retry',
       img: GetImage.wrong
 
     },
@@ -51,6 +54,7 @@ function ScanQR(props) {
       id: 4,
       title: 'Successfully Offboard',
       sub: 'Thank you for using our service.',
+      but: 'Okay',
       img: GetImage.promoSuccess
 
     }
@@ -165,8 +169,9 @@ function ScanQR(props) {
             height: (height / 100) * 50,
             width: "95%",
             justifyContent: "center",
+            
             alignItems: "center",
-            borderRadius: 10,
+            borderRadius: 24,
           }}
         >
           <View style={{ flex: 0.4, }}>
@@ -188,23 +193,33 @@ function ScanQR(props) {
             }}
           >
             <Text
-              style={{
-                fontSize: (height / 100) * 2.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#000",
-              }}
+            style={{
+              ...design.TEXT[700][24],
+              color: colors.C181A20_700,
+              textAlign:'center'
+          }}
+              // style={{
+              //   fontSize: (height / 100) * 2.5,
+              //   fontFamily: "Urbanist_semibold",
+              //   color: "#000",
+              // }}
             >
               {data[ModalCount].title}
             </Text>
             <Text
-              style={{
-                fontSize: (height / 100) * 1.8,
-                fontFamily: "Urbanist_semibold",
-                color: "#616161",
-                textAlign: 'center',
-                marginTop: 2,
-                paddingHorizontal: 5
-              }}
+            style={{
+              ...design.TEXT[400][16],
+              color: colors.C212121_400,
+              textAlign:'center'
+          }}
+              // style={{
+              //   fontSize: (height / 100) * 1.8,
+              //   fontFamily: "Urbanist_semibold",
+              //   color: "#616161",
+              //   textAlign: 'center',
+              //   marginTop: 2,
+              //   paddingHorizontal: 5
+              // }}
             >
               {data[ModalCount].sub}
             </Text>
@@ -216,20 +231,26 @@ function ScanQR(props) {
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#0F437B",
-                width: width / 100 * 70,
+                width: width / 100 * 78,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
               }}
             >
               <Text
-                style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  color: "#fff",
-                }}
+              style={{
+                ...design.TEXT[400][16],
+                color: colors.white,
+                textAlign:'center'
+            }}
+                // style={{
+                //   fontSize: (height / 100) * 2,
+                //   fontFamily: "Urbanist_semibold",
+                //   color: "#fff",
+                // }}
               >
-                {"Okay"}
+                {data[ModalCount].but}
+                {/* {"Okay"} */}
               </Text>
             </TouchableOpacity>
             <View style={{ height: (height / 100) * 2 }}></View>

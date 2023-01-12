@@ -129,7 +129,7 @@ const Security = () => {
             width: "89%",
             justifyContent: "center",
             alignItems: "center",
-            borderRadius: 10,
+            borderRadius: 24,
           }}
         >
           <View style={{ flex: 0.4, }}>
@@ -151,22 +151,32 @@ const Security = () => {
             }}
           >
             <Text
-              style={{
-                fontSize: (height / 100) * 2.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#000",
-              }}
+            style={{
+              ...design.TEXT[700][24],
+              color: colors.C181A20_700,
+              textAlign:'center'
+          }}
+              // style={{
+              //   fontSize: (height / 100) * 2.5,
+              //   fontFamily: "Urbanist_semibold",
+              //   color: "#000",
+              // }}
             >
               {"Congratulations"}
             </Text>
             <Text
-              style={{
-                fontSize: (height / 100) * 1.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#616161",
-              }}
+            style={{
+              ...design.TEXT[400][16],
+              color: colors.C212121_400,
+              textAlign:'center'
+          }}
+              // style={{
+              //   fontSize: (height / 100) * 1.5,
+              //   fontFamily: "Urbanist_semibold",
+              //   color: "#616161",
+              // }}
             >
-              Your passcode has been updated to the new ones
+              Your passcode has been updated {"\n"}to the new ones
             </Text>
           </View>
 
@@ -179,7 +189,7 @@ const Security = () => {
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#0F437B",
-                width: (height / 100) * 35,
+                width: (height / 100) * 33,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
@@ -187,10 +197,10 @@ const Security = () => {
             >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  color: "#fff",
-                }}
+                  ...design.TEXT[400][16],
+                  color: colors.white,
+                  textAlign:'center'
+              }}
               >
                 {"Got It"}
               </Text>
@@ -211,11 +221,11 @@ const Security = () => {
         <View
           style={{
             backgroundColor: "#fff",
-            height: (height / 100) * 40,
+            height: (height / 100) * 35,
             width: "89%",
             justifyContent: "center",
             alignItems: "center",
-            borderRadius: 10,
+            borderRadius: 24,
           }}
         >
           <View
@@ -227,31 +237,31 @@ const Security = () => {
           >
             <Text
               style={{
-                fontSize: (height / 100) * 2.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#000",
-              }}
+                ...design.TEXT[700][24],
+                color: colors.C181A20_700,
+                textAlign:'center'
+            }}
             >
               {"Forgot your PIN"}
             </Text>
             <Text
               style={{
-                fontSize: (height / 100) * 2,
-                fontFamily: "Urbanist_semibold",
-                color: "#616161",
-              }}
+                ...design.TEXT[400][16],
+                color: colors.C212121_400,
+                textAlign:'center'
+            }}
             >
-              Request an email to authenticate yourself & update your PIN
+              Request an email to authenticate{"\n"} yourself & update your PIN
             </Text>
           </View>
 
-          <View style={{ flex: 0.2, top: height / 100 * 5, marginBottom: 10 }}>
+          <View style={{ flex: 0.2, top: height / 100 * 3, marginBottom: 10 }}>
             <TouchableOpacity
               onPress={() => setPromoModal1(!promoModal1)}
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#0F437B",
-                width: (height / 100) * 35,
+                width: (height / 100) * 33,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
@@ -260,10 +270,10 @@ const Security = () => {
             >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  color: "#fff",
-                }}
+                  ...design.TEXT[400][16],
+                  color: colors.white,
+                  textAlign:'center'
+              }}
               >
                 {"Request Email"}
               </Text>
@@ -271,11 +281,11 @@ const Security = () => {
             <TouchableOpacity
               onPress={() => setPromoModal1(!promoModal1)}
               style={{
-                height: (height / 100) * 6,
+                height: (height / 100) * 5.5,
                 backgroundColor: "white",
-                borderColor: "#e0e0e0",
+                borderColor: "#E0E0E0",
                 borderWidth: 1,
-                width: (height / 100) * 35,
+                width: (height / 100) * 33,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
@@ -284,10 +294,10 @@ const Security = () => {
             >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  color: "gray",
-                }}
+                  ...design.TEXT[600][18],
+                  color: colors.C616161_600,
+                  textAlign:'center'
+              }}
               >
                 {"Cancel"}
               </Text>

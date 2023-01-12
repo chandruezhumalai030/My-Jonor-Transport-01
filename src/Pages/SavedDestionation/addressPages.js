@@ -168,11 +168,11 @@ export default function Addressnew( props) {
         <View
           style={{
             backgroundColor: "#fff",
-            height: (height / 100) * 40,
+            height: (height / 100) * 35,
             width: "89%",
             justifyContent: "center",
             alignItems: "center",
-            borderRadius: 10,
+            borderRadius: 24,
           }}
         >
           <View
@@ -184,31 +184,31 @@ export default function Addressnew( props) {
           >
             <Text
               style={{
-                fontSize: (height / 100) * 2.5,
-                fontFamily: "Urbanist, sans-serif",
-                color: "#000",
-              }}
+                ...design.TEXT[700][24],
+                color: colors.C181A20_700,
+                textAlign:'center'
+            }}
             >
               {"Location Confimation"}
             </Text>
             <Text
               style={{
-                fontSize: (height / 100) * 2,
-                fontFamily: "Urbanist, sans-serif",
-                color: "#616161",
-              }}
+                ...design.TEXT[400][16],
+                color: colors.C212121_400,
+                textAlign:'center'
+            }}
             >
-              Are you currently on this new location right at this moment?
+              Are you currently on this new location {"\n"}right at this moment?
             </Text>
           </View>
 
-          <View style={{ flex: 0.2, top: height / 100 * 5,marginBottom:10 }}>
+          <View style={{ flex: 0.2, top: height / 100 * 3,marginBottom:10 }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("SavedDestionation")}
               style={{
                 height: (height / 100) * 6,
                 backgroundColor: "#0F437B",
-                width: (height / 100) * 35,
+                width: (height / 100) * 34,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
@@ -217,10 +217,10 @@ export default function Addressnew( props) {
             >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist, sans-serif",
-                  color: "#fff",
-                }}
+                  ...design.TEXT[400][16],
+                  color: colors.white,
+                  textAlign:'center'
+              }}
               >
                 {"Yes, Add Now"}
               </Text>
@@ -228,11 +228,11 @@ export default function Addressnew( props) {
             <TouchableOpacity
               onPress={() => navigation.navigate("SavedDestionation")}
               style={{
-                height: (height / 100) * 6,
+                height: (height / 100) * 5.5,
                 backgroundColor: "white",
                 borderColor:"#e0e0e0",
                 borderWidth: 1,
-                width: (height / 100) * 35,
+                width: (height / 100) * 34,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 25,
@@ -241,10 +241,10 @@ export default function Addressnew( props) {
             >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist, sans-serif",
-                  color: "gray",
-                }}
+                  ...design.TEXT[600][18],
+                  color: colors.C616161_600,
+                  textAlign:'center'
+              }}
               >
                 {"No, But Add Anyways"}
               </Text>

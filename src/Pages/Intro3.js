@@ -4,6 +4,9 @@ import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
 import Helper from '../Components/utils/Helper';
 
+import { design } from "../config/design.config";
+import { colors } from "../config/colors.config";
+
 export default function Intro3({navigation}) {
   const goNext = () => {
     Helper.setData('userdata', 'VivekaJee');
@@ -13,14 +16,32 @@ export default function Intro3({navigation}) {
     <View style={styles.Container}>
       <Image style={styles.BrandLogo} source={GetImage.introImg3} />
       <View style={styles.contentTxt}>
-        <Text style={styles.heading}>Ride For Free</Text>
-        <Text style={styles.content}>
-          Get on bus for free. Exclusively for Malaysia citizen. That’s right!
+        <Text
+        style={{
+          ...design.TEXT[700][24],
+          color: colors.C212121_700,
+          marginBottom: 16,
+      }}
+        //  style={styles.heading}
+        >Ride For Free</Text>
+        <Text 
+        style={{
+          ...design.TEXT[400][16],
+          color: colors.C212121_400,
+          textAlign: 'center',
+          justifyContent: 'center',
+          marginBottom: 16,
+          marginLeft:10
+      }}
+        // style={styles.content}
+        >
+          {  }Get on bus for free. Exclusively for Malaysia {"\n"}citizen. That’s right!
           No charge!
         </Text>
+        <Image source={GetImage.pagination2} />
       </View>
       <TouchableOpacity style={styles.Button} onPress={goNext}>
-        <Text style={styles.btnTxt}>Next</Text>
+        <Text style={styles.btnTxt}>Get Started</Text>
       </TouchableOpacity>
     </View>
   );

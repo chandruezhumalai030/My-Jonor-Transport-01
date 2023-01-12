@@ -30,13 +30,14 @@ const Work = () => {
             <Text style={styles.text}>Add New</Text>
           </View>
         </Pressable> */}
-         <TouchableOpacity style={styles.Button}
+         
+      </View>
+    </View>
+    <TouchableOpacity style={styles.Button}
           onPress={() => navigation.navigate("Saved")}
           >
         <Text style={styles.btnTxt}>Add New</Text>
       </TouchableOpacity>
-      </View>
-    </View>
     </View>
   );
 };
@@ -102,7 +103,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    marginTop: hs(30)
+    marginTop: hs(30),
+    marginBottom:hs(50),
   },
   btnTxt: {
     ...design.TEXT[600][18],

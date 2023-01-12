@@ -28,6 +28,10 @@ const LONGITUDE = 79.6623146;
 const LATITUDE_DELTA = 2200;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
+import { design } from "../config/design.config";
+import { colors } from "../config/colors.config";
+import { hs, ws } from "../utils/design/measurement.design";
+
 const Home = (props) => {
   const { data, para } = props.route?.params;
   const isFocused = useIsFocused();
@@ -218,7 +222,7 @@ const Home = (props) => {
 
       <View
         style={{
-        top:height/100*50,
+          top: height / 100 * 50,
           flex: 0.4,
           backgroundColor: "#FFFFFF",
           height: "40%",
@@ -226,46 +230,46 @@ const Home = (props) => {
           borderTopLeftRadius: 25,
           width: "100%",
           zIndex: 5,
-       position:'absolute'
-          
+          position: 'absolute'
+
         }}
       >
         {some ? (
           <>
-            <View style={{flex:0.5,flexDirection:'row',paddingTop:10}}>
-            <TouchableOpacity
-            //  onPress={() => navigation.navigate("Ewallet")}
-              style={{
-                flex: 0.5,
-                justifyContent: "flex-end",
-                alignItems: "center",
-            paddingLeft:20
-              }}
-            >
-              <Image
-                source={GetImage.point}
-                style={{ height: "50%", width: "90%", resizeMode: "contain",padding:10 ,}}
-              />
-           
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Ewallet")}
-              style={{
-                flex: 0.5,
-                justifyContent: "flex-end",
-                width: "100%",
-                alignItems: "center",
-                paddingRight:20
-              }}
-            >
-             
-              <Image
-                source={GetImage.wallet}
-                style={{ height: "50%", width: "90%", resizeMode: "contain" }}
-              />
-            </TouchableOpacity>
+            <View style={{ flex: 0.5, flexDirection: 'row', paddingTop: 10 }}>
+              <TouchableOpacity
+                //  onPress={() => navigation.navigate("Ewallet")}
+                style={{
+                  flex: 0.5,
+                  justifyContent: "flex-end",
+                  alignItems: "center",
+                  paddingLeft: 20
+                }}
+              >
+                <Image
+                  source={GetImage.point}
+                  style={{ height: "50%", width: "90%", resizeMode: "contain", padding: 10, }}
+                />
+
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Ewallet")}
+                style={{
+                  flex: 0.5,
+                  justifyContent: "flex-end",
+                  width: "100%",
+                  alignItems: "center",
+                  paddingRight: 20
+                }}
+              >
+
+                <Image
+                  source={GetImage.wallet}
+                  style={{ height: "50%", width: "90%", resizeMode: "contain" }}
+                />
+              </TouchableOpacity>
             </View>
-          
+
             <View
               style={{
                 flex: 0.08,
@@ -274,17 +278,21 @@ const Home = (props) => {
                 justifyContent: "space-between",
                 paddingHorizontal: 1,
                 alignSelf: "center",
-            
+
               }}
             >
               <TouchableOpacity>
                 <Text
                   style={{
-                    fontSize: (height / 100) * 2.2,
-                    fontFamily: "Urbanist_bold",
-                    fontWeight: "bold",
-                    color: "#000",
+                    ...design.TEXT[700][20],
+                    color: colors.C212121_700,
                   }}
+                // style={{
+                //   fontSize: (height / 100) * 2.2,
+                //   fontFamily: "Urbanist_bold",
+                //   fontWeight: "bold",
+                //   color: "#000",
+                // }}
                 >
                   Promos
                 </Text>
@@ -293,10 +301,14 @@ const Home = (props) => {
                 <Text
                   onPress={() => navigation.navigate("PromoCode")}
                   style={{
-                    fontSize: (height / 100) * 1.7,
-                    fontFamily: "Urbanist_semibold",
-                    color: "#616161",
+                    ...design.TEXT[600][14],
+                    color: colors.C616161_600,
                   }}
+                // style={{
+                //   fontSize: (height / 100) * 1.7,
+                //   fontFamily: "Urbanist_semibold",
+                //   color: "#616161",
+                // }}
                 >
                   View all
                 </Text>
@@ -337,11 +349,16 @@ const Home = (props) => {
                   />
                   <Text
                     style={{
-                      fontSize: (height / 100) * 1.7,
-                      fontFamily: "Urbanist_regular",
-                      color: "#616161",
-                      fontWeight: "600",
+                      ...design.TEXT[500][16],
+                      color: colors.C616161_500,
+                      textAlign: 'center'
                     }}
+                  // style={{
+                  //   fontSize: (height / 100) * 1.7,
+                  //   fontFamily: "Urbanist_regular",
+                  //   color: "#616161",
+                  //   fontWeight: "600",
+                  // }}
                   >
                     {"Get me Somewhere"}
                   </Text>
@@ -374,17 +391,22 @@ const Home = (props) => {
                         height: (height / 100) * 3.5,
                         width: (height / 100) * 3.5,
                         resizeMode: "contain",
-                        right:5
+                        right: 5
                       }}
                     />
                     <Text
                       style={{
-                        fontSize: (height / 100) * 1.7,
-                        fontFamily: "Urbanist_regular",
-                        color: "#616161",
-                        fontWeight: "600",
-                        right:20
+                        ...design.TEXT[500][16],
+                        color: colors.C616161_500,
+                        textAlign: 'center'
                       }}
+                    // style={{
+                    //   fontSize: (height / 100) * 1.7,
+                    //   fontFamily: "Urbanist_regular",
+                    //   color: "#616161",
+                    //   fontWeight: "600",
+                    //   right:20
+                    // }}
                     >
                       {"Get me home"}
                     </Text>
@@ -399,7 +421,7 @@ const Home = (props) => {
                     }}
                   >
                     <TouchableOpacity
-                    onPress={() => setSome(false)}
+                      onPress={() => setSome(false)}
                       // onPress={() => navigation.navigate("SavedDestionation")}
                       style={{
                         flex: 0.5,
@@ -410,7 +432,7 @@ const Home = (props) => {
                       <Image source={GetImage.work} style={styles.Img_2} />
                     </TouchableOpacity>
                     <TouchableOpacity
-                    onPress={() => setSome(false)}
+                      onPress={() => setSome(false)}
                       // onPress={() => navigation.navigate("SavedDestionation")}
                       style={{
                         flex: 0.5,
@@ -428,39 +450,41 @@ const Home = (props) => {
             </View>
           </>
         ) : (
-          
+
           <View
             style={{
-            
+
               flex: 1,
               zIndex: 1,
-              
+
               borderTopLeftRadius: 25,
               borderTopRightRadius: 25,
-              
+
             }}
           >
- <Image style={{height:25,width:25,alignSelf:'center',resizeMode:'contain'}} source={icon.pull} />
-      
+            <Image style={{ height: 25, width: 25, alignSelf: 'center', resizeMode: 'contain' }} source={icon.pull} />
+
             <ScrollView
               showsVerticalScrollIndicator={false}
               style={{ flex: 1 }}
             >
 
               <View style={{ height: (height / 100) * 2 }} />
-             
+
               <View
                 style={{
                   flex: 0.3,
                   justifyContent: "center",
                   alignItems: "center",
+                  
                 }}
               >
                 <TouchableOpacity
                   // onPress={() => navigation.navigate("CurrentLocation")}
-                  onPress={() =>{ 
+                  onPress={() => {
                     setSome(true)
-                    navigation.navigate("CurrentLocation")}}
+                    navigation.navigate("CurrentLocation")
+                  }}
                   style={styles.sub_Con}
                 >
                   <Image
@@ -483,12 +507,13 @@ const Home = (props) => {
                     {from == "" ? "Current Location" : from}
                   </Text>
                 </TouchableOpacity>
-                <View style={{ height: (height / 100) * 1 }} />
+                <View style={{ height: (height / 100) * 1}} />
                 <TouchableOpacity
                   // onPress={() => navigation.navigate("Destination")}
-                  onPress={() =>{ 
+                  onPress={() => {
                     setSome(true)
-                    navigation.navigate("Destination")}}
+                    navigation.navigate("Destination")
+                  }}
                   style={styles.sub_Con}
                 >
                   <Image
@@ -538,15 +563,19 @@ const Home = (props) => {
                     style={{
                       height: (height / 100) * 2,
                       width: (height / 100) * 2,
-                      resizeMode: "contain",
+                       // left: 10,
+                       right:10,
+                      resizeMode: "contain", 
                     }}
                   />
                   <Text
                     style={{
                       fontSize: (height / 100) * 2,
                       fontFamily: "Urbanist_semibold",
+                      // textAlign: "left",
+                      right:30,
 
-                      color: "#616161",
+                      color: "#616161", 
                     }}
                   >
                     {"View saved destination"}
@@ -570,17 +599,20 @@ const Home = (props) => {
                 }}
               >
                 <TouchableOpacity
-                  style={{ height: (height / 100) * 6,
-    width: "90%",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: from==""&&to==""? "#B5C5D6":"#0F437B",
-    borderRadius: 25,
-    top: 5,
-    position: "absolute",}}
-                  onPress={() =>{ 
+                  style={{
+                    height: (height / 100) * 6,
+                    width: "90%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: from == "" && to == "" ? "#B5C5D6" : "#0F437B",
+                    borderRadius: 25,
+                    top: 5,
+                    position: "absolute",
+                  }}
+                  onPress={() => {
                     setSome(true)
-                    navigation.navigate("HomeAction")}}
+                    navigation.navigate("HomeAction")
+                  }}
                 >
                   <Text
                     style={{
@@ -636,23 +668,33 @@ const Home = (props) => {
           >
             <Text
               style={{
-                fontSize: (height / 100) * 2.5,
-                fontFamily: "Urbanist_semibold",
-                color: "#000",
+                ...design.TEXT[700][24],
+                color: colors.C181A20_700,
+                textAlign: 'center'
               }}
+            // style={{
+            //   fontSize: (height / 100) * 2.5,
+            //   fontFamily: "Urbanist_semibold",
+            //   color: "#000",
+            // }}
             >
               {"Enable Location"}
             </Text>
             <Text
               style={{
-                fontSize: (height / 100) * 1.8,
-                fontFamily: "Urbanist_semibold",
-                color: "#616161",
-                alignSelf: "center",
+                ...design.TEXT[400][16],
+                color: colors.C212121_400,
+                textAlign: 'center'
               }}
+            // style={{
+            //   fontSize: (height / 100) * 1.8,
+            //   fontFamily: "Urbanist_semibold",
+            //   color: "#616161",
+            //   alignSelf: "center",
+            // }}
             >
-              We need access to your location to be able {"\n"}
-              {"                     "}to use this service.
+              {"    "} We need access to your location to be {"\n"}
+              {"      "}able to use this service.
             </Text>
           </View>
           <View style={{ height: (height / 100) * 4 }}></View>
@@ -670,10 +712,15 @@ const Home = (props) => {
             >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  color: "#fff",
+                  ...design.TEXT[600][18],
+                  color: colors.white,
+                  textAlign: 'center'
                 }}
+              // style={{
+              //   fontSize: (height / 100) * 2,
+              //   fontFamily: "Urbanist_semibold",
+              //   color: "#fff",
+              // }}
               >
                 {"Enable Location"}
               </Text>
@@ -683,7 +730,8 @@ const Home = (props) => {
               onPress={() => setLocationEnable(false)}
               style={{
                 height: (height / 100) * 7,
-                borderWidth: 0.5,
+                borderColor: "#E0E0E0",
+                borderWidth: 1,
                 width: (width / 100) * 70,
                 justifyContent: "center",
                 alignItems: "center",
@@ -692,10 +740,15 @@ const Home = (props) => {
             >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  color: "#000",
+                  ...design.TEXT[600][18],
+                  color: colors.C616161_600,
+                  textAlign: 'center'
                 }}
+              // style={{
+              //   fontSize: (height / 100) * 2,
+              //   fontFamily: "Urbanist_semibold",
+              //   color: "#000",
+              // }}
               >
                 {"Not Now"}
               </Text>
@@ -714,7 +767,7 @@ const styles = StyleSheet.create({
   },
 
   map: {
-   ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFillObject,
     height: "100%",
     width: "100%",
   },
@@ -753,17 +806,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: (Hight / 100) * 4,
     marginRight: (Hight / 100) * 9,
   },
-  sub_Con: {
+  sub_Con: { 
     flexDirection: "row",
     height: (Hight / 100) * 6,
-    borderWidth: 0.3,
+    borderWidth: 0.5,
     width: "90%",
     alignItems: "center",
     paddingHorizontal: (Hight / 100) * 2,
-    borderRadius: 12,
-   
-    borderColor:'#BDBDBD'
-  },
+    borderRadius: 24,
+    borderColor: '#BDBDBD'
+  }, 
   btn3: {
     height: (height / 100) * 6,
     width: "90%",
